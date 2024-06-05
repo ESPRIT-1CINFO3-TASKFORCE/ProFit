@@ -9,6 +9,8 @@ import java.sql.SQLException;
 public class DataSource {
 
     private  String url="jdbc:mysql://localhost:3306/profit_db";
+
+
     private  String login="root";
     private  String pwd="";
     private static DataSource data;
@@ -18,11 +20,16 @@ public class DataSource {
 
     private DataSource(){
         try {
+
             con1= DriverManager.getConnection(url,login,pwd);
             System.out.println("connexion établie");
+
+            con= DriverManager.getConnection(url,login,pwd);
+            System.out.println("Connexion établie avec la base de données profit_bd. ");
+
         } catch (SQLException e) {
 
-            System.out.println(e);
+            System.out.println("Impossible de se connecter à la base de données : "+e);
         }
     }
     public Connection getCon() {
