@@ -1,39 +1,56 @@
 package Entites;
+import java.time.LocalDate;
 import java.util.Date;
 public class ProgressionEntity {
 
-    private int id_progression;
+    private int id_prg;
+    private  int id;
     private int poids;
-    private double longeur;
+    private double longueur;
     private int IMC;
-    private int Masse_musc;
-    private Date date_inscri;
-    private String Desciption;
+    private LocalDate date_inscri;
+    private String desciption;
+    private int masse_musc;
 
     //constructeur paramétres
 
 
-    public ProgressionEntity(int id_progression, int poids, double longeur, int IMC, int masse_musc, Date date_inscri, String desciption) {
-        this.id_progression = id_progression;
+    public ProgressionEntity(int id_prg, int id, int poids, double longueur, int IMC, LocalDate date_inscri, String desciption, int masse_musc) {
+        this.id_prg = id_prg;
+        this.id = id;
         this.poids = poids;
-        this.longeur = longeur;
+        this.longueur = longueur;
         this.IMC = IMC;
-        Masse_musc = masse_musc;
         this.date_inscri = date_inscri;
-        Desciption = desciption;
+        this.desciption = desciption;
+        this.masse_musc = masse_musc;
     }
 
-    public ProgressionEntity (){}
+    public ProgressionEntity(int id, int poids, double longueur, int IMC, LocalDate date_inscri, String desciption, int masse_musc) {
+        this.id = id;
+        this.poids = poids;
+        this.longueur = longueur;
+        this.IMC = IMC;
+        this.date_inscri = date_inscri;
+        this.desciption = desciption;
+        this.masse_musc = masse_musc;
+    }
+    public ProgressionEntity(){}
 
-
-    //Getters et Setters
-
-    public int getId_progression() {
-        return id_progression;
+    public int getId_prg() {
+        return id_prg;
     }
 
-    public void setId_progression(int id_progression) {
-        this.id_progression = id_progression;
+    public void setId_prg(int id_prg) {
+        this.id_prg = id_prg;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getPoids() {
@@ -44,12 +61,12 @@ public class ProgressionEntity {
         this.poids = poids;
     }
 
-    public double getLongeur() {
-        return longeur;
+    public double getLongueur() {
+        return longueur;
     }
 
-    public void setLongeur(double longeur) {
-        this.longeur = longeur;
+    public void setLongueur(double longueur) {
+        this.longueur = longueur;
     }
 
     public int getIMC() {
@@ -60,43 +77,42 @@ public class ProgressionEntity {
         this.IMC = IMC;
     }
 
-    public int getMasse_musc() {
-        return Masse_musc;
-    }
-
-    public void setMasse_musc(int masse_musc) {
-        Masse_musc = masse_musc;
-    }
-
-    public Date getDate_inscri() {
+    public LocalDate getDate_inscri() {
         return date_inscri;
     }
 
-    public void setDate_inscri(Date date_inscri) {
+    public void setDate_inscri(LocalDate date_inscri) {
         this.date_inscri = date_inscri;
     }
 
     public String getDesciption() {
-        return Desciption;
+        return desciption;
     }
 
     public void setDesciption(String desciption) {
-        Desciption = desciption;
+        this.desciption = desciption;
     }
 
-    //methode toString
+    public int getMasse_musc() {
+        return masse_musc;
+    }
 
+    public void setMasse_musc(int masse_musc) {
+        this.masse_musc = masse_musc;
+    }
 
     @Override
     public String toString() {
         return "ProgressionEntity{" +
-                "id_progression=" + id_progression +
+                "id_prg=" + id_prg +
+                ", id=" + id +
                 ", poids=" + poids +
-                ", longeur=" + longeur +
+                ", longueur=" + longueur +
                 ", IMC=" + IMC +
-                ", Masse_musc=" + Masse_musc +
                 ", date_inscri=" + date_inscri +
-                ", Desciption='" + Desciption + '\'' +
+                ", desciption='" + desciption + '\'' +
+                ", masse_musc=" + masse_musc +
                 '}';
     }
+
 }
