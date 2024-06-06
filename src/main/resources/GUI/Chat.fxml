@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="chatVBox" spacing="15.0" style="-fx-background-color: #FBCEB1;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21">
+    <!-- Chat interface components, including messageDisplayArea -->
+    <TextArea fx:id="messageDisplayArea" editable="false" prefHeight="322.0" prefWidth="646.0">
+      <padding>
+         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+      </padding>
+      <VBox.margin>
+         <Insets />
+      </VBox.margin></TextArea>
+    <!-- Input field for typing message -->
+    <TextField fx:id="messageInputField" alignment="TOP_LEFT" minWidth="-Infinity" prefHeight="26.0" prefWidth="354.0" promptText="Ecrivez votre message ici..." VBox.vgrow="ALWAYS" />
+    <!-- Button to send message -->
+    <Button onAction="#sendMessage" text="Send" textAlignment="CENTER" />
+    <!-- Other chat interface components -->
+</VBox>
