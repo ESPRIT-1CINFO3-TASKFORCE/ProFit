@@ -1,6 +1,5 @@
 package Entites;
 import java.time.LocalDate;
-import java.util.Date;
 
 public class RegimeEntity {
 
@@ -11,6 +10,8 @@ public class RegimeEntity {
   private String description;
   private LocalDate date_debut;
   private  LocalDate date_fin;
+  private Semaine semaine;
+  private Repas repas;
   //Constructeur parametré
 
 
@@ -21,15 +22,20 @@ public class RegimeEntity {
     this.description = description;
     this.date_debut = date_debut;
     this.date_fin = date_fin;
+    this.semaine = semaine;
+    this.repas = repas;
   }
 
-  public RegimeEntity(int id_client, String nom_regime, String description, LocalDate date_debut, LocalDate date_fin) {
+  public RegimeEntity(int id_client, String nom_regime, String description, LocalDate date_debut, LocalDate date_fin, Semaine semaine, Repas repas) {
     this.id_client = id_client;
     this.nom_regime = nom_regime;
     this.description = description;
     this.date_debut = date_debut;
     this.date_fin = date_fin;
+    this.semaine = semaine;
+    this.repas = repas;
   }
+
   public RegimeEntity(){}
 
   public int getId_regime() {
@@ -80,6 +86,21 @@ public class RegimeEntity {
     this.date_fin = date_fin;
   }
 
+  public Semaine getSemaine() {
+    return semaine;
+  }
+
+  public void setSemaine(Semaine semaine) {
+    this.semaine = semaine;
+  }
+
+  public Repas getRepas() {
+    return repas;
+  }
+
+  public void setRepas(Repas repas) {
+    this.repas = repas;
+  }
 
   @Override
   public String toString() {
@@ -90,7 +111,8 @@ public class RegimeEntity {
             ", description='" + description + '\'' +
             ", date_debut=" + date_debut +
             ", date_fin=" + date_fin +
+            ", semaine=" + semaine +
+            ", repas=" + repas +
             '}';
   }
-
 }

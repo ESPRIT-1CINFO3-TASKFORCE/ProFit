@@ -21,10 +21,9 @@ public class DataSource {
     private DataSource(){
         try {
 
-            con1= DriverManager.getConnection(url,login,pwd);
-            System.out.println("connexion établie");
 
-            con= DriverManager.getConnection(url,login,pwd);
+
+            con1= DriverManager.getConnection(url,login,pwd);
             System.out.println("Connexion établie avec la base de données profit_bd. ");
 
         } catch (SQLException e) {

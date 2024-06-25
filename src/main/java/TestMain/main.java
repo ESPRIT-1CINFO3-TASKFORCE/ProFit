@@ -90,6 +90,30 @@ public class main {
         }
 
 
+        //******************Tester la methode d'affichage par id client
+
+        ProgressionService progressionService=new ProgressionService();
+        // ID du client à rechercher
+        int clientId = 2208;
+
+        // Récupérer les progressions pour ce client
+        List<ProgressionEntity> progressions = progressionService.getProgressionsByClientId(clientId);
+
+        // Afficher les progressions
+        for (ProgressionEntity progression : progressions) {
+            System.out.println("ID Progression: " + progression.getId_prg());
+            System.out.println("ID Client: " + progression.getId());
+            System.out.println("Poids: " + progression.getPoids());
+            System.out.println("Longueur: " + progression.getLongueur());
+            System.out.println("IMC: " + progression.getIMC());
+            System.out.println("Date d'inscription: " + progression.getDate_inscri());
+            System.out.println("Description: " + progression.getDesciption());
+            System.out.println("Masse musculaire: " + progression.getMasse_musc());
+            System.out.println("---------------------------");
+        }
+
+
+
 
         //*************************************TESTER CRUD REGIME************************************
 
@@ -121,7 +145,7 @@ public class main {
             System.out.println("Erreur lors de l'ajout de regime : " + e.getMessage());
         }*/
 
-        //Tester pour supprimer une regime
+        //***********Tester pour supprimer une regime
 
         try {
             // Créez une instance de ProgressionService
@@ -137,7 +161,7 @@ public class main {
         }
 
 
-        //modifier un regime
+        //****************modifier un regime
 
 
         try {
@@ -162,6 +186,8 @@ public class main {
             // Gérez les exceptions SQL, par exemple, affichez simplement la trace de la pile
             e.printStackTrace();
         }
+
+
 
 
 

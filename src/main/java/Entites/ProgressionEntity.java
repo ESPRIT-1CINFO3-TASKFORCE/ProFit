@@ -1,6 +1,6 @@
 package Entites;
 import java.time.LocalDate;
-import java.util.Date;
+
 public class ProgressionEntity {
 
     private int id_prg;
@@ -26,7 +26,7 @@ public class ProgressionEntity {
         this.masse_musc = masse_musc;
     }
 
-    public ProgressionEntity(int id, int poids, double longueur, int IMC, LocalDate date_inscri, String desciption, int masse_musc) {
+    public ProgressionEntity(int id, int poids, double longueur, int IMC, LocalDate date_inscri, String desciption) {
         this.id = id;
         this.poids = poids;
         this.longueur = longueur;
@@ -35,6 +35,8 @@ public class ProgressionEntity {
         this.desciption = desciption;
         this.masse_musc = masse_musc;
     }
+
+
     public ProgressionEntity(){}
 
     public int getId_prg() {
@@ -57,7 +59,7 @@ public class ProgressionEntity {
         return poids;
     }
 
-    public void setPoids(int poids) {
+    public  void setPoids(int poids) {
         this.poids = poids;
     }
 
@@ -73,7 +75,7 @@ public class ProgressionEntity {
         return IMC;
     }
 
-    public void setIMC(int IMC) {
+    public  void setIMC(int IMC) {
         this.IMC = IMC;
     }
 
@@ -89,7 +91,7 @@ public class ProgressionEntity {
         return desciption;
     }
 
-    public void setDesciption(String desciption) {
+    public  void setDesciption(String desciption) {
         this.desciption = desciption;
     }
 

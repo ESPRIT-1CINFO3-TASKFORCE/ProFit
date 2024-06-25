@@ -21,7 +21,7 @@ public class ProgressionService {
     private static ProgressionService instance;
 
     // Méthode privée pour le constructeur privé du singleton
-    private ProgressionService() {}
+    public ProgressionService() {}
 
     // Méthode publique pour obtenir l'instance unique du singleton
     public static ProgressionService getInstance() {
@@ -121,77 +121,46 @@ public class ProgressionService {
     }
 
 
+    //Afficher progression par id client
 
+    public List<ProgressionEntity> getProgressionsByClientId(int clientId) {
+        List<ProgressionEntity> progressions = new ArrayList<>();
 
+        String query = "SELECT id_prg, id, poids, longueur, IMC, date_inscri, description, masse_musc FROM progression WHERE id = ?";
 
+        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
 
+            preparedStatement.setInt(1, clientId);
+            ResultSet resultSet = preparedStatement.executeQuery();
 
+            while (resultSet.next()) {
+                int id_prg = resultSet.getInt("id_prg");
+                int id_client = resultSet.getInt("id");
+                int poids = resultSet.getInt("poids");
+                double longueur = resultSet.getDouble("longueur");
+                int IMC = resultSet.getInt("IMC");
+                LocalDate date_inscri = resultSet.getDate("date_inscri").toLocalDate();
+                String description = resultSet.getString("description");
+                int masse_musc = resultSet.getInt("masse_musc");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  /*  //Afficher progression par id client
-
-    public ProgressionEntity getProgressionById(Long id) throws SQLException {
-        ProgressionEntity progression = null;
-        String query = "SELECT * FROM progression WHERE id = ?";
-
-        try (PreparedStatement preparedStatement = con1.prepareStatement(query)) {
-            preparedStatement.setLong(1, id);
-
-            try (ResultSet resultSet = preparedStatement.executeQuery()) {
-                if (resultSet.next()) {
-                    int id_prog = resultSet.getInt("id_prg");
-                    int id_client = resultSet.getInt("id");
-                    int poids = resultSet.getInt("poids");
-                    double longueur = resultSet.getDouble("longueur");
-                    int IMC = resultSet.getInt("IMC");
-                    int masse_musc = resultSet.getInt("Masse_musc");
-                    LocalDate date_inscrit = LocalDate.parse(resultSet.getString("date_inscrit"));
-                    String description = resultSet.getString("description");
-
-                    progression = new ProgressionEntity(id_prog, id_client, poids, longueur, IMC, masse_musc, date_inscrit, description);
-                }
+                ProgressionEntity progression = new ProgressionEntity(id_prg, id_client, poids, longueur, IMC, date_inscri, description, masse_musc);
+                progressions.add(progression);
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            throw e;
         }
 
-        return progression;
+        return progressions;
     }
+}
 
 
 
 
 
 
-   }*/
 
 
-    }
+
+
 
