@@ -1,6 +1,7 @@
 package TestMain;
 
 
+
 import Entites.MessageEntity;
 import Entites.ProgressionEntity;
 import Entites.RegimeEntity;
@@ -120,7 +121,7 @@ public class main {
         //methode afficher tous les regimes de le BD
         try {
             // Lecture de toutes les regimes et affichage
-           RegimeService reg = RegimeService.getInstance();
+            RegimeService reg = RegimeService.getInstance();
             List<RegimeEntity> regimes = reg.readAll();
             for (RegimeEntity regime : regimes) {
                 System.out.println(regime);
@@ -149,7 +150,7 @@ public class main {
 
         try {
             // Créez une instance de ProgressionService
-          RegimeService regimeService = RegimeService.getInstance();
+            RegimeService regimeService = RegimeService.getInstance();
 
             // Supprimez une progression en appelant la méthode deleteProgression
             long idRegimeSuppr = 1; // Entrer l'id que a supprimer
@@ -171,7 +172,7 @@ public class main {
             // Créez une instance de RegimeEntity avec les nouvelles valeurs
             RegimeEntity regimeModifiee = new RegimeEntity();
             regimeModifiee.setNom_regime("regime minouch");
-           regimeModifiee.setDescription("regime pour perte poids");
+            regimeModifiee.setDescription("regime pour perte poids");
             regimeModifiee.setDate_debut(LocalDate.of(2024, 2, 23));
             regimeModifiee.setDate_fin(LocalDate.of(2024, 2, 23));
 
@@ -180,13 +181,12 @@ public class main {
             // Appelez la méthode modifierregime avec l'ID de la regime à modifier et les nouvelles valeurs
             long regimeIdAModifier = 3; // Remplacez 3 par l'ID de regime à modifier
             //le regime d'id 3 a modifier avec les coordonnes au dessus (modifier dans la ligne d'id 3)
-           regimeService.modifierRegime(regimeIdAModifier, regimeModifiee);
+            regimeService.modifierRegime(regimeIdAModifier, regimeModifiee);
 
         } catch (SQLException e) {
             // Gérez les exceptions SQL, par exemple, affichez simplement la trace de la pile
             e.printStackTrace();
         }
-
 
 
 

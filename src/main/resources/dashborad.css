@@ -1,0 +1,73 @@
+.gradient-background {
+    -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #D91F4E, #FF854C);
+}
+.pie-chart {
+    -fx-pie-label-visible: true;
+    -fx-font-size: 14px;
+}
+
+.chart-pie-label {
+    -fx-fill: white;
+    -fx-font-weight: bold;
+}
+
+.bar-chart {
+    -fx-background-color: #f4f4f4;
+}
+
+.chart-legend {
+    -fx-background-color: #e0e0e0;
+}
+
+.chart-title {
+    -fx-text-fill: #333;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+.chart-bar.series0 {
+    -fx-bar-fill: #79776b; /* Bleu pour le poids */
+}
+
+/* Couleur des barres pour la deuxième série (masse musculaire) */
+.chart-bar.series1 {
+    -fx-bar-fill: #eb6c28; /* Rouge pour la masse musculaire */
+}
+.chart-bar.series2 {
+    -fx-bar-fill: #e2a785; /* Rouge pour la masse musculaire */
+}
+
+.card-1 {
+    -fx-background-color: #79776b; /* Couleur de fond blanche */
+    -fx-padding: 10; /* Espacement intérieur */
+    -fx-spacing: 5; /* Espacement entre les éléments */
+    -fx-border-color: #e0e0e0; /* Couleur de la bordure */
+    -fx-border-width: 1; /* Épaisseur de la bordure */
+    -fx-border-radius: 5; /* Coins arrondis */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0.5, 0, 0); /* Ombre portée */
+}
+
+.card-2 {
+    -fx-background-color: #eb6c28; /* Couleur de fond blanche */
+    -fx-padding: 10; /* Espacement intérieur */
+    -fx-spacing: 5; /* Espacement entre les éléments */
+    -fx-border-color: #e0e0e0; /* Couleur de la bordure */
+    -fx-border-width: 1; /* Épaisseur de la bordure */
+    -fx-border-radius: 5; /* Coins arrondis */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0.5, 0, 0); /* Ombre portée */
+}
+.card-3 {
+    -fx-background-color: #e2a785; /* Couleur de fond blanche */
+    -fx-padding: 10; /* Espacement intérieur */
+    -fx-spacing: 5; /* Espacement entre les éléments */
+    -fx-border-color: #e0e0e0; /* Couleur de la bordure */
+    -fx-border-width: 1; /* Épaisseur de la bordure */
+    -fx-border-radius: 5; /* Coins arrondis */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0.5, 0, 0); /* Ombre portée */
+}
+
+
+
+.card {
+    -fx-font-size: 14px; /* Taille de la police */
+    -fx-fill: #333333; /* Couleur du texte */
+}

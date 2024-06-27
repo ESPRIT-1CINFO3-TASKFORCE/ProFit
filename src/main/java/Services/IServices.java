@@ -1,5 +1,7 @@
 package Services;
 
+import Entites.UserEntity;
+
 import java.sql.SQLException;
 import java.util.List;
 
@@ -13,8 +15,12 @@ public interface IServices <T>{
 
     T findbyId(int e) throws SQLException;
 
-    List<T> readAll() throws SQLException;
 
+    //List<T> readAll() throws SQLException;
+
+
+
+    List<UserEntity> readAll() throws SQLException;
 
 }
 
