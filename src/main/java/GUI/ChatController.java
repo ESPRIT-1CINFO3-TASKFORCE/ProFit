@@ -5,11 +5,12 @@ import Services.MessageService;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
 import javafx.scene.Parent;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.VBox;
+import javafx.scene.control.*;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -36,8 +37,7 @@ public class ChatController {
     private TextField inputRecepteurIDField;
 
     @FXML
-    private TextArea messageDisplayArea;
-
+    private VBox messagesContainer;
     @FXML
     private TextField messageInputField;
 
@@ -46,7 +46,8 @@ public class ChatController {
 
     @FXML
     private VBox loginVBox;
-
+    @FXML
+    private Pane container;
     private int userId;
     private String userName;
     private int recepteurID;
@@ -70,9 +71,21 @@ public class ChatController {
                     String message;
                     while ((message = serverReader.readLine()) != null) {
                         String finalMessage = message;
-                        Platform.runLater(() -> messageDisplayArea.appendText(finalMessage + "\n"));
-                        fetchAndDisplayMessages(); // Fetch and display messages in the chat interface
+                        Platform.runLater(() -> {
+                            // Append the new message to the message display area
+                            TextArea messageArea = new TextArea(finalMessage);
+                            messageArea.setEditable(false);
+                            messageArea.setWrapText(true);
+                            messageArea.setPrefHeight(47.0); // Adjust the height as needed
+                            messageArea.setFont(new Font("Malgun Gothic", 14));
+
+                            messagesContainer.getChildren().add(messageArea);
+
+                            // Fetch and display messages in the chat interface
+                            fetchAndDisplayMessages();
+                        });
                     }
+
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -134,10 +147,43 @@ public class ChatController {
         }
     }
 
-    private void fetchAndDisplayMessages() {
+
+
+    public void fetchAndDisplayMessages() {
         // Fetch messages for the logged-in user and recipient
         String conversation = messageService.getConversation(userId, recepteurID);
-        // Display fetched messages in the text area
-        messageDisplayArea.setText(conversation);
+        if (conversation.length() > 0) {
+            // Clear any existing messages in the FlowPane
+            messagesContainer.getChildren().clear();
+
+            // Split the conversation into individual messages
+            String[] messages = conversation.split("\n");
+            // Create and add a Label for each message
+            for (String message : messages) {
+                Label messageLabel = new Label(message);
+                messageLabel.setFont(Font.font("Malgun Gothic", 14));
+                messageLabel.setWrapText(true);
+                messageLabel.setTextFill(Color.WHITE); // Text color
+                messageLabel.setStyle("-fx-background-color: #479BFEff; -fx-background-radius: 10; -fx-padding: 10px;");
+                messageLabel.setMaxWidth(450); // Max width for the bubble
+                messagesContainer.getChildren().add(messageLabel);
+            }
+
+            // Add padding to the bottom to push the messages up
+            messagesContainer.setPadding(new Insets(10, 0, 20, 0));
+        }
+
+        // Scroll to the bottom of the messages container
+        ScrollPane scrollPane = new ScrollPane(messagesContainer);
+        scrollPane.setVvalue(1.0);
+        scrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+        scrollPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
+        scrollPane.setFitToWidth(true);
+        scrollPane.setPrefViewportHeight(450); // Set your desired height
+
+        // Replace the existing container with the ScrollPane
+        container.getChildren().setAll(scrollPane);
     }
+
+
 }

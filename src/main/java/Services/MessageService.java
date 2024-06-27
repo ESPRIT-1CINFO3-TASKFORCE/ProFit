@@ -58,6 +58,7 @@ public class MessageService {
         return conversation.toString();
     }
 
+
     public String getNameById(int userId) {
         Connection con = DataSource.getInstance().getCon();
         String sql = "SELECT name FROM user WHERE id = ?";
