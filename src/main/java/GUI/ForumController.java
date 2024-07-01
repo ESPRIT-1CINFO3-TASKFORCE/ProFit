@@ -9,10 +9,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.ListView;
+import javafx.scene.control.*;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import javax.swing.*;
@@ -23,8 +24,7 @@ import java.sql.SQLException;
 public class ForumController {
 
     @FXML
-    private ListView<String> forumListView;
-
+    private ListView<String> forumCardPane;
     @FXML
     private TextField titreField;
     //provisoire
@@ -34,6 +34,8 @@ public class ForumController {
     private TextField topicField;
     @FXML
     private TextArea messageField;
+    @FXML
+    private Label newTopicAlert;
 
     private ForumService forumService = new ForumService();
     private ObservableList<String> forumList = FXCollections.observableArrayList();
@@ -73,22 +75,30 @@ public class ForumController {
 
     @FXML
     private void addTopic() {
-        ForumEntity forum = new ForumEntity();
-        forum.setCreateur(Integer.parseInt(userId.getText()));
-        forum.setTitre(titreField.getText());
-        forum.setTopique(topicField.getText());
-        forum.setContenu(messageField.getText());
-        //forum.setDateCreation(new java.util.Date());
+        if (userId.getText().isEmpty() || titreField.getText().isEmpty() || topicField.getText().isEmpty() || messageField.getText().isEmpty()) {
+            newTopicAlert.setText("Tous les champs sont obligatoires !");
+            newTopicAlert.setStyle("-fx-text-fill: red;");
+        } else {
+            ForumEntity forum = new ForumEntity();
+            forum.setCreateur(Integer.parseInt(userId.getText()));
+            forum.setTitre(titreField.getText());
+            forum.setTopique(topicField.getText());
+            forum.setContenu(messageField.getText());
+            //forum.setDateCreation(new java.util.Date());
 
-        try {
-            forumService.addForum(forum);
-            System.out.println("Topic added successfully.");
-            loadForums();
-        } catch (SQLException e) {
-            e.printStackTrace();
+            try {
+                forumService.addForum(forum);
+                newTopicAlert.setText("Vous avez ajouté un nouveau sujet !");
+                newTopicAlert.setStyle("-fx-text-fill: green;"); // Set the success message to green
+                System.out.println("Topic added successfully.");
+                loadForums();
+            } catch (SQLException e) {
+                newTopicAlert.setText("Erreur !");
+                newTopicAlert.setStyle("-fx-text-fill: red;");
+                e.printStackTrace();
+            }
         }
     }
-
     private void loadForums() throws SQLException {
         forumList.clear();
         for (ForumEntity forum : forumService.getForums()) {
@@ -97,7 +107,11 @@ public class ForumController {
         if (forumList.isEmpty()) {
             forumList.add("No topics found");
         }
-        //forumListView.setItems(forumList);
+        if (forumCardPane != null) {
+            forumCardPane.setItems(forumList);  // Set the list view items here
+        }
+
     }
+
 
 }

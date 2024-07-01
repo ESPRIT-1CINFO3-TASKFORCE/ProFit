@@ -11,89 +11,94 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1064.0" prefWidth="1763.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ForumController">
-    <children>
-        <Pane prefHeight="88.0" prefWidth="1311.0" style="-fx-background-color: #F68B38;">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ForumController">
+    <BorderPane>
+        <bottom>
+            <Pane prefHeight="62.0" prefWidth="900.0" style="-fx-background-color: #f7855b;" BorderPane.alignment="CENTER">
             <children>
-                <Label layoutX="142.0" layoutY="11.0" prefHeight="19.0" prefWidth="119.0" text="FORUM">
-                    <font>
-                        <Font name="System Bold" size="21.0" />
-                    </font>
-                </Label>
-            </children>
-        </Pane>
-        <Pane prefHeight="40.0" prefWidth="1311.0" style="-fx-background-color: #BDBDBD;" />
-        <BorderPane>
-            <bottom>
-                <Pane prefHeight="86.0" prefWidth="1311.0" style="-fx-background-color: #f7855b;" BorderPane.alignment="CENTER">
-                    <children>
-                        <ImageView fitHeight="59.0" fitWidth="200.0" layoutX="869.0" layoutY="14.0">
-                            <image>
-                                <Image url="@../assets/profittitle.PNG" />
-                            </image>
-                        </ImageView>
-                    </children>
-                </Pane>
-            </bottom>
-            <top>
-                <Pane prefHeight="174.0" style="-fx-background-color: #F1F1F1;" BorderPane.alignment="CENTER">
-               <children>
-                  <Label layoutX="103.0" layoutY="125.0" text="PUBLIER UN NOUVEAU SUJET">
-                     <font>
-                        <Font name="SansSerif Bold" size="24.0" />
-                     </font>
-                  </Label>
-               </children></Pane>
-            </top>
-         <center>
-                <Pane prefHeight="734.0" prefWidth="1408.0" BorderPane.alignment="CENTER">
-               <children>
-                  <TextField fx:id="titreField" layoutX="159.0" layoutY="96.0" prefHeight="41.0" prefWidth="550.0" />
-                  <Button layoutX="865.0" layoutY="626.0" mnemonicParsing="false" onAction="#cancelTopic" prefHeight="39.0" prefWidth="136.0" style="-fx-background-color: #f7855b;" text="ANNULER" textFill="WHITE">
-                     <font>
-                        <Font name="System Bold" size="18.0" />
-                     </font>
-                  </Button>
-                  <Label layoutX="61.0" layoutY="95.0" prefHeight="42.0" prefWidth="98.0" text="TITRE">
-                     <font>
-                        <Font name="System Bold Italic" size="14.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="54.0" layoutY="255.0" prefHeight="42.0" prefWidth="98.0" text="MESSAGE">
-                     <font>
-                        <Font name="System Bold Italic" size="14.0" />
-                     </font>
-                  </Label>
-                  <TextArea fx:id="messageField" layoutX="159.0" layoutY="255.0" prefHeight="324.0" prefWidth="898.0" />
-                  <Label layoutX="54.0" layoutY="171.0" prefHeight="42.0" prefWidth="98.0" text="TOPIQUE">
-                     <font>
-                        <Font name="System Bold Italic" size="14.0" />
-                     </font>
-                  </Label>
-                  <TextField fx:id="topicField" layoutX="159.0" layoutY="181.0" prefHeight="41.0" prefWidth="550.0" />
-                  <TextField fx:id="userId" layoutX="982.0" layoutY="28.0" prefHeight="31.0" prefWidth="62.0" text="userId" />
-                  <Button layoutX="201.0" layoutY="626.0" mnemonicParsing="false" onAction="#addTopic" prefHeight="39.0" prefWidth="421.0" style="-fx-background-color: #76b5c5;" text="POSTULER" textFill="WHITE">
-                     <font>
-                        <Font name="System Bold" size="18.0" />
-                     </font>
-                  </Button>
-               </children></Pane>
-         </center>
-         <right>
-            <Pane prefHeight="715.0" prefWidth="686.0" style="-fx-background-color: #F1F1F1;" BorderPane.alignment="CENTER">
-               <children>
-                  <Pane layoutX="122.0" layoutY="43.0" prefHeight="545.0" prefWidth="442.0" style="-fx-background-color: #161b20;">
-                     <children>
-                        <ImageView fitHeight="507.0" fitWidth="417.0" layoutX="13.0" layoutY="19.0">
-                           <image>
-                              <Image url="@../assets/forumimage.PNG" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </Pane>
-               </children>
+                      <ImageView fitHeight="38.0" fitWidth="119.0" layoutX="391.0" layoutY="12.0">
+                          <image>
+                              <Image url="@../assets/profittitle.PNG" />
+                          </image>
+                      </ImageView>
+            </children></Pane>
+        </bottom>
+        <top>
+            <Pane prefHeight="146.0" prefWidth="874.0" style="-fx-background-color: #eaeaea;" BorderPane.alignment="CENTER">
+                <children>
+               <Pane prefHeight="78.0" prefWidth="900.0" style="-fx-background-color: #f7855b;">
+                  <children>
+                     <Label layoutX="96.0" layoutY="31.0" text="FORUM">
+                        <font>
+                           <Font name="System Bold" size="18.0" />
+                        </font>
+                     </Label>
+                  </children></Pane>
+                    <Label layoutX="92.0" layoutY="105.0" text="PUBLIER UN NOUVEAU SUJET">
+                        <font>
+                            <Font name="SansSerif Bold" size="24.0" />
+                        </font>
+                    </Label>
+               <TextField fx:id="userId" layoutX="612.0" layoutY="111.0" prefHeight="27.0" prefWidth="61.0" promptText="user id" />
+                </children></Pane>
+        </top>
+        <center>
+            <Pane prefHeight="410.0" prefWidth="900.0" BorderPane.alignment="CENTER">
+                <children>
+                    <TextField fx:id="titreField" layoutX="133.0" layoutY="29.0" prefHeight="41.0" prefWidth="338.0" />
+                    <Label layoutX="41.0" layoutY="29.0" prefHeight="42.0" prefWidth="98.0" text="TITRE">
+                        <font>
+                            <Font name="System Bold Italic" size="14.0" />
+                        </font>
+                    </Label>
+                    <Label layoutX="35.0" layoutY="186.0" prefHeight="42.0" prefWidth="98.0" text="MESSAGE">
+                        <font>
+                            <Font name="System Bold Italic" size="14.0" />
+                        </font>
+                    </Label>
+                    <Label layoutX="41.0" layoutY="105.0" prefHeight="42.0" prefWidth="98.0" text="TOPIQUE">
+                        <font>
+                            <Font name="System Bold Italic" size="14.0" />
+                        </font>
+                    </Label>
+                    <TextField fx:id="topicField" layoutX="131.0" layoutY="104.0" prefHeight="43.0" prefWidth="342.0" />
+               <TextArea fx:id="messageField" layoutX="132.0" layoutY="186.0" prefHeight="102.0" prefWidth="340.0" />
+                    <Button layoutX="131.0" layoutY="337.0" mnemonicParsing="false" onAction="#addTopic" prefHeight="40.0" prefWidth="191.0" style="-fx-background-color: #76b5c5;" text="POSTULER" textFill="WHITE">
+                        <font>
+                            <Font name="System Bold" size="18.0" />
+                        </font>
+                    </Button>
+               <Button layoutX="340.0" layoutY="337.0" mnemonicParsing="false" onAction="#cancelTopic" prefHeight="23.0" prefWidth="131.0" style="-fx-background-color: #f7855b;" text="ANNULER" textFill="WHITE">
+                  <font>
+                     <Font name="System Bold" size="18.0" />
+                  </font>
+               </Button>
+               <Label fx:id="newTopicAlert" layoutX="202.0" layoutY="304.0" prefHeight="17.0" prefWidth="200.0" text="" textFill="BLACK" />
+
+                </children>
             </Pane>
-         </right>
-        </BorderPane>
-    </children>
+        </center>
+        <right>
+            <Pane prefHeight="391.0" prefWidth="386.0" style="-fx-background-color: #F1F1F1;" BorderPane.alignment="CENTER">
+                <children>
+                    <Pane layoutX="70.0" layoutY="12.0" prefHeight="358.0" prefWidth="283.0" style="-fx-background-color: #161b20;">
+                        <children>
+                            <ImageView fitHeight="308.0" fitWidth="255.0" layoutX="14.0" layoutY="25.0">
+                                <image>
+                                    <Image url="@../assets/forumimage.PNG" />
+                                </image>
+                            </ImageView>
+                        </children>
+                    </Pane>
+                </children>
+            </Pane>
+        </right>
+    </BorderPane>
+
+
+
+
+
+
+
 </VBox>

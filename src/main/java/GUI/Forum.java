@@ -16,7 +16,7 @@ public class Forum extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
+        //Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
 
         try {
             // Load the FXML file
@@ -24,7 +24,7 @@ public class Forum extends Application {
             Parent root = loader.load();
 
             // Create the scene with the screen dimensions
-            Scene scene = new Scene(root, screenBounds.getWidth(), screenBounds.getHeight());
+            Scene scene = new Scene(root);
 
             // Set the scene to the stage
             primaryStage.setScene(scene);
