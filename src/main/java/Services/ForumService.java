@@ -5,6 +5,7 @@ import GUI.Forum;
 import Utils.DataSource;
 
 import java.sql.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,6 +20,7 @@ public class ForumService {
             pstmt.setString(2, forum.getTitre());
             pstmt.setString(3, forum.getTopique());
             pstmt.setString(4, forum.getContenu());
+
             //pstmt.setString(5, forum.getComm());
             //pstmt.setDate(6, new java.sql.Date(forum.getDateCreation().toLocalTime()));
             pstmt.executeUpdate();
@@ -40,7 +42,7 @@ public class ForumService {
                     forum.setTopique(rs.getString("topique"));
                     forum.setContenu(rs.getString("contenu"));
                     //forum.setComm(rs.getString("comm"));
-                    //forum.setDateCreation(rs.getDate("dateCreation"));
+                    forum.setDateCreation((rs.getTimestamp("dateCreation").toLocalDateTime()));
                     forums.add(forum);
                 }
             }

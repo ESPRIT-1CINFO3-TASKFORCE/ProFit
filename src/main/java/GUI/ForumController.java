@@ -13,6 +13,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -20,6 +21,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 
 public class ForumController {
 
@@ -36,6 +38,21 @@ public class ForumController {
     private TextArea messageField;
     @FXML
     private Label newTopicAlert;
+
+    @FXML
+    private TableView<ForumEntity> forumTablePane;
+
+    @FXML
+    private TableColumn<ForumEntity, String> topiqueColumn;
+
+    @FXML
+    private TableColumn<ForumEntity, String> titreColumn;
+
+    @FXML
+    private TableColumn<ForumEntity, String> createurColumn;
+
+    @FXML
+    private TableColumn<ForumEntity, String> dateColumn;
 
     private ForumService forumService = new ForumService();
     private ObservableList<String> forumList = FXCollections.observableArrayList();
@@ -100,15 +117,17 @@ public class ForumController {
         }
     }
     private void loadForums() throws SQLException {
-        forumList.clear();
-        for (ForumEntity forum : forumService.getForums()) {
-            forumList.add(forum.getTitre() + " - " + forum.getCreateur());
-        }
-        if (forumList.isEmpty()) {
-            forumList.add("No topics found");
-        }
-        if (forumCardPane != null) {
-            forumCardPane.setItems(forumList);  // Set the list view items here
+        if (topiqueColumn != null && titreColumn != null && createurColumn != null && dateColumn != null) {
+            try {
+                topiqueColumn.setCellValueFactory(new PropertyValueFactory<>("topique"));
+                titreColumn.setCellValueFactory(new PropertyValueFactory<>("titre"));
+                createurColumn.setCellValueFactory(new PropertyValueFactory<>("createur"));
+                dateColumn.setCellValueFactory(new PropertyValueFactory<>("dateCreation"));
+                List<ForumEntity> forums = forumService.getForums();
+                forumTablePane.getItems().addAll(forums);
+            } catch (SQLException e) {
+                e.printStackTrace(); // Handle your exception properly
+            }
         }
 
     }
