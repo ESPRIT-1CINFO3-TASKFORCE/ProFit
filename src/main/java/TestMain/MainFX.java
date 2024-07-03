@@ -13,19 +13,17 @@ public class MainFX extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Login.fxml"));
         try {
             Parent root = loader.load();
             Scene scene =new Scene(root);
             stage.setScene(scene);
-            stage.setTitle("Inscription");
+            stage.setTitle("PROFIT");
             stage.show();
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
-
-        }
+    }
     public static void main(String[] args) {
         launch(args);
 

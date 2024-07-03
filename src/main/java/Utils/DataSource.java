@@ -6,34 +6,32 @@ import java.sql.SQLException;
 
 public class DataSource {
 
-    private  String url="jdbc:mysql://localhost:3306/profit_db";
-    private  String login="root";
-    private  String pwd="";
-    private static DataSource data = null;
+    private static DataSource instance = null;
+    private Connection conn = null;
 
-    private Connection con;
-
-
-    private DataSource(){
-        try {
-            con= DriverManager.getConnection(url,login,pwd);
-            System.out.println("connexion établie");
-        } catch (SQLException e) {
-
-            System.out.println(e);
-        }
-    }
-    public Connection getCon() {
-        return con;
+    private DataSource() {
     }
 
-    public static DataSource getInstance() {
-        if(data==null)
-            data=new DataSource();
-        return data;
+    private void init() throws SQLException {
+        final String DB_URL = "jdbc:mysql://localhost:3306/profit_db";
+        final String USER = "root";
+        final String PASS = "";
+
+        conn = DriverManager.getConnection(DB_URL, USER, PASS);
+
+        System.out.println("Connected to database");
     }
 
     public Connection getConnection() {
-        return con;
+        return conn;
+    }
+
+    public static DataSource getInstance() throws SQLException {
+        if (instance != null && !instance.getConnection().isClosed()) {
+        } else {
+            instance = new DataSource();
+            instance.init();
+        }
+        return instance;
     }
 }

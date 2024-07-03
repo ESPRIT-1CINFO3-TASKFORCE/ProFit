@@ -15,10 +15,11 @@ public class UserEntity {
     private String login;
     private String mdp;
     private String email;
-    private int role;
+    private String role;
+    private Boolean active;
 
     // Constructeur complet
-    public UserEntity(int id, int age, int poids, int longeur, int note_c, int note_n, int n_tel, String nom, String prenom, String login, String mdp, String email, int role) {
+    public UserEntity(int id, int age, int poids, int longeur, int note_c, int note_n, int n_tel, String nom, String prenom, String login, String mdp, String email, String role) {
         this.id = id;
         this.age = age;
         this.poids = poids;
@@ -32,6 +33,7 @@ public class UserEntity {
         this.mdp = mdp;
         this.email = email;
         this.role = role;
+        this.active = active;
     }
 
     // Constructeur sans ID pour l'ajout de nouveaux utilisateurs
@@ -51,6 +53,13 @@ public class UserEntity {
     }*/
 
     public UserEntity(String nom, String prenom, int age, String email, int nTel) {
+    }
+
+    public UserEntity() {
+
+    }
+
+    public UserEntity(String nom, String prenom, String email, String role) {
     }
 
 
@@ -151,13 +160,16 @@ public class UserEntity {
         this.email = email;
     }
 
-    public int getRole() {
+    public String getRole() {
         return role;
     }
 
-    public void setRole(int role) {
+    public void setRole(String role) {
         this.role = role;
     }
+    public boolean isActive() { return false; }
+
+    public void setActive(boolean active) {this.active=active;}
 
     // Méthodes Object (toString, equals, hashCode)
     @Override
@@ -197,10 +209,13 @@ public class UserEntity {
                 Objects.equals(mdp, that.mdp) &&
                 Objects.equals(email, that.email) &&
                 Objects.equals(role, that.role);
+
+
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, age, poids, longeur, note_c, note_n, n_tel, nom, prenom, login, mdp, email, role);
+        return Objects.hash(id, age, poids, longeur, note_c, note_n, n_tel, nom, prenom, login, mdp, email, role, active);
     }
+
 }

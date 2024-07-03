@@ -12,31 +12,42 @@
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.UserController">
     <children>
         <Pane prefHeight="200.0" prefWidth="200.0" />
-        <Pane layoutX="1.0" prefHeight="406.0" prefWidth="337.0" style="-fx-background-color: #e47873;">
+        <Pane layoutY="-3.0" prefHeight="406.0" prefWidth="337.0" style="-fx-background-color: #e47873;">
             <children>
-                <Button contentDisplay="BOTTOM" graphicTextGap="6.0" layoutX="209.0" layoutY="307.0" mnemonicParsing="false" onAction="#signin" text="Sign In" textFill="#15151787">
+                <Button contentDisplay="BOTTOM" graphicTextGap="6.0" layoutX="200.0" layoutY="203.0" mnemonicParsing="false" onAction="#signin" text="Connexion" textFill="#15151787">
                <font>
                   <Font name="Arial Rounded MT Bold" size="16.0" />
                </font>
             </Button>
-                <Label fx:id="tflogin" layoutX="28.0" layoutY="120.0" text="Login">
+                <Label fx:id="llogin" layoutX="37.0" layoutY="91.0" text="Login">
                <font>
                   <Font name="Arial Bold Italic" size="17.0" />
                </font>
             </Label>
-                <Label fx:id="tfmdp" layoutX="28.0" layoutY="193.0" text="Mot de Passe">
+                <Label fx:id="lmdp" layoutX="29.0" layoutY="155.0" text="Mot de Passe">
                <font>
                   <Font name="Arial Bold Italic" size="17.0" />
                </font>
             </Label>
-                <TextField layoutX="172.0" layoutY="118.0" onAction="#login" />
-                <TextField layoutX="172.0" layoutY="191.0" onAction="#mdp" />
+                <TextField fx:id="tflogin" layoutX="172.0" layoutY="89.0" />
+                <TextField fx:id="tfmdp" layoutX="172.0" layoutY="152.0" />
+            <Button contentDisplay="BOTTOM" graphicTextGap="6.0" layoutX="37.0" layoutY="331.0" mnemonicParsing="false" onAction="#signup" text="Inscription" textFill="#15151787">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="16.0" />
+               </font>
+            </Button>
+            <Label layoutX="46.0" layoutY="293.0" />
+            <Label fx:id="lcreer" layoutX="37.0" layoutY="293.0" text="Créer un compte">
+               <font>
+                  <Font name="Arial Bold Italic" size="17.0" />
+               </font>
+            </Label>
             </children>
         </Pane>
-        <ImageView fx:id="tfimage" fitHeight="179.0" fitWidth="174.0" layoutX="378.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
-            <image>
-                <Image url="@source/logo.png" />
-            </image>
-        </ImageView>
+      <ImageView fitHeight="171.0" fitWidth="171.0" layoutX="380.0" layoutY="118.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@source/logo.png" />
+         </image>
+      </ImageView>
     </children>
 </AnchorPane>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.UserController">
+   <children>
+      <AnchorPane layoutY="5.0" prefHeight="436.0" prefWidth="731.0">
+         <children>
+            <AnchorPane layoutY="-11.0" prefHeight="450.0" prefWidth="271.0" style="-fx-background-color:  #e47873; -fx-background-color:  #e47873;">
+               <children>
+                  <Button layoutX="43.0" layoutY="112.0" mnemonicParsing="false" onAction="#AjouterUser" prefHeight="39.0" prefWidth="189.0" text="Ajouter utilisateur" textFill="#cc6a0e">
+                     <font>
+                        <Font name="Arial Bold Italic" size="17.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="43.0" layoutY="188.0" mnemonicParsing="false" onAction="#chercherUser" prefHeight="39.0" prefWidth="189.0" text="Chercher utilisateur" textFill="#cc6a0e">
+                     <font>
+                        <Font name="Arial Bold Italic" size="16.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="lmenu" layoutX="103.0" layoutY="43.0" text="MENU">
+                     <font>
+                        <Font name="System Bold Italic" size="23.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="280.0" fitWidth="212.0" layoutX="30.0" layoutY="241.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@source/logo.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <Label fx:id="lchnom" layoutX="312.0" layoutY="37.0" text="Nom">
+               <font>
+                  <Font name="Arial Bold Italic" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="lchprenom" layoutX="312.0" layoutY="73.0" text="Prénom">
+               <font>
+                  <Font name="Arial Bold Italic" size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="lchemail" layoutX="312.0" layoutY="109.0" text="Email">
+               <font>
+                  <Font name="Arial Bold Italic" size="17.0" />
+               </font>
+            </Label>
+            <TextField fx:id="chemail" layoutX="445.0" layoutY="105.0" prefHeight="25.0" prefWidth="132.0" />
+            <TextField fx:id="chnom" layoutX="445.0" layoutY="34.0" prefHeight="25.0" prefWidth="132.0" />
+            <Button layoutX="440.0" layoutY="242.0" mnemonicParsing="false" onAction="#pagePrecedente" prefHeight="39.0" prefWidth="141.0" text="Precédent" textFill="#cc6a0e">
+               <font>
+                  <Font name="Arial Bold Italic" size="17.0" />
+               </font>
+            </Button>
+            <TextField fx:id="chprenom" layoutX="445.0" layoutY="70.0" prefHeight="25.0" prefWidth="132.0" />
+            <TextField fx:id="chtel" layoutX="445.0" layoutY="137.0" prefHeight="25.0" prefWidth="132.0" />
+            <Label fx:id="lchnumtel" layoutX="310.0" layoutY="140.0" prefHeight="20.0" prefWidth="88.0" text="Téléphone">
+               <font>
+                  <Font name="Arial Bold Italic" size="17.0" />
+               </font>
+            </Label>
+            <Button layoutX="440.0" layoutY="191.0" mnemonicParsing="false" onAction="#findUser" prefHeight="39.0" prefWidth="141.0" text="Chercher" textFill="#cc6a0e">
+               <font>
+                  <Font name="Arial Bold Italic" size="17.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

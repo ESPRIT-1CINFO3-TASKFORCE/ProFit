@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.UserController">
+   <children>
+      <AnchorPane prefHeight="416.0" prefWidth="622.0" style="-fx-background-color:  #e47873; -fx-background-color:  #e47873;">
+         <children>
+            <Label fx:id="labname" layoutX="14.0" layoutY="16.0" text="Nom">
+               <font>
+                  <Font name="Arial Bold Italic" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="labprename" layoutX="15.0" layoutY="53.0" text="Prénom">
+               <font>
+                  <Font name="Arial Bold Italic" size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="labage" layoutX="15.0" layoutY="88.0" text="Age">
+               <font>
+                  <Font name="Arial Bold Italic" size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="labnumber" layoutX="14.0" layoutY="159.0" prefHeight="20.0" prefWidth="178.0" text="Téléphone">
+               <font>
+                  <Font name="Arial Bold Italic" size="17.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtname" layoutX="204.0" layoutY="13.0" prefHeight="25.0" prefWidth="132.0" />
+            <TextField fx:id="txtprename" layoutX="204.0" layoutY="50.0" prefHeight="25.0" prefWidth="132.0" />
+            <TextField fx:id="txtnumber" layoutX="204.0" layoutY="156.0" prefHeight="25.0" prefWidth="132.0" />
+            <TextField fx:id="txtemail" layoutX="204.0" layoutY="120.0" prefHeight="25.0" prefWidth="132.0" />
+            <TextField fx:id="txtage" layoutX="204.0" layoutY="85.0" prefHeight="25.0" prefWidth="132.0" AnchorPane.bottomAnchor="308.59999999999997" AnchorPane.leftAnchor="204.0" AnchorPane.rightAnchor="286.4" AnchorPane.topAnchor="85.0" />
+            <Pane layoutX="490.0" layoutY="-6.0" prefHeight="424.0" prefWidth="132.0" style="-fx-background-color: white;" />
+            <Label fx:id="labemail" layoutX="15.0" layoutY="123.0" text="Email">
+               <font>
+                  <Font name="Arial Bold Italic" size="17.0" />
+               </font>
+            </Label>
+            <Button layoutX="186.0" layoutY="271.0" mnemonicParsing="false" onAction="#createUser" prefHeight="39.0" prefWidth="168.0" text="Créer un compte" textFill="#cc6a0e">
+               <font>
+                  <Font name="Arial Bold Italic" size="17.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
