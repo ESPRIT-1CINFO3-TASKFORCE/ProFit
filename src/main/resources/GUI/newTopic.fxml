@@ -7,6 +7,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Reflection?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
@@ -31,6 +32,11 @@
                 <children>
                <Pane prefHeight="78.0" prefWidth="900.0" style="-fx-background-color: #f7855b;">
                   <children>
+                     <Pane layoutY="24.0" prefHeight="69.0" prefWidth="900.0" style="-fx-background-color: #E87659;">
+                        <effect>
+                           <Reflection />
+                        </effect>
+                     </Pane>
                      <Label layoutX="96.0" layoutY="31.0" text="FORUM">
                         <font>
                            <Font name="System Bold" size="18.0" />

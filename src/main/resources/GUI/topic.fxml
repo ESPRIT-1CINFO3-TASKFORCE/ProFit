@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.effect.Reflection?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
@@ -13,6 +16,9 @@
 <?import javafx.scene.text.TextFlow?>
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.TopicController">
+    <stylesheets>
+        <URL value="@/styles/topicStyle.css" />
+    </stylesheets>
     <BorderPane style="-fx-background-color: #F0F0F0;">
         <bottom>
             <Pane prefHeight="62.0" prefWidth="900.0" style="-fx-background-color: #f7855b;" BorderPane.alignment="CENTER">
@@ -30,6 +36,11 @@
                 <children>
                     <Pane prefHeight="78.0" prefWidth="900.0" style="-fx-background-color: #f7855b;">
                         <children>
+                     <Pane layoutY="28.0" prefHeight="69.0" prefWidth="900.0" style="-fx-background-color: #E87659;">
+                        <effect>
+                           <Reflection />
+                        </effect>
+                     </Pane>
                             <Label layoutX="96.0" layoutY="31.0" text="FORUM">
                                 <font>
                                     <Font name="System Bold" size="18.0" />
@@ -37,13 +48,13 @@
                             </Label>
                         </children>
                     </Pane>
-                    <Button fx:id="newTopic" layoutX="111.0" layoutY="100.0" mnemonicParsing="false" onAction="#goToNewTopic" prefHeight="39.0" prefWidth="188.0" style="-fx-background-color: #76b5c5;" text="NOUVEAU SUJET">
+                    <Button fx:id="newTopic" layoutX="111.0" layoutY="100.0" mnemonicParsing="false" onAction="#goToNewTopic" prefHeight="39.0" prefWidth="188.0" text="NOUVEAU SUJET">
                         <font>
                             <Font name="System Bold" size="18.0" />
                         </font>
                     </Button>
                <Pane layoutY="148.0" prefHeight="29.0" prefWidth="900.0" style="-fx-background-color: #585858;" />
-               <Button fx:id="backtoForum" layoutX="320.0" layoutY="100.0" mnemonicParsing="false" onAction="#goBackToForum" prefHeight="39.0" prefWidth="104.0" style="-fx-background-color: #76b5c5;" text="FORUM">
+               <Button fx:id="backtoForum" layoutX="320.0" layoutY="100.0" mnemonicParsing="false" onAction="#goBackToForum" prefHeight="39.0" prefWidth="104.0" text="FORUM">
                   <font>
                      <Font name="System Bold" size="18.0" />
                   </font>
@@ -62,19 +73,19 @@
         </top>
 
         <right>
-            <Pane prefHeight="382.0" prefWidth="81.0" style="-fx-background-color: #e5e7e6;" BorderPane.alignment="CENTER">
-            <children>
-               <Label fx:id="topic" layoutX="2.0" layoutY="14.0" prefHeight="24.0" prefWidth="77.0" text="TOPIC" textAlignment="CENTER">
-                  <font>
-                     <Font name="System Bold" size="14.0" />
-                  </font>
-               </Label>
-            </children></Pane>
+            <Pane prefHeight="382.0" prefWidth="81.0" style="-fx-background-color: #e5e7e6;" BorderPane.alignment="CENTER" />
         </right>
       <left>
          <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #e5e7e6;" BorderPane.alignment="CENTER">
             <children>
-               <Pane layoutX="51.0" layoutY="56.0" prefHeight="91.0" prefWidth="99.0" style="-fx-background-color: #317AC1;" />
+               <Pane layoutX="51.0" layoutY="56.0" prefHeight="91.0" prefWidth="99.0" style="-fx-background-color: #317AC1;">
+                  <children>
+                     <ImageView fitHeight="94.0" fitWidth="94.0" layoutX="3.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@../assets/woman-silhouette-profile-10.png" />
+                        </image>
+                     </ImageView>
+                  </children></Pane>
                <Label fx:id="username" layoutX="64.0" layoutY="171.0" prefHeight="20.0" prefWidth="124.0" text="" textAlignment="CENTER">
                   <font>
                      <Font name="System Bold" size="14.0" />
@@ -93,7 +104,7 @@
             <children>
                <Pane layoutY="331.0" prefHeight="51.0" prefWidth="619.0" style="-fx-background-color: #e5e7e6;">
                   <children>
-                     <Button alignment="CENTER" contentDisplay="CENTER" layoutX="220.0" layoutY="11.0" mnemonicParsing="false" onAction="#openCommentPopup" prefHeight="29.0" prefWidth="180.0" style="-fx-background-color: #76b5c5;" text="COMMENTER" textAlignment="CENTER" textOverrun="CLIP">
+                     <Button fx:id="commentaire" alignment="CENTER" contentDisplay="CENTER" layoutX="220.0" layoutY="11.0" mnemonicParsing="false" onAction="#openCommentPopup" prefHeight="29.0" prefWidth="180.0" text="COMMENTER">
                         <font>
                            <Font name="System Bold" size="13.0" />
                         </font></Button>
@@ -101,6 +112,18 @@
                </Pane>
                <Pane id="CONTENT" prefHeight="331.0" prefWidth="620.0">
                   <children>
+                     <Pane layoutX="-200.0" layoutY="11.0" prefHeight="27.0" prefWidth="900.0" style="-fx-background-color: #CACACA;">
+                        <effect>
+                           <Glow />
+                        </effect>
+                        <children>
+                           <Label fx:id="topic" layoutX="792.0" prefHeight="30.0" prefWidth="99.0" text="TOPIC" textAlignment="CENTER">
+                              <font>
+                                 <Font name="System Bold" size="17.0" />
+                              </font>
+                           </Label>
+                        </children>
+                     </Pane>
                      <Label fx:id="title" layoutX="53.0" layoutY="14.0" prefHeight="24.0" prefWidth="351.0" text="TITLE">
                         <font>
                            <Font name="System Bold" size="14.0" />
@@ -109,11 +132,17 @@
                      <TextFlow id="MESSAGE" fx:id="messsage" layoutX="21.0" layoutY="51.0" prefHeight="119.0" prefWidth="562.0" style="-fx-background-color: #ffffff;">
                         <padding>
                            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
-                        </padding></TextFlow>
-                     <ListView fx:id="commentId" fixedCellSize="50.0" layoutX="44.0" layoutY="179.0" prefHeight="144.0" prefWidth="522.0" style="-fx-background-color: #ffffff;" />
+                        </padding>
+                     </TextFlow>
+                     <ListView fx:id="commentId" fixedCellSize="50.0" layoutX="44.0" layoutY="179.0" prefHeight="144.0" prefWidth="522.0" />
                      <Label fx:id="topicDate" layoutX="468.0" layoutY="26.0" prefHeight="24.0" prefWidth="115.0" text="DATE">
                         <font>
                            <Font name="System Italic" size="10.0" />
+                        </font>
+                     </Label>
+                     <Label layoutX="63.0" layoutY="169.0" text="COMMENTAIRES" textFill="#545454">
+                        <font>
+                           <Font name="System Bold" size="14.0" />
                         </font>
                      </Label>
                   </children>
