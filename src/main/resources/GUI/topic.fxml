@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
@@ -10,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.TextFlow?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ForumController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.TopicController">
     <BorderPane style="-fx-background-color: #F0F0F0;">
         <bottom>
             <Pane prefHeight="62.0" prefWidth="900.0" style="-fx-background-color: #f7855b;" BorderPane.alignment="CENTER">
@@ -35,12 +37,26 @@
                             </Label>
                         </children>
                     </Pane>
-                    <Button layoutX="129.0" layoutY="100.0" mnemonicParsing="false" onAction="#NavigateToNewTopic" prefHeight="37.0" prefWidth="161.0" style="-fx-background-color: #76b5c5;" text="Nouveau sujet">
+                    <Button fx:id="newTopic" layoutX="111.0" layoutY="100.0" mnemonicParsing="false" onAction="#goToNewTopic" prefHeight="39.0" prefWidth="188.0" style="-fx-background-color: #76b5c5;" text="NOUVEAU SUJET">
                         <font>
                             <Font name="System Bold" size="18.0" />
                         </font>
                     </Button>
                <Pane layoutY="148.0" prefHeight="29.0" prefWidth="900.0" style="-fx-background-color: #585858;" />
+               <Button fx:id="backtoForum" layoutX="320.0" layoutY="100.0" mnemonicParsing="false" onAction="#goBackToForum" prefHeight="39.0" prefWidth="104.0" style="-fx-background-color: #76b5c5;" text="FORUM">
+                  <font>
+                     <Font name="System Bold" size="18.0" />
+                  </font>
+               </Button>
+               <Pane layoutX="674.0" layoutY="-2.0" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: #A3A3A3;">
+                  <children>
+                     <ImageView fitHeight="209.0" fitWidth="209.0" layoutX="-33.0" layoutY="-20.0" pickOnBounds="true" preserveRatio="true">
+                         <image>
+                             <Image url="@../assets/logo.png" />
+                         </image>
+                     </ImageView>
+                  </children>
+               </Pane>
                 </children>
             </Pane>
         </top>
@@ -48,7 +64,7 @@
         <right>
             <Pane prefHeight="382.0" prefWidth="81.0" style="-fx-background-color: #e5e7e6;" BorderPane.alignment="CENTER">
             <children>
-               <Label fx:id="topic_id" layoutX="12.0" layoutY="14.0" prefHeight="24.0" prefWidth="57.0" text="TOPIC" textAlignment="CENTER">
+               <Label fx:id="topic" layoutX="2.0" layoutY="14.0" prefHeight="24.0" prefWidth="77.0" text="TOPIC" textAlignment="CENTER">
                   <font>
                      <Font name="System Bold" size="14.0" />
                   </font>
@@ -59,7 +75,7 @@
          <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #e5e7e6;" BorderPane.alignment="CENTER">
             <children>
                <Pane layoutX="51.0" layoutY="56.0" prefHeight="91.0" prefWidth="99.0" style="-fx-background-color: #317AC1;" />
-               <Label fx:id="username" layoutX="50.0" layoutY="171.0" text="TRABELSI BAHA">
+               <Label fx:id="username" layoutX="64.0" layoutY="171.0" prefHeight="20.0" prefWidth="124.0" text="" textAlignment="CENTER">
                   <font>
                      <Font name="System Bold" size="14.0" />
                   </font>
@@ -77,18 +93,29 @@
             <children>
                <Pane layoutY="331.0" prefHeight="51.0" prefWidth="619.0" style="-fx-background-color: #e5e7e6;">
                   <children>
-                     <Button layoutX="36.0" layoutY="11.0" mnemonicParsing="false" text="COMMENTER" />
+                     <Button alignment="CENTER" contentDisplay="CENTER" layoutX="220.0" layoutY="11.0" mnemonicParsing="false" onAction="#openCommentPopup" prefHeight="29.0" prefWidth="180.0" style="-fx-background-color: #76b5c5;" text="COMMENTER" textAlignment="CENTER" textOverrun="CLIP">
+                        <font>
+                           <Font name="System Bold" size="13.0" />
+                        </font></Button>
                   </children>
                </Pane>
                <Pane id="CONTENT" prefHeight="331.0" prefWidth="620.0">
                   <children>
-                     <Label fx:id="title_id" layoutX="53.0" layoutY="14.0" prefHeight="24.0" prefWidth="82.0" text="TITLE">
+                     <Label fx:id="title" layoutX="53.0" layoutY="14.0" prefHeight="24.0" prefWidth="351.0" text="TITLE">
                         <font>
                            <Font name="System Bold" size="14.0" />
                         </font>
                      </Label>
-                     <TextFlow id="MESSAGE" fx:id="messsageId" layoutX="21.0" layoutY="51.0" prefHeight="243.0" prefWidth="562.0" style="-fx-background-color: #FFFFFF;" />
-                     <TextFlow id="COMMENTS" fx:id="commentId" layoutX="20.0" layoutY="309.0" prefHeight="108.0" prefWidth="564.0" />
+                     <TextFlow id="MESSAGE" fx:id="messsage" layoutX="21.0" layoutY="51.0" prefHeight="119.0" prefWidth="562.0" style="-fx-background-color: #ffffff;">
+                        <padding>
+                           <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                        </padding></TextFlow>
+                     <ListView fx:id="commentId" fixedCellSize="50.0" layoutX="44.0" layoutY="179.0" prefHeight="144.0" prefWidth="522.0" style="-fx-background-color: #ffffff;" />
+                     <Label fx:id="topicDate" layoutX="468.0" layoutY="26.0" prefHeight="24.0" prefWidth="115.0" text="DATE">
+                        <font>
+                           <Font name="System Italic" size="10.0" />
+                        </font>
+                     </Label>
                   </children>
                </Pane>
             </children>

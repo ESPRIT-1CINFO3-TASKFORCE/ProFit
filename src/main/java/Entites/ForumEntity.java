@@ -11,6 +11,8 @@ public class ForumEntity implements Serializable {
     private String titre;
     private String topique;
     private String contenu;
+
+    private int comments;
     private LocalDateTime dateCreation;
 
 
@@ -60,6 +62,14 @@ public class ForumEntity implements Serializable {
 
     public void setDateCreation(LocalDateTime dateCreation) {
         this.dateCreation = dateCreation;
+    }
+
+    public int getComments() {
+        return comments;
+    }
+
+    public void setComments(int comments) {
+        this.comments = comments;
     }
 
     @Override

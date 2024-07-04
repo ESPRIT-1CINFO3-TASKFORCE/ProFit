@@ -3,6 +3,7 @@ package GUI;
 import Entites.ForumEntity;
 import GUI.Forum;
 import Services.ForumService;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -15,6 +16,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
 
 import javax.swing.*;
@@ -33,7 +35,7 @@ public class ForumController {
     @FXML
     private TextField userId;
     @FXML
-    private TextField topicField;
+    private ComboBox<String> topicField;
     @FXML
     private TextArea messageField;
     @FXML
@@ -53,6 +55,9 @@ public class ForumController {
 
     @FXML
     private TableColumn<ForumEntity, String> dateColumn;
+
+
+
 
     private ForumService forumService = new ForumService();
     private ObservableList<String> forumList = FXCollections.observableArrayList();
@@ -92,14 +97,15 @@ public class ForumController {
 
     @FXML
     private void addTopic() {
-        if (userId.getText().isEmpty() || titreField.getText().isEmpty() || topicField.getText().isEmpty() || messageField.getText().isEmpty()) {
+        if (userId.getText().isEmpty() || titreField.getText().isEmpty() || topicField.getValue().isEmpty() || messageField.getText().isEmpty()) {
+
             newTopicAlert.setText("Tous les champs sont obligatoires !");
             newTopicAlert.setStyle("-fx-text-fill: red;");
         } else {
             ForumEntity forum = new ForumEntity();
             forum.setCreateur(Integer.parseInt(userId.getText()));
             forum.setTitre(titreField.getText());
-            forum.setTopique(topicField.getText());
+            forum.setTopique((String) topicField.getValue());
             forum.setContenu(messageField.getText());
             //forum.setDateCreation(new java.util.Date());
 
@@ -121,15 +127,47 @@ public class ForumController {
             try {
                 topiqueColumn.setCellValueFactory(new PropertyValueFactory<>("topique"));
                 titreColumn.setCellValueFactory(new PropertyValueFactory<>("titre"));
-                createurColumn.setCellValueFactory(new PropertyValueFactory<>("createur"));
-                dateColumn.setCellValueFactory(new PropertyValueFactory<>("dateCreation"));
+
+                // replacing user id by username
+                createurColumn.setCellValueFactory(cellData -> {
+                    int userId = cellData.getValue().getCreateur();
+                    String username = forumService.getUserNameById(userId);
+                    return new SimpleStringProperty(username);
+                });                dateColumn.setCellValueFactory(new PropertyValueFactory<>("dateCreation"));
                 List<ForumEntity> forums = forumService.getForums();
                 forumTablePane.getItems().addAll(forums);
+
+                // Add listener to handle row selection
+                forumTablePane.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+                    if (newValue != null) {
+                        navigateToForumDetails(newValue);
+                    }
+                });
+
             } catch (SQLException e) {
                 e.printStackTrace(); // Handle your exception properly
             }
         }
 
+    }
+
+
+    // navigate to selected topic
+    private void navigateToForumDetails(ForumEntity selectedForum) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("topic.fxml"));
+            Parent root = loader.load();
+
+            // Get the controller of topic.fxml and pass the selected forum
+            TopicController topicController = loader.getController();
+            topicController.setForumDetails(selectedForum);
+
+            // Get the current stage and set the new scene
+            Stage stage = (Stage) forumTablePane.getScene().getWindow();
+            stage.setScene(new Scene(root));
+        } catch (IOException e) {
+            e.printStackTrace(); // Handle your exception properly
+        }
     }
 
 
