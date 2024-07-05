@@ -2,6 +2,7 @@ package TestMain;
 
 
 
+import Controllers.AjouterProgresController;
 import Entites.MessageEntity;
 import Entites.ProgressionEntity;
 import Entites.RegimeEntity;
@@ -16,10 +17,13 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
+
+
 public class main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
 
         System.out.println("hello!");
 
@@ -56,7 +60,7 @@ public class main {
             ProgressionService progressionService = ProgressionService.getInstance();
 
             // Supprimez une progression en appelant la méthode deleteProgression
-            long idProgresSuppr = 10; // Entrer l'id que a supprimer
+            int idProgresSuppr = 10; // Entrer l'id que a supprimer
             progressionService.deleteProgression(idProgresSuppr);
 
         } catch (SQLException e) {
@@ -79,7 +83,7 @@ public class main {
             progressionModifiee.setIMC(179);
             progressionModifiee.setMasse_musc(567);
             progressionModifiee.setDate_inscri(LocalDate.of(2024, 2, 23));
-            progressionModifiee.setDesciption("tester modification des methodes");
+            progressionModifiee.setDescription("tester modification des methodes");
 
             // Appelez la méthode modifierProgres avec l'ID de la progression à modifier et les nouvelles valeurs
             long progressionIdAModifier = 9; // Remplacez 3 par l'ID de progression à modifier
@@ -108,7 +112,7 @@ public class main {
             System.out.println("Longueur: " + progression.getLongueur());
             System.out.println("IMC: " + progression.getIMC());
             System.out.println("Date d'inscription: " + progression.getDate_inscri());
-            System.out.println("Description: " + progression.getDesciption());
+            System.out.println("Description: " + progression.getDescription());
             System.out.println("Masse musculaire: " + progression.getMasse_musc());
             System.out.println("---------------------------");
         }
@@ -188,6 +192,11 @@ public class main {
             e.printStackTrace();
         }
 
+        //Tester la methode calcule imc
+        double poids = 70.0; // Exemple de poids en kg
+        double longueur = 175.0; // Exemple de longueur en cm
+       // AjouterProgresController.calculerEtAfficherIMC(clientId,poids, longueur);
+
 
 
 
@@ -228,7 +237,62 @@ public class main {
 
         //FOR TEST messageService.insertMessage(message);
 
+
+
+
+//        ProgressionService progressi = new ProgressionService();
+//         // ID que vous souhaitez rechercher
+//        List<ProgressionEntity> idsTrouves = null;
+//        try {
+//            idsTrouves = progressi.chercherParEmail("aziz.hajri@esprit.tn");
+//        } catch (SQLException e) {
+//            throw new RuntimeException(e);
+//        }
+//
+//// Affichage des IDs trouvés
+//        System.out.println("IDs trouvés pour idClient "  + idsTrouves);
+
+
+
+
+
+        String jdbcURL = "jdbc:mysql://localhost:3306/profit_db";
+        String username = "root";
+        String password = "";
+
+        try  {
+             Connection conn = DriverManager.getConnection(jdbcURL, username, password);
+            // Assurez-vous que votre ProgressionService utilise cette connexion
+            ProgressionService service = new ProgressionService(conn);
+
+            // Remplacez par un email existant dans votre base de données
+            String email = "aziz.hajri@esprit.tn";
+
+            // Appel de la méthode
+            List<ProgressionEntity> progression = service.chercherParEmail(email);
+
+            // Afficher les résultats
+            for (ProgressionEntity prog : progression) {
+                System.out.println("Poids: " + prog.getPoids());
+                System.out.println("Longueur: " + prog.getLongueur());
+                System.out.println("IMC: " + prog.getIMC());
+                System.out.println("Date d'inscription: " + prog.getDate_inscri());
+                System.out.println("Description: " + prog.getDescription());
+                System.out.println("Email: " + prog.getEmail());
+                System.out.println("-----");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+
+
     }
+
+
+
+
 }
 
 

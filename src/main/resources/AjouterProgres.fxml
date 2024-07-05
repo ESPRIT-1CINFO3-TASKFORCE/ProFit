@@ -16,9 +16,9 @@
             <Font name="Comic Sans MS" size="13.0" />
          </font>
       </Button>
-      <TextField fx:id="tfID" layoutX="287.0" layoutY="104.0" text="72" />
-      <TextField fx:id="tfPoids" layoutX="287.0" layoutY="134.0" text="65" />
-      <Label layoutX="159.0" layoutY="108.0" prefHeight="18.0" prefWidth="111.0" text=" Identifient_Client" />
+      <TextField fx:id="tfEmail" layoutX="287.0" layoutY="104.0" />
+      <TextField fx:id="tfPoids" layoutX="287.0" layoutY="134.0" />
+      <Label layoutX="159.0" layoutY="108.0" prefHeight="18.0" prefWidth="111.0" text="Email" textFill="#100f0f" />
       <AnchorPane prefHeight="400.0" prefWidth="131.0" style="-fx-background-color: #ed8f50;">
          <children>
             <Accordion layoutY="351.0" prefHeight="55.0" prefWidth="135.0" />
@@ -29,13 +29,9 @@
             </ImageView>
          </children></AnchorPane>
       <Label layoutX="163.0" layoutY="138.0" text="Poids" />
-      <Label layoutX="167.0" layoutY="199.0" text="IMC" />
-      <Label layoutX="167.0" layoutY="234.0" text="Date_inscription" />
-      <Label layoutX="167.0" layoutY="271.0" text="Description" />
-      <TextField fx:id="tfLongueur" layoutX="287.0" layoutY="164.0" text="1.73" />
-      <TextField fx:id="tfimc" layoutX="287.0" layoutY="197.0" text="345" />
-      <TextField fx:id="tfdateInscri" layoutX="287.0" layoutY="229.0" text="22/08/2022" />
-      <TextField fx:id="tfDescri" layoutX="287.0" layoutY="260.0" text="minouch" />
+      <Label layoutX="159.0" layoutY="203.0" text="Date_inscription" />
+      <TextField fx:id="tfLongueur" layoutX="287.0" layoutY="164.0" />
+      <TextField fx:id="tfdateInscri" layoutX="287.0" layoutY="199.0" />
       <Label layoutX="164.0" layoutY="168.0" text="Longueur" />
       <Button layoutX="241.0" layoutY="358.0" mnemonicParsing="false" onAction="#navigation" prefHeight="27.0" prefWidth="208.0" text="Afficher Progressions" textFill="#1b1712cc">
          <font>
@@ -48,5 +44,6 @@
             <Font name="Arial Black" size="18.0" />
          </font>
       </Label>
+      <Button fx:id="navigationHome" layoutX="578.0" layoutY="-2.0" mnemonicParsing="false" onAction="#navigationHome" text="HOME" />
    </children>
 </AnchorPane>

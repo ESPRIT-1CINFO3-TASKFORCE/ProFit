@@ -53,6 +53,10 @@ public class UserEntity {
     public UserEntity(String nom, String prenom, int age, String email, int nTel) {
     }
 
+    public UserEntity() {
+
+    }
+
 
     // Getters et Setters
     public int getId() {

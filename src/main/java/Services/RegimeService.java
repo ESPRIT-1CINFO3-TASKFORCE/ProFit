@@ -19,7 +19,7 @@ public class RegimeService {
     private static RegimeService instance;
 
     // Méthode privée pour le constructeur privé du singleton
-    private RegimeService() {}
+    public RegimeService() {}
 
     // Méthode publique pour obtenir l'instance unique du singleton
     public static RegimeService getInstance() {
@@ -115,6 +115,34 @@ public class RegimeService {
             throw e;
         }
     }
+
+
+    //**************recuperer nom regime et date début***************
+    public List<RegimeEntity> getNomDateRegimAvecUserDetails(int idClient) {
+        List<RegimeEntity> regimess = new ArrayList<>();
+        String regime = "SELECT r.nom_regime, r.date_fin FROM régime r JOIN user u ON r.id_client = u.id WHERE u.id = ? ORDER BY date_fin DESC LIMIT 1;";
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/profit_db", "root", "");
+             PreparedStatement statement = connection.prepareStatement(regime)) {
+
+            statement.setInt(1, idClient); // Set the idClient parameter
+            try (ResultSet resultSet = statement.executeQuery()) {
+                while (resultSet.next()) {
+                    RegimeEntity regim = new RegimeEntity();
+                    regim.setNom_regime(resultSet.getString("nom_regime"));
+                    regim.setDate_fin(LocalDate.parse(resultSet.getString("date_fin")));
+                    regimess.add(regim);
+
+                    // Ajoutez des messages de debug
+                    System.out.println("NomRégime from DB: " + resultSet.getString("nom_regime"));
+                    System.out.println("date_fin from DB: " + resultSet.getDate("date_fin"));
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return regimess;
+    }
+
 
 
 

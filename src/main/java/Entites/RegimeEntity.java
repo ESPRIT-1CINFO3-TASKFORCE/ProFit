@@ -37,6 +37,20 @@ public class RegimeEntity {
   }
 
   public RegimeEntity(){}
+  public RegimeEntity(int id_client, int poids,double longueur,LocalDate dateInscri) {
+  }
+
+
+
+  public RegimeEntity(String nom_Regime ,LocalDate date_debut, LocalDate date_fin) {
+    this.nom_regime=nom_Regime;
+    this.date_debut = date_debut;
+    this.date_fin = date_fin;
+  }
+
+  public RegimeEntity(String nomRegime, String dateDebutStr, String dateFinStr) {
+  }
+
 
   public int getId_regime() {
     return id_regime;
