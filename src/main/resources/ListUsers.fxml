@@ -14,22 +14,12 @@
     <children>
         <AnchorPane prefHeight="539.0" prefWidth="238.0" style="-fx-background-color: #e47873;">
             <children>
-                <Button layoutX="35.0" layoutY="112.0" mnemonicParsing="false" onAction="#AjouterUser" prefHeight="39.0" prefWidth="189.0" text="Ajouter utilisateur" textFill="#cc6a0e">
-                    <font>
-                        <Font name="Arial Bold Italic" size="17.0" />
-                    </font>
-                </Button>
-                <Button layoutX="34.0" layoutY="187.0" mnemonicParsing="false" onAction="#chercherUser" prefHeight="39.0" prefWidth="189.0" text="Chercher utilisateur" textFill="#cc6a0e">
-                    <font>
-                        <Font name="Arial Bold Italic" size="16.0" />
-                    </font>
-                </Button>
-                <Label fx:id="lmenu" layoutX="103.0" layoutY="43.0" text="MENU">
+                <Label fx:id="lmenu" layoutX="85.0" layoutY="42.0" text="MENU">
                     <font>
                         <Font name="System Bold Italic" size="23.0" />
                     </font>
                 </Label>
-                <ImageView fitHeight="185.0" fitWidth="196.0" layoutX="26.0" layoutY="248.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="185.0" fitWidth="196.0" layoutX="27.0" layoutY="334.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@source/logo.png" />
                     </image>
@@ -49,5 +39,6 @@
         <Button layoutX="514.0" layoutY="455.0" mnemonicParsing="false" onAction="#handelEdit" text="MODIFIER" />
         <Button layoutX="597.0" layoutY="455.0" mnemonicParsing="false" onAction="#handelActivate" text="ACTIVER" />
         <Button layoutX="670.0" layoutY="455.0" mnemonicParsing="false" onAction="#handelDesactivate" text="DESACTIVER" />
+      <Button layoutX="431.0" layoutY="455.0" mnemonicParsing="false" onAction="#AjouterUser" text="AJOUTER" />
     </children>
 </AnchorPane>

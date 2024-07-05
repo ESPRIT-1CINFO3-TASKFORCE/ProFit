@@ -60,6 +60,16 @@ public class ListController {
     @FXML
     void AjouterUser(ActionEvent event) {
         // Implementation for adding a user
+
+        FXMLLoader a = new FXMLLoader(getClass().getResource("/ListUsers.fxml"));
+        try {
+            root = a.load();
+            lmenu.getScene().setRoot(root);
+        } catch (IOException e) {
+            e.printStackTrace();
+
+        }
+
     }
 
     @FXML

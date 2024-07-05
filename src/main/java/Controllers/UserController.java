@@ -205,7 +205,7 @@ public class UserController {
     // INTERFACE LOGIN
     //SIGNIN
 
-    @FXML
+   /* @FXML
     void signin(ActionEvent event) throws IOException {
         String login = tflogin.getText();
         String mdp = tfmdp.getText();
@@ -284,9 +284,9 @@ public class UserController {
             e.printStackTrace();
         }
 
-    }
+    }*/
 
-    @FXML
+    /*@FXML
     void createUser(ActionEvent event) {
 
         System.out.println("enter");
@@ -385,12 +385,12 @@ public class UserController {
             e.printStackTrace();
         }
         return null;
-    }
+    }*/
 
     // GERERUSERS
     //GERERUTILISATEUR
 
-    @FXML
+    /*@FXML
     void AjouterUser(ActionEvent event) {
         FXMLLoader a = new FXMLLoader(getClass().getResource("/GererUtilisateur.fxml"));
         try {
@@ -445,20 +445,16 @@ public class UserController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
+    }*/
 
     //CONTROLLER LISTE DES UTILISATEURS
     //BOUTON MODIFIER
     //BOUTON ACTIVER/DESACTIVER
 
-    @FXML
+    /*@FXML
     public void initialize() {
-
-        chrole.setValue("ADMIN");
-        chrole.setItems(roleList);
-
-
-
+        //chrole.setValue("ADMIN");
+        //chrole.setItems(roleList);
         allusers = FXCollections.observableArrayList();
         loadUsersFromDatabase();
         System.out.println(allusers.size());
@@ -469,11 +465,11 @@ public class UserController {
         colprenom.setCellValueFactory(new PropertyValueFactory<UserEntity, String>("prenom"));
         colprenom.setText("Prenom");
         colrole.setCellValueFactory(new PropertyValueFactory<UserEntity, String>("role"));
-        colrole.setText("Role");
+        colrole.setText("Role");*/
 
 
         //MODIFIER
-        Callback<TableColumn<UserEntity, Void>, TableCell<UserEntity, Void>> cellFactory = new Callback<TableColumn<UserEntity, Void>, TableCell<UserEntity, Void>>() {
+        /*Callback<TableColumn<UserEntity, Void>, TableCell<UserEntity, Void>> cellFactory = new Callback<TableColumn<UserEntity, Void>, TableCell<UserEntity, Void>>() {
             @Override
             public TableCell<UserEntity, Void> call(final TableColumn<UserEntity, Void> param) {
                 final TableCell<UserEntity, Void> cell = new TableCell<UserEntity, Void>() {
@@ -501,12 +497,12 @@ public class UserController {
                 };
                 return cell;
             }
-        };
+        };*/
 
 
         // Bouton Activer/Désactiver
 
-        TableColumn<UserEntity, Void> colActivate = new TableColumn<>("Activer/Désactiver");
+       /*TableColumn<UserEntity, Void> colActivate = new TableColumn<>("Activer/Désactiver");
         Callback<TableColumn<UserEntity, Void>, TableCell<UserEntity, Void>> cellFactoryActivate = new Callback<TableColumn<UserEntity, Void>, TableCell<UserEntity, Void>>() {
             @Override
             public TableCell<UserEntity, Void> call(final TableColumn<UserEntity, Void> param) {
@@ -533,9 +529,9 @@ public class UserController {
                 };
                 return cell;
             }
-        };
+        };*/
 
-        colActivate.setCellFactory(cellFactoryActivate);
+      /*  colActivate.setCellFactory(cellFactoryActivate);
 
         colBtn.setCellFactory(cellFactory);
         tableview.getColumns().add(colBtn);
@@ -546,9 +542,9 @@ public class UserController {
         tableview.getColumns().add(2, colemail);
         tableview.getColumns().add(3, colrole);
         tableview.setItems(allusers);
-    }
+    }*/
 
-    private void editUser(UserEntity selectedUser) {
+    /*private void editUser(UserEntity selectedUser) {
         try {
             selectedUser = us.findById(selectedUser.getId());
             //ednom=new TextField();
@@ -601,21 +597,6 @@ public class UserController {
 
     }
 
-    private void showUserDetails(UserEntity selectedUser) {
-    }
-
-
-    @FXML
-    private void saveEditedUser(ActionEvent event) {
-    }
-
-    private void showAlert(String alert) {
-    }
-
-    @FXML
-    public void chercherUser() throws SQLException {
-    }
-
 
     private void loadUsersFromDatabase () {
         List<UserEntity> users = us.readAll();
@@ -653,7 +634,7 @@ public class UserController {
         UserEntity user = us.findUser(nom, prenom, email, tel);
         if (user == null) System.out.println("NO USER FOUND");
         else System.out.println(user.getId());
-    }
+    }*/
 
 }
 
