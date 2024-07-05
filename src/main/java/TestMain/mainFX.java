@@ -7,8 +7,13 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.util.logging.LogManager;
 
 public class mainFX extends Application {
+
+
+
 
 
     @Override
