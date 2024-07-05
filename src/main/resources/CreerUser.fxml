@@ -3,51 +3,62 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.CreateUserController">
+<AnchorPane prefHeight="398.0" prefWidth="564.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.CreateUserController">
    <children>
-      <AnchorPane prefHeight="416.0" prefWidth="622.0" style="-fx-background-color:  #e47873; -fx-background-color:  #e47873;">
-         <children>
-            <Label fx:id="labname" layoutX="14.0" layoutY="16.0" text="Nom">
-               <font>
-                  <Font name="Arial Bold Italic" size="16.0" />
-               </font>
-            </Label>
-            <Label fx:id="labprename" layoutX="15.0" layoutY="53.0" text="Prénom">
-               <font>
-                  <Font name="Arial Bold Italic" size="17.0" />
-               </font>
-            </Label>
-            <Label fx:id="labage" layoutX="15.0" layoutY="88.0" text="Age">
-               <font>
-                  <Font name="Arial Bold Italic" size="17.0" />
-               </font>
-            </Label>
-            <Label fx:id="labnumber" layoutX="14.0" layoutY="159.0" prefHeight="20.0" prefWidth="178.0" text="Téléphone">
-               <font>
-                  <Font name="Arial Bold Italic" size="17.0" />
-               </font>
-            </Label>
-            <TextField fx:id="txtname" layoutX="204.0" layoutY="13.0" prefHeight="25.0" prefWidth="132.0" />
-            <TextField fx:id="txtprename" layoutX="204.0" layoutY="50.0" prefHeight="25.0" prefWidth="132.0" />
-            <TextField fx:id="txtnumber" layoutX="204.0" layoutY="156.0" prefHeight="25.0" prefWidth="132.0" />
-            <TextField fx:id="txtemail" layoutX="204.0" layoutY="120.0" prefHeight="25.0" prefWidth="132.0" />
-            <TextField fx:id="txtage" layoutX="204.0" layoutY="85.0" prefHeight="25.0" prefWidth="132.0" AnchorPane.bottomAnchor="308.59999999999997" AnchorPane.leftAnchor="204.0" AnchorPane.rightAnchor="286.4" AnchorPane.topAnchor="85.0" />
-            <Pane layoutX="490.0" layoutY="-6.0" prefHeight="424.0" prefWidth="132.0" style="-fx-background-color: white;" />
-            <Label fx:id="labemail" layoutX="15.0" layoutY="123.0" text="Email">
-               <font>
-                  <Font name="Arial Bold Italic" size="17.0" />
-               </font>
-            </Label>
-            <Button layoutX="186.0" layoutY="271.0" mnemonicParsing="false" onAction="#createUser" prefHeight="39.0" prefWidth="168.0" text="Créer un compte" textFill="#cc6a0e">
-               <font>
-                  <Font name="Arial Bold Italic" size="17.0" />
-               </font>
-            </Button>
-         </children>
-      </AnchorPane>
+      <ImageView fitHeight="420.0" fitWidth="630.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@source/profitacc.jpg" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtname" layoutX="431.0" layoutY="109.0" prefHeight="25.0" prefWidth="132.0" />
+      <TextField fx:id="txtprename" layoutX="431.0" layoutY="141.0" prefHeight="25.0" prefWidth="132.0" />
+      <TextField fx:id="txtemail" layoutX="431.0" layoutY="206.0" prefHeight="25.0" prefWidth="132.0" />
+      <TextField fx:id="txtnumber" layoutX="431.0" layoutY="238.0" prefHeight="25.0" prefWidth="132.0" />
+      <Label fx:id="labnumber" layoutX="295.0" layoutY="242.0" prefHeight="20.0" prefWidth="101.0" text="Téléphone">
+         <font>
+            <Font name="Arial Bold Italic" size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="labemail" layoutX="298.0" layoutY="209.0" text="Email">
+         <font>
+            <Font name="Arial Bold Italic" size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="labage" layoutX="298.0" layoutY="176.0" text="Age">
+         <font>
+            <Font name="Arial Bold Italic" size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="labprename" layoutX="298.0" layoutY="144.0" text="Prénom">
+         <font>
+            <Font name="Arial Bold Italic" size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="labname" layoutX="297.0" layoutY="112.0" text="Nom">
+         <font>
+            <Font name="Arial Bold Italic" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="lcreation" layoutX="321.0" layoutY="31.0" text="Creer votre compte">
+         <font>
+            <Font name="Arial Bold Italic" size="24.0" />
+         </font>
+      </Label>
+      <Button contentDisplay="BOTTOM" graphicTextGap="6.0" layoutX="455.0" layoutY="316.0" mnemonicParsing="false" onAction="#pagePrecedente" prefHeight="30.0" prefWidth="109.0" text="Retour" textFill="#cd3f0687">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="16.0" />
+         </font>
+      </Button>
+      <Button contentDisplay="BOTTOM" graphicTextGap="6.0" layoutX="455.0" layoutY="275.0" mnemonicParsing="false" onAction="#createUser" prefHeight="30.0" prefWidth="109.0" text="Eregistrer" textFill="#cd3f0687">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="16.0" />
+         </font>
+      </Button>
+      <TextField fx:id="txtage" layoutX="431.0" layoutY="173.0" prefHeight="25.0" prefWidth="132.0" />
    </children>
 </AnchorPane>

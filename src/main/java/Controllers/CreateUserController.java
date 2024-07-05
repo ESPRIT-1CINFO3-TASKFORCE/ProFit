@@ -170,6 +170,24 @@ public class CreateUserController {
         return null;
     }
 
+    @FXML
+    private Label lfitness;
+
+    @FXML
+    void pagePrecedente (ActionEvent event) {
+        try {
+            // Load the FXML file for the previous page
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Accueil.fxml"));
+            Parent root = loader.load();
+            if (txtname != null)
+                txtname.getScene().setRoot(root);
+            if (lfitness != null)
+                lfitness.getScene().setRoot(root);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 
 

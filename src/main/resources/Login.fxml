@@ -9,35 +9,45 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.LoginController">
+<AnchorPane prefHeight="426.0" prefWidth="641.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.LoginController">
     <children>
         <Pane prefHeight="200.0" prefWidth="200.0" />
-        <Pane layoutY="-3.0" prefHeight="406.0" prefWidth="364.0" style="-fx-background-color: #e47873;">
-            <children>
-                <Button contentDisplay="BOTTOM" graphicTextGap="6.0" layoutX="200.0" layoutY="203.0" mnemonicParsing="false" onAction="#signin" text="Connexion" textFill="#15151787">
-               <font>
-                  <Font name="Arial Rounded MT Bold" size="16.0" />
-               </font>
-            </Button>
-                <Label fx:id="llogin" layoutX="37.0" layoutY="91.0" text="Login">
-               <font>
-                  <Font name="Arial Bold Italic" size="17.0" />
-               </font>
-            </Label>
-                <Label fx:id="lmdp" layoutX="29.0" layoutY="155.0" text="Mot de Passe">
-               <font>
-                  <Font name="Arial Bold Italic" size="17.0" />
-               </font>
-            </Label>
-                <TextField fx:id="tflogin" layoutX="172.0" layoutY="89.0" />
-                <TextField fx:id="tfmdp" layoutX="172.0" layoutY="152.0" />
-            <Label layoutX="46.0" layoutY="293.0" />
-            </children>
-        </Pane>
-      <ImageView fitHeight="171.0" fitWidth="171.0" layoutX="380.0" layoutY="118.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="467.0" fitWidth="653.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@source/profitacc.jpg" />
+         </image>
+      </ImageView>
+          <TextField fx:id="tflogin" layoutX="440.0" layoutY="79.0" />
+          <TextField fx:id="tfmdp" layoutX="440.0" layoutY="141.0" />
+      <ImageView fitHeight="200.0" fitWidth="174.0" layoutX="259.0" layoutY="185.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@source/logo.png" />
          </image>
       </ImageView>
+          <Button contentDisplay="BOTTOM" graphicTextGap="6.0" layoutX="485.0" layoutY="185.0" mnemonicParsing="false" onAction="#signin" text="Connexion" textFill="#15151787">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="16.0" />
+         </font>
+      </Button>
+      <Button contentDisplay="BOTTOM" graphicTextGap="6.0" layoutX="389.0" layoutY="334.0" mnemonicParsing="false" onAction="#forgotpassword" prefHeight="30.0" prefWidth="200.0" text="Mot de Passe oublié ?" textFill="#cd3f0687">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="16.0" />
+         </font>
+      </Button>
+          <Label fx:id="lmdp" layoutX="292.0" layoutY="144.0" text="Mot de Passe">
+         <font>
+            <Font name="Arial Bold Italic" size="17.0" />
+         </font>
+      </Label>
+          <Label fx:id="llogin" layoutX="295.0" layoutY="82.0" text="Login">
+         <font>
+            <Font name="Arial Bold Italic" size="17.0" />
+         </font>
+      </Label>
+      <Button contentDisplay="BOTTOM" graphicTextGap="6.0" layoutX="495.0" layoutY="371.0" mnemonicParsing="false" onAction="#pagePrecedente" prefHeight="30.0" prefWidth="96.0" text="Retour" textFill="#cd3f0687">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="16.0" />
+         </font>
+      </Button>
     </children>
 </AnchorPane>

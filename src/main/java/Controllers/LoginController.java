@@ -110,6 +110,35 @@ public class LoginController {
 
         }
     }
+    @FXML
+    private Label lfitness;
+    @FXML
+    void pagePrecedente (ActionEvent event) {
+        try {
+            // Load the FXML file for the previous page
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Accueil.fxml"));
+            Parent root = loader.load();
+            if (tfmdp != null)
+                tfmdp.getScene().setRoot(root);
+            if (lfitness != null)
+                lfitness.getScene().setRoot(root);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    void forgotpassword (ActionEvent event) {
+
+        FXMLLoader a = new FXMLLoader(getClass().getResource("/MdpOublier.fxml"));
+        try {
+            Parent e = a.load();
+            tfmdp.getScene().setRoot(e);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
 
 
 }

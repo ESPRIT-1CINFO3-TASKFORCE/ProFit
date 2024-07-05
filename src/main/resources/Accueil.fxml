@@ -7,7 +7,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="402.0" prefWidth="618.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.HomeController">
    <children>
       <ImageView fitHeight="431.0" fitWidth="660.0" layoutX="-17.0" layoutY="-18.0">
@@ -15,32 +14,32 @@
             <Image url="@source/profitacc.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="155.0" fitWidth="167.0" layoutX="336.0" layoutY="91.0">
+      <ImageView fitHeight="145.0" fitWidth="155.0" layoutX="297.0" layoutY="91.0">
          <image>
             <Image url="@source/logo.png" />
          </image>
       </ImageView>
-      <Label fx:id="lfitness" layoutX="377.0" layoutY="235.0" text="Fitness and Healthy">
+      <Label fx:id="lfitness" layoutX="273.0" layoutY="233.0" text="Fitness and Healthy">
          <font>
-            <Font name="Bernard MT Condensed" size="34.0" />
+            <Font name="Bernard MT Condensed" size="30.0" />
          </font>
       </Label>
-      <Label fx:id="lconnect" layoutX="242.0" layoutY="48.0" text="Connect your body">
+      <Label fx:id="lconnect" layoutX="273.0" layoutY="53.0" text="Connect your body">
          <font>
-            <Font name="Bernard MT Condensed" size="34.0" />
+            <Font name="Bernard MT Condensed" size="30.0" />
          </font>
       </Label>
-      <Button contentDisplay="BOTTOM" graphicTextGap="6.0" layoutX="496.0" layoutY="11.0" mnemonicParsing="false" onAction="#connexion" text="Se connecter" textFill="#c7560087">
+      <Button contentDisplay="BOTTOM" graphicTextGap="6.0" layoutX="495.0" layoutY="55.0" mnemonicParsing="false" onAction="#connexion" text="Se connecter" textFill="#c7560087">
          <font>
             <Font name="Arial Rounded MT Bold" size="17.0" />
          </font>
       </Button>
-      <Label fx:id="linscription" layoutX="313.0" layoutY="308.0" text="Vous n'avez pas de compte ? Rejoignez-nous !  ">
+      <Label fx:id="linscription" layoutX="313.0" layoutY="320.0" text="Vous n'avez pas de compte ? Rejoignez-nous !  ">
          <font>
             <Font name="Arial" size="15.0" />
          </font>
       </Label>
-      <Button contentDisplay="BOTTOM" graphicTextGap="6.0" layoutX="423.0" layoutY="337.0" mnemonicParsing="false" onAction="#inscription" text="S'inscrire" textFill="#c7560087">
+      <Button contentDisplay="BOTTOM" graphicTextGap="6.0" layoutX="423.0" layoutY="353.0" mnemonicParsing="false" onAction="#inscription" text="S'inscrire" textFill="#c7560087">
          <font>
             <Font name="Arial Rounded MT Bold" size="17.0" />
          </font>

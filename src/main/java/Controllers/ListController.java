@@ -15,7 +15,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.List;
 
 public class ListController {
 
@@ -43,6 +45,14 @@ public class ListController {
     private TextField tfrecherche;
 
     public void initialize() {
+
+        // Initialize database connection
+        try {
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/profit_db", "root", "");
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        us = new UserService(connection);
         conom.setCellValueFactory(new PropertyValueFactory<>("nom"));
         coprenom.setCellValueFactory(new PropertyValueFactory<>("prenom"));
         coemail.setCellValueFactory(new PropertyValueFactory<>("email"));
@@ -61,7 +71,7 @@ public class ListController {
     void AjouterUser(ActionEvent event) {
         // Implementation for adding a user
 
-        FXMLLoader a = new FXMLLoader(getClass().getResource("/ListUsers.fxml"));
+        FXMLLoader a = new FXMLLoader(getClass().getResource("/AjouterUser.fxml"));
         try {
             root = a.load();
             lmenu.getScene().setRoot(root);
@@ -74,8 +84,21 @@ public class ListController {
 
     @FXML
     void chercherUser(ActionEvent event) {
-        // Implementation for searching a user
+        String email = tfrecherche.getText().trim();
+        if (!email.isEmpty()) {
+            List<UserEntity> users = us.getUserEmail(email);
+            if (!users.isEmpty()) {
+                allusers = FXCollections.observableArrayList(users);
+                tableview.setItems(allusers);
+            } else {
+                showAlert("Information", "Aucun utilisateur trouvé avec cet email", Alert.AlertType.INFORMATION);
+                refreshTable();
+            }
+        } else {
+            showAlert("Erreur", "Veuillez entrer un email", Alert.AlertType.WARNING);
+        }
     }
+
     @FXML
     void handelActivate(ActionEvent event) {
         UserEntity selectedUser = tableview.getSelectionModel().getSelectedItem();

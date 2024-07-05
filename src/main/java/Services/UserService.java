@@ -205,6 +205,60 @@ public class UserService implements IServices<UserEntity> {
         }
     }
 
+    public List<UserEntity> getUserEmail(String email) {
+        String req = "SELECT * FROM users WHERE email = ?";
+        List<UserEntity> users = new ArrayList<>();
+        try (PreparedStatement preparedStatement = DataSource.getInstance().getConnection().prepareStatement(req)) {
+            preparedStatement.setString(1, email);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+                UserEntity user = new UserEntity();
+                user.setId(resultSet.getInt("id"));
+                user.setNom(resultSet.getString("nom"));
+                user.setPrenom(resultSet.getString("prenom"));
+                user.setEmail(resultSet.getString("email"));
+                user.setRole(resultSet.getString("role"));
+                users.add(user);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return users;
+    }
+
+    public UserEntity geEmailUser(String email) {
+        String req = "SELECT * FROM users WHERE email = ?";
+        UserEntity user = null;
+        System.out.println(email);
+        try (PreparedStatement preparedStatement = DataSource.getInstance().getConnection().prepareStatement(req)) {
+            preparedStatement.setString(1, email);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                user = new UserEntity();
+                user.setId(resultSet.getInt("id"));
+                user.setEmail(resultSet.getString("email"));
+                user.setMdp(resultSet.getString("mdp"));
+                // Assurez-vous de définir les autres attributs de UserEntity
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return user;
+    }
+
+    public void updateUserPassword(UserEntity user) {
+        String req = "UPDATE users SET mdp = ? WHERE id = ?";
+        try (PreparedStatement preparedStatement = DataSource.getInstance().getConnection().prepareStatement(req)) {
+            preparedStatement.setString(1, user.getMdp());
+            preparedStatement.setInt(2, user.getId());
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+
     public UserEntity findUser(String nom, String prenom, String email, int tel) {
         List<UserEntity> users = readAll();
         System.out.println("0 "+tel);
