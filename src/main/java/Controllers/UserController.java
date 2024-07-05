@@ -1,6 +1,7 @@
 package Controllers;
 
 
+import javafx.application.Platform;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ChoiceBox;
 
@@ -15,8 +16,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
 import javafx.util.Callback;
-import org.passay.CharacterData;
 import org.passay.CharacterRule;
 import org.passay.EnglishCharacterData;
 import org.passay.PasswordGenerator;
@@ -28,18 +29,14 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
-import java.util.Locale;
 import java.util.Properties;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class UserController {
 
     public static UserEntity current_user;
     public static ObservableList<UserEntity> allusers;
     Parent root = null;
-    //private String [] role = {"Admin","Coach","Nutritionniste","Member"};
-    ObservableList<String> roleList = FXCollections.observableArrayList("Admin", "Coach", "Nutritionniste", "Member");
+    ObservableList<String> roleList = FXCollections.observableArrayList("ADMIN", "COACH", "NUTRITIONNISTE", "ADHERENT");
     private Connection connection;
     UserService us = new UserService(connection);
 
@@ -126,7 +123,7 @@ public class UserController {
     @FXML
     private Label lmdp2;
     @FXML
-    private ChoiceBox<String> chrole;
+    private ChoiceBox<String> chrole = new ChoiceBox<>();
     @FXML
     private Label linom;
     @FXML
@@ -165,35 +162,45 @@ public class UserController {
 
     //edit
     @FXML
-    private TextField edage = new TextField();
+    private TextField edage=new TextField();
 
     @FXML
-    private TextField edemail = new TextField();
+    private TextField edemail=new TextField();
 
     @FXML
-    private TextField edlogin = new TextField();
+    private TextField edlogin=new TextField();
+
 
     @FXML
-    private TextField edmdp = new TextField();
+    private TextField ednom=new TextField();
 
     @FXML
-    private TextField ednom = new TextField();
+    private TextField edprenom=new TextField();
 
     @FXML
-    private TextField edprenom = new TextField();
+    private TextField edrole=new TextField();
 
     @FXML
-    private TextField edrole = new TextField();
+    private TextField edtel=new TextField();
 
     @FXML
-    private TextField edtel = new TextField();
+    private AnchorPane edpane;
 
     @FXML
     private TextField tfrecherche;
 
     @FXML
-    void mdp(ActionEvent event) {
-    }
+    private TextField chemail;
+
+    @FXML
+    private TextField chnom;
+
+    @FXML
+    private TextField chprenom;
+
+    @FXML
+    private TextField chtel;
+
 
     // INTERFACE LOGIN
     //SIGNIN
@@ -413,7 +420,7 @@ public class UserController {
             user.setLogin(tflogin2.getText());
             user.setMdp(tfmdp2.getText());
             user.setEmail(tfemail.getText());
-            user.setRole(tfrole.getText());
+            user.setRole(chrole.getValue());
 
             if (!us.getUserByEmail(user.getEmail())) {
                 us.ajouter(user);
@@ -446,10 +453,15 @@ public class UserController {
 
     @FXML
     public void initialize() {
+
+        chrole.setValue("ADMIN");
+        chrole.setItems(roleList);
+
+
+
         allusers = FXCollections.observableArrayList();
         loadUsersFromDatabase();
         System.out.println(allusers.size());
-
         colemail.setCellValueFactory(new PropertyValueFactory<UserEntity, String>("email"));
         colemail.setText("Email");
         colnom.setCellValueFactory(new PropertyValueFactory<UserEntity, String>("nom"));
@@ -472,7 +484,7 @@ public class UserController {
                     {
                         btn.setOnAction((ActionEvent event) -> {
                             UserEntity selectedUser = getTableView().getItems().get(getIndex());
-                            editUser(selectedUser);
+                            editUser (selectedUser);
                         });
                     }
 
@@ -538,36 +550,41 @@ public class UserController {
 
     private void editUser(UserEntity selectedUser) {
         try {
+            selectedUser = us.findById(selectedUser.getId());
+            //ednom=new TextField();
             FXMLLoader a = new FXMLLoader(getClass().getResource("/ModifierUser.fxml"));
             root = a.load();
             lmenu.getScene().setRoot(root);
+            //setUser(selectedUser);
 
-            selectedUser = us.findById(selectedUser.getId());
-            ednom = new TextField(selectedUser.getNom());
-            edprenom = new TextField(selectedUser.getPrenom());
-            edage = new TextField(String.valueOf(selectedUser.getAge()));
-            edemail = new TextField(selectedUser.getEmail());
-            edtel = new TextField(String.valueOf(selectedUser.getN_tel()));
-            edlogin = new TextField(selectedUser.getLogin());
-            edmdp = new TextField(selectedUser.getMdp());
-            edrole = new TextField(selectedUser.getRole());
+            Thread thread = new Thread(() -> {
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException exc) {
+                    throw new Error("Unexpected interruption", exc);
+                }
+                Platform.runLater(() -> ednom.setText("Hello World!"));
+            });
+            thread.setDaemon(true);
+            thread.start();
 
-        } catch (IOException e) {
+
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
     }
 
-    public void setUser(UserEntity selectedUser) {
+    public void setUserEntity (UserEntity selectedUser) {
         ednom.setText(selectedUser.getNom());
         edprenom.setText(selectedUser.getPrenom());
         edage.setText(String.valueOf(selectedUser.getAge()));
         edemail.setText(selectedUser.getEmail());
         edtel.setText(String.valueOf(selectedUser.getN_tel()));
         edlogin.setText(selectedUser.getLogin());
-        edmdp.setText(selectedUser.getMdp());
         edrole.setText(selectedUser.getRole());
     }
+
 
     private void toggleUserStatus(UserEntity selectedUser) {
 
@@ -590,33 +607,6 @@ public class UserController {
 
     @FXML
     private void saveEditedUser(ActionEvent event) {
-
-/*        String updatedname = ednom.getText();
-        String updatedprename = edprenom.getText();
-        String updateage = edage.getText();
-        String updatedEmail = edemail.getText();
-        String updatedNtel = edtel.getText();
-        String updatlogin = edlogin.getText();
-        String updatemdp = edmdp.getText();
-        String updatedRole = edrole.getText();
-
-        user.setNom(updatedname);
-        user.setPrenom(updatedprename);
-        user.setAge(Integer.parseInt(updateage));
-        user.setEmail(updatedEmail);
-        user.setN_tel(Integer.parseInt(updatedNtel));
-        user.setLogin(updatlogin);
-        user.setMdp(updatemdp);
-        user.setRole(updatedRole);
-
-
-        /*boolean isUpdated = us.update(user);;
-
-        if (isUpdated) {
-            showAlert("Les modifications ont été ajoutées avec succées.");
-        } else {
-            showAlert("Erreur, Aucune modification n'a été ajoutée.");
-        }*/
     }
 
     private void showAlert(String alert) {
@@ -627,7 +617,7 @@ public class UserController {
     }
 
 
-    private void loadUsersFromDatabase() {
+    private void loadUsersFromDatabase () {
         List<UserEntity> users = us.readAll();
         //System.out.println(users.size());
         allusers.setAll(users);
@@ -640,17 +630,6 @@ public class UserController {
         tableview.setItems(data);
     }
 
-    @FXML
-    private TextField chemail;
-
-    @FXML
-    private TextField chnom;
-
-    @FXML
-    private TextField chprenom;
-
-    @FXML
-    private TextField chtel;
 
     @FXML
     void chercherUser(ActionEvent event) {
@@ -675,7 +654,6 @@ public class UserController {
         if (user == null) System.out.println("NO USER FOUND");
         else System.out.println(user.getId());
     }
-
 
 }
 

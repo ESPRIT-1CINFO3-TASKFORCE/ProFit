@@ -9,39 +9,17 @@ import java.util.List;
 
 public class UserService implements IServices<UserEntity> {
 
-    private static Statement ste;
-
     public UserService(Connection connection) {
+        this.connection = connection;
     }
+    private static Statement ste;
+    private Connection connection;
+
+
 
     public UserService() {
 
     }
-
-
-
-    /*public static void insertRolesIfNotExist() throws SQLException {
-        Connection conn = DataSource.getInstance().getConnection();
-        if (conn == null) {
-            throw new SQLException("La connexion à la base de données est nulle");
-        }
-
-        String query = "SELECT COUNT(*) FROM role";
-        PreparedStatement pst = conn.prepareStatement(query);
-        ResultSet rs = pst.executeQuery();
-        rs.next();
-        int count = rs.getInt(1);
-
-        if (count == 0) {
-            String insertQuery = "INSERT INTO role (id, libelle) VALUES "
-                    + "(1, 'Admin'), "
-                    + "(2, 'Coach'), "
-                    + "(3, 'Nutritioniste'), "
-                    + "(4, 'Adhérent')";
-            PreparedStatement insertPst = conn.prepareStatement(insertQuery);
-            insertPst.executeUpdate();
-        }
-    }*/
 
     // Méthode de connexion
 
@@ -123,8 +101,6 @@ public class UserService implements IServices<UserEntity> {
 
     }
 
-
-
     //  suppression des utilisateurs
     public void supprimer(UserEntity user) throws SQLException {
         String req = "DELETE FROM users WHERE id = ?";
@@ -142,39 +118,45 @@ public class UserService implements IServices<UserEntity> {
 
     // Mise à jour
     public void update(UserEntity user) throws SQLException {
-        String req = "UPDATE users SET nom = ?, prenom = ?, email = ?, mdp = ?, n_tel = ?, role = ?, age = ?, active = ? WHERE id = ?";
+        String req = "UPDATE users SET nom = ?, prenom = ?, email = ?, n_tel = ?, role = ?, age = ?, active = ? WHERE id = ?";
         try (PreparedStatement preparedStatement = DataSource.getInstance().getConnection().prepareStatement(req)) {
             preparedStatement.setString(1, user.getNom());
-            preparedStatement.setString(2, user.getPrenom ());
+            preparedStatement.setString(2, user.getPrenom());
             preparedStatement.setString(3, user.getEmail());
-            preparedStatement.setString(4, user.getMdp());
-            preparedStatement.setInt(5, user.getN_tel());
-            preparedStatement.setString(6, user.getRole());
-            preparedStatement.setInt(7, user.getAge());
-            preparedStatement.setBoolean(8, user.isActive());
-            preparedStatement.setInt(9, user.getId());
+            preparedStatement.setInt(4, user.getN_tel());
+            preparedStatement.setString(5, user.getRole());
+            preparedStatement.setInt(6,user.getAge());
+            preparedStatement.setBoolean(7, user.isActive());
+            preparedStatement.setInt(8, user.getId());
 
             System.out.println("Executing query: " + preparedStatement);
             preparedStatement.executeUpdate();
             System.out.println("Update successful for user ID: " + user.getId());
-
-            /*int rowsAffected = preparedStatement.executeUpdate();
-            //preparedStatement.setInt(10, user.getId());
-            //preparedStatement.executeUpdate();
-            if (rowsAffected > 0) {
-                System.out.println("Utilisateur mis à jour avec succès.");
-            } else {
-                System.out.println("Aucun utilisateur trouvé avec cet ID.");
-            }*/
         }
     }
 
+    public void activateUser(int userId) throws SQLException {
+        String req = "UPDATE users SET active = 1 WHERE id = ?";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(req)) {
+            preparedStatement.setInt(1, userId);
+            preparedStatement.executeUpdate();
+            System.out.println("User with ID " + userId + " has been activated.");
+        }
+    }
+
+    public void deactivateUser(int userId) throws SQLException {
+        String req = "UPDATE users SET active = 0 WHERE id = ?";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(req)) {
+            preparedStatement.setInt(1, userId);
+            preparedStatement.executeUpdate();
+            System.out.println("User with ID " + userId + " has been deactivated.");
+        }
+    }
 
     @Override
     public UserEntity findbyId(int e) throws SQLException {
         return null;
     }
-
 
     // Trouver un utilisateur par ID
 
@@ -206,32 +188,6 @@ public class UserService implements IServices<UserEntity> {
         }catch (Exception e){}
         return user;
     }
-
-    // Afficher les utilisateurs
-    public UserEntity readLastUser() throws SQLException {
-        String req = "SELECT * FROM users ORDER BY id DESC LIMIT 1"; // Assuming 'id' is the primary key
-        ResultSet resultSet = ste.executeQuery(req);
-
-        if (resultSet.next()) {
-            return new UserEntity(
-                    resultSet.getInt("id"),
-                    resultSet.getInt("age"),
-                    resultSet.getInt("poids"),
-                    resultSet.getInt("longeur"),
-                    resultSet.getInt("note_c"),
-                    resultSet.getInt("note_n"),
-                    resultSet.getInt("n_tel"),
-                    resultSet.getString("nom"),
-                    resultSet.getString("prenom"),
-                    resultSet.getString("login"),
-                    resultSet.getString("mdp"),
-                    resultSet.getString("email"),
-                    resultSet.getString("role")
-            );
-        }
-        return null;
-    }
-
 
     public boolean getUserByEmail(String email) {
 

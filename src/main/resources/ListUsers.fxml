@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="539.0" prefWidth="833.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ListController">
+    <children>
+        <AnchorPane prefHeight="539.0" prefWidth="238.0" style="-fx-background-color: #e47873;">
+            <children>
+                <Button layoutX="35.0" layoutY="112.0" mnemonicParsing="false" onAction="#AjouterUser" prefHeight="39.0" prefWidth="189.0" text="Ajouter utilisateur" textFill="#cc6a0e">
+                    <font>
+                        <Font name="Arial Bold Italic" size="17.0" />
+                    </font>
+                </Button>
+                <Button layoutX="34.0" layoutY="187.0" mnemonicParsing="false" onAction="#chercherUser" prefHeight="39.0" prefWidth="189.0" text="Chercher utilisateur" textFill="#cc6a0e">
+                    <font>
+                        <Font name="Arial Bold Italic" size="16.0" />
+                    </font>
+                </Button>
+                <Label fx:id="lmenu" layoutX="103.0" layoutY="43.0" text="MENU">
+                    <font>
+                        <Font name="System Bold Italic" size="23.0" />
+                    </font>
+                </Label>
+                <ImageView fitHeight="185.0" fitWidth="196.0" layoutX="26.0" layoutY="248.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@source/logo.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+        <TableView fx:id="tableview" layoutX="249.0" layoutY="76.0" prefHeight="372.0" prefWidth="504.0">
+         <columns>
+            <TableColumn fx:id="conom" prefWidth="105.2000732421875" text="Nom" />
+            <TableColumn fx:id="coprenom" prefWidth="101.99993896484375" text="Prenom" />
+            <TableColumn fx:id="coemail" prefWidth="195.99996948242188" text="Email" />
+            <TableColumn fx:id="corole" prefWidth="100.00006103515625" text="Role" />
+         </columns></TableView>
+        <TextField fx:id="tfrecherche" layoutX="289.0" layoutY="31.0" text="Rechercher" />
+        <Button layoutX="450.0" layoutY="31.0" mnemonicParsing="false" onAction="#chercherUser" text="OK" />
+        <!-- Ajout des nouveaux boutons sous la TableView -->
+        <Button layoutX="514.0" layoutY="455.0" mnemonicParsing="false" onAction="#handelEdit" text="MODIFIER" />
+        <Button layoutX="597.0" layoutY="455.0" mnemonicParsing="false" onAction="#handelActivate" text="ACTIVER" />
+        <Button layoutX="670.0" layoutY="455.0" mnemonicParsing="false" onAction="#handelDesactivate" text="DESACTIVER" />
+    </children>
+</AnchorPane>

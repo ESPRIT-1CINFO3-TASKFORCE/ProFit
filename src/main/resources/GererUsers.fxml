@@ -9,16 +9,16 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="498.0" prefWidth="909.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.UserController">
+<AnchorPane prefHeight="453.0" prefWidth="791.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.UserController">
    <children>
-      <AnchorPane prefHeight="462.0" prefWidth="262.0" style="-fx-background-color:  #e47873; -fx-background-color:  #e47873;">
+      <AnchorPane prefHeight="453.0" prefWidth="238.0" style="-fx-background-color:  #e47873; -fx-background-color:  #e47873;">
          <children>
-            <Button layoutX="43.0" layoutY="112.0" mnemonicParsing="false" onAction="#AjouterUser" prefHeight="39.0" prefWidth="189.0" text="Ajouter utilisateur" textFill="#cc6a0e">
+            <Button layoutX="35.0" layoutY="112.0" mnemonicParsing="false" onAction="#AjouterUser" prefHeight="39.0" prefWidth="189.0" text="Ajouter utilisateur" textFill="#cc6a0e">
                <font>
                   <Font name="Arial Bold Italic" size="17.0" />
                </font>
             </Button>
-            <Button layoutX="43.0" layoutY="188.0" mnemonicParsing="false" onAction="#chercherUser" prefHeight="39.0" prefWidth="189.0" text="Chercher utilisateur" textFill="#cc6a0e">
+            <Button layoutX="34.0" layoutY="187.0" mnemonicParsing="false" onAction="#chercherUser" prefHeight="39.0" prefWidth="189.0" text="Chercher utilisateur" textFill="#cc6a0e">
                <font>
                   <Font name="Arial Bold Italic" size="16.0" />
                </font>
@@ -28,14 +28,14 @@
                   <Font name="System Bold Italic" size="23.0" />
                </font>
             </Label>
-            <ImageView fitHeight="245.0" fitWidth="244.0" layoutX="9.0" layoutY="278.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="185.0" fitWidth="196.0" layoutX="26.0" layoutY="248.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@source/logo.png" />
                </image>
             </ImageView>
          </children>
       </AnchorPane>
-      <TableView fx:id="tableview" layoutX="273.0" layoutY="73.0" prefHeight="424.0" prefWidth="644.0" />
+      <TableView fx:id="tableview" layoutX="249.0" layoutY="76.0" prefHeight="372.0" prefWidth="504.0" />
       <TextField fx:id="tfrecherche" layoutX="289.0" layoutY="31.0" text="Rechercher" />
       <Button layoutX="450.0" layoutY="31.0" mnemonicParsing="false" onAction="#chercherUser" text="OK" />
    </children>
