@@ -131,16 +131,18 @@ public class CreateUserController {
 
             }
         });
-        String emailBody = "Dear User,\n" +
+        String emailBody = "Bonjour,\n" +
                 "\n" +
-                "Your new Login is: " + user.getLogin() + "\n" +
+                "Votre nouveau Login est : " + user.getLogin() + "\n" +
                 "\n" +
-                "Your new Password is: " + user.getMdp() + "\n" +
+                "Votre mot de passe est : " + user.getMdp() + "\n" +
                 "\n" +
-                "Please keep this password secure and consider changing it after logging in.\n" +
+                "Veuillez garder ce mot de passe sécurisé et envisagez de le changer après votre connexion.\n\n" +
                 "\n" +
-                "Best regards,\n" +
-                "ProFit Team";
+                "Cordialement,+" +
+                "\n" +
+                "L'équipe ProFit";
+
         Message message = prepareMessage(session, myEmail, user.getEmail(), emailBody);
         if (message != null) {
             new Alert(Alert.AlertType.INFORMATION, "Send Email Successfully").show();

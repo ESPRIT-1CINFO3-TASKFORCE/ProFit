@@ -2,6 +2,7 @@ package Controllers;
 
 import Entites.UserEntity;
 import Services.UserService;
+import Utils.SessionManager;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -69,7 +70,6 @@ public class ListController {
 
     @FXML
     void AjouterUser(ActionEvent event) {
-        // Implementation for adding a user
 
         FXMLLoader a = new FXMLLoader(getClass().getResource("/AjouterUser.fxml"));
         try {
@@ -163,6 +163,21 @@ public class ListController {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+        }
+    }
+
+    @FXML
+    void logout (ActionEvent event) {
+        if (current_user != null) {
+            UserService.logout(current_user);
+        }
+        SessionManager.clearSession();
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Login.fxml"));
+            Parent root = loader.load();
+            lmenu.getScene().setRoot(root);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }

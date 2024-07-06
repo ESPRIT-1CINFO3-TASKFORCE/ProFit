@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -10,7 +11,7 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.EditUserController">
    <children>
-      <AnchorPane fx:id="edpane" layoutX="-12.0" layoutY="-15.0" prefHeight="486.0" prefWidth="684.0">
+      <AnchorPane fx:id="edpane" layoutY="-8.0" prefHeight="486.0" prefWidth="684.0">
          <children>
             <AnchorPane layoutY="7.0" prefHeight="500.0" prefWidth="287.0" style="-fx-background-color:  #e47873; -fx-background-color:  #e47873;">
                <children>
@@ -73,12 +74,12 @@
             <TextField fx:id="edtel" layoutX="431.0" layoutY="182.0" />
             <TextField fx:id="edemail" layoutX="430.0" layoutY="142.0" />
             <TextField fx:id="edage" layoutX="429.0" layoutY="106.0" />
-            <Label fx:id="llogin21" layoutX="322.0" layoutY="258.0" text="Role">
+            <Label fx:id="llogin21" layoutX="322.0" layoutY="223.0" text="Role">
                <font>
                   <Font name="Arial Bold Italic" size="17.0" />
                </font>
             </Label>
-            <TextField fx:id="edrole" layoutX="431.0" layoutY="255.0" />
+            <ChoiceBox fx:id="chbrole" layoutX="431.0" layoutY="220.0" prefHeight="25.0" prefWidth="149.0" />
          </children>
       </AnchorPane>
    </children>

@@ -2,6 +2,7 @@ package Controllers;
 
 import Entites.UserEntity;
 import Services.UserService;
+import Utils.SessionManager;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -14,7 +15,12 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.util.List;
 
-public class LoginController {
+import javafx.fxml.Initializable;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class LoginController implements Initializable {
 
     @FXML
     private Label lcreer;
@@ -46,7 +52,7 @@ public class LoginController {
         System.out.println("ID:" + allusers.get(5).getId());
     }
 
-    @FXML
+    /*@FXML
     void signin(ActionEvent event) throws IOException {
         String login = tflogin.getText();
         String mdp = tfmdp.getText();
@@ -73,7 +79,8 @@ public class LoginController {
                     System.out.println("IS COACH");
 
                     //nom d'interface à modifier avec interface coach
-                    FXMLLoader a = new FXMLLoader(getClass().getResource("/GererUsers.fxml"));
+
+                    FXMLLoader a = new FXMLLoader(getClass().getResource("/ListUsers.fxml"));
                     try {
                         Parent e = a.load();
                         tfmdp.getScene().setRoot(e);
@@ -85,7 +92,7 @@ public class LoginController {
                     System.out.println("IS NUTRITIONNISTE");
 
                     //nom d'interface à modifier avec interface nutritionniste
-                    FXMLLoader a = new FXMLLoader(getClass().getResource("/GererUsers.fxml"));
+                    FXMLLoader a = new FXMLLoader(getClass().getResource("/ListUsers.fxml"));
                     try {
                         Parent e = a.load();
                         tfmdp.getScene().setRoot(e);
@@ -109,7 +116,60 @@ public class LoginController {
             }
 
         }
+    }*/
+
+    @Override
+    public void initialize (URL url, ResourceBundle resources) {
+        current_user = SessionManager.getSession();
+        if (current_user != null) {
+            //redirectToRoleInterface(current_user.getRole());
+        }
     }
+
+    private void redirectToRoleInterface(String role) {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            switch (role) {
+                case "ADMIN":
+                    loader.setLocation(getClass().getResource("/ListUsers.fxml"));
+                    break;
+                case "COACH":
+                    loader.setLocation(getClass().getResource("/CoachInterface.fxml"));
+                    break;
+                case "NUTRITIONNISTE":
+                    loader.setLocation(getClass().getResource("/NutritionistInterface.fxml"));
+                    break;
+                case "ADHERENT":
+                    loader.setLocation(getClass().getResource("/AdherentInterface.fxml"));
+                    break;
+                default:
+                    return;
+            }
+            Parent root = loader.load();
+            tflogin.getScene().setRoot(root);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    void signin (ActionEvent event) {
+        String login = tflogin.getText();
+        String mdp = tfmdp.getText();
+
+        if (login.length() > 0 && mdp.length() > 6) {
+            current_user = UserService.login(login, mdp);
+            if (current_user == null) {
+                System.out.println("Erreur");
+            } else {
+                SessionManager.saveSession(current_user);
+                redirectToRoleInterface(current_user.getRole());
+            }
+        }
+    }
+
+
+
     @FXML
     private Label lfitness;
     @FXML

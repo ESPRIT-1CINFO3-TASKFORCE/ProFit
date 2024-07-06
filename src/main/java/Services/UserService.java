@@ -15,8 +15,6 @@ public class UserService implements IServices<UserEntity> {
     private static Statement ste;
     private Connection connection;
 
-
-
     public UserService() {
 
     }
@@ -54,6 +52,18 @@ public class UserService implements IServices<UserEntity> {
         } catch (SQLException e) {
             e.printStackTrace();
             return null;
+        }
+    }
+
+    public static void logout(UserEntity user) {
+        String query = "UPDATE users SET last_logout_time = ? WHERE id = ?";
+        try {
+            PreparedStatement preparedStatement = DataSource.getInstance().getConnection().prepareStatement(query);
+            preparedStatement.setTimestamp(1, new Timestamp(System.currentTimeMillis()));
+            preparedStatement.setInt(2, user.getId());
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 
@@ -135,12 +145,15 @@ public class UserService implements IServices<UserEntity> {
         }
     }
 
+
     public void activateUser(int userId) throws SQLException {
-        String req = "UPDATE users SET active = 1 WHERE id = ?";
-        try (PreparedStatement preparedStatement = connection.prepareStatement(req)) {
-            preparedStatement.setInt(1, userId);
-            preparedStatement.executeUpdate();
-            System.out.println("User with ID " + userId + " has been activated.");
+        String sql = "UPDATE users SET active = true WHERE id = ?";
+        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+            stmt.setInt(1, userId);
+            int rowsAffected = stmt.executeUpdate();
+            if (rowsAffected == 0) {
+                throw new SQLException("Failed to activate user with ID: " + userId);
+            }
         }
     }
 

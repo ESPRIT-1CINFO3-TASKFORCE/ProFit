@@ -27,18 +27,19 @@
             </children>
         </AnchorPane>
         <TableView fx:id="tableview" layoutX="213.0" layoutY="68.0" prefHeight="260.0" prefWidth="397.0">
-         <columns>
-            <TableColumn fx:id="conom" prefWidth="87.20001220703125" text="Nom" />
-            <TableColumn fx:id="coprenom" prefWidth="90.0" text="Prenom" />
-            <TableColumn fx:id="coemail" prefWidth="140.79995727539062" text="Email" />
-            <TableColumn fx:id="corole" prefWidth="79.5999755859375" text="Role" />
-         </columns></TableView>
+            <columns>
+                <TableColumn fx:id="conom" prefWidth="87.20001220703125" text="Nom" />
+                <TableColumn fx:id="coprenom" prefWidth="90.0" text="Prenom" />
+                <TableColumn fx:id="coemail" prefWidth="140.79995727539062" text="Email" />
+                <TableColumn fx:id="corole" prefWidth="79.5999755859375" text="Role" />
+            </columns></TableView>
         <TextField fx:id="tfrecherche" layoutX="213.0" layoutY="18.0" promptText="Rechercher" />
         <Button layoutX="362.0" layoutY="18.0" mnemonicParsing="false" onAction="#chercherUser" text="Chercher" />
         <!-- Ajout des nouveaux boutons sous la TableView -->
         <Button layoutX="377.0" layoutY="340.0" mnemonicParsing="false" onAction="#handelEdit" text="MODIFIER" />
         <Button layoutX="455.0" layoutY="340.0" mnemonicParsing="false" onAction="#handelActivate" text="ACTIVER" />
         <Button layoutX="527.0" layoutY="340.0" mnemonicParsing="false" onAction="#handelDesactivate" text="DESACTIVER" />
-      <Button layoutX="304.0" layoutY="340.0" mnemonicParsing="false" onAction="#AjouterUser" text="AJOUTER" />
+        <Button layoutX="304.0" layoutY="340.0" mnemonicParsing="false" onAction="#AjouterUser" text="AJOUTER" />
+        <Button layoutX="544.0" layoutY="18.0" mnemonicParsing="false" onAction="#logout" text="Déconnexion" />
     </children>
 </AnchorPane>

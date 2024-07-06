@@ -22,16 +22,14 @@ public class HomeController {
 
     @FXML
     void connexion(ActionEvent event) {
-
-        FXMLLoader l = new FXMLLoader(getClass().getResource("/Login.fxml"));
-        Parent root = null;
         try {
-            root = l.load();
+            FXMLLoader l = new FXMLLoader(getClass().getResource("/Login.fxml"));
+            Parent root = l.load();
             lconnect.getScene().setRoot(root);
         } catch (IOException e) {
             e.printStackTrace();
+            System.out.println("Erreur lors du chargement de Login.fxml : " + e.getMessage());
         }
-
     }
 
     @FXML

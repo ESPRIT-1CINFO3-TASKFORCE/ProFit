@@ -2,11 +2,14 @@ package Controllers;
 
 import Entites.UserEntity;
 import Services.UserService;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
@@ -65,6 +68,10 @@ public class EditUserController {
     private Label lprenom;
 
     private UserEntity currentUser;
+    @FXML
+    private ChoiceBox<String> chbrole = new ChoiceBox<>();
+
+    ObservableList<String> roleList = FXCollections.observableArrayList("ADMIN", "COACH", "NUTRITIONNISTE", "ADHERENT");
 
     @FXML
     void AjouterUser(ActionEvent event) {
@@ -75,6 +82,13 @@ public class EditUserController {
     void chercherUser(ActionEvent event) {
 
     }
+    @FXML
+    public void initialize () {
+
+        chbrole.setValue("ADMIN");
+        chbrole.setItems(roleList);
+
+    }
 
     @FXML
     void saveEditedUser(ActionEvent event) {
@@ -83,10 +97,11 @@ public class EditUserController {
         currentUser.setPrenom(edprenom.getText());
         currentUser.setEmail(edemail.getText());
         currentUser.setN_tel(Integer.parseInt(edtel.getText()));
-        currentUser.setRole(edrole.getText());
         currentUser.setAge(Integer.parseInt(edage.getText()));
+        currentUser.setRole(chbrole.getValue());
 
-        // Ajoutez ici la logique pour mettre à jour l'utilisateur dans la base de données
+
+
         UserService userService = new UserService();
         try {
             userService.update(currentUser);
