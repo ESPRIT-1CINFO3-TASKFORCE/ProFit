@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.TextField?>
+<VBox alignment="CENTER" prefHeight="551.0" prefWidth="747.0" spacing="10" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AjouterExerciceController">
+   <padding>
+      <Insets bottom="20" left="20" right="20" top="20" />
+   </padding>
+
+   <Label alignment="CENTER" prefHeight="25.0" prefWidth="363.0" stylesheets="@style/styleDash.css" text="Exercice" textAlignment="CENTER">
+      <font>
+         <Font name="Baskerville Old Face" size="38.0" />
+      </font>
+      <textFill>
+         <LinearGradient endX="1.0" endY="1.0" startX="0.946969726320469" startY="0.35227277062155987">
+            <stops>
+               <Stop>
+                  <color>
+                     <Color red="0.2228713482618332" green="0.11387914419174194" blue="0.24210526049137115" />
+                  </color>
+               </Stop>
+               <Stop offset="1.0">
+                  <color>
+                     <Color red="1.0" green="1.0" blue="1.0" />
+                  </color>
+               </Stop>
+            </stops>
+         </LinearGradient>
+      </textFill>
+   </Label>
+
+   <Text fill="#8317d4" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom" textAlignment="CENTER" wrappingWidth="298.9367003440857">
+      <font>
+         <Font name="Arial Rounded MT Bold" size="12.0" />
+      </font>
+   </Text>
+
+   <TextField fx:id="id_nomEx" promptText="Nom Exercice" stylesheets="@style/styleDash.css" />
+   <Label fx:id="label_nomEx" prefHeight="18.0" prefWidth="752.0" textFill="RED" />
+
+   <Text fill="#8317d4" strokeType="OUTSIDE" strokeWidth="0.0" text="Description" textAlignment="CENTER" wrappingWidth="298.9367003440857">
+      <font>
+         <Font name="Arial Rounded MT Bold" size="12.0" />
+      </font>
+   </Text>
+
+   <TextField fx:id="id_description" promptText="Description" stylesheets="@style/styleDash.css" />
+   <Label fx:id="label_description" textFill="RED" />
+
+   <Text fill="#8317d4" strokeType="OUTSIDE" strokeWidth="0.0" text="Difficulté" textAlignment="CENTER" wrappingWidth="298.9367003440857">
+      <font>
+         <Font name="Arial Rounded MT Bold" size="12.0" />
+      </font>
+   </Text>
+
+   <Slider fx:id="id_difficulteSlider" majorTickUnit="10" max="100" min="1" minorTickCount="1" showTickLabels="true" showTickMarks="true" stylesheets="@style/styleDash.css" value="50" />
+   <Label fx:id="label_difficulte" textFill="RED" />
+
+   <Text fill="#8317d4" strokeType="OUTSIDE" strokeWidth="0.0" text="Durée" textAlignment="CENTER" wrappingWidth="298.9367003440857">
+      <font>
+         <Font name="Arial Rounded MT Bold" size="12.0" />
+      </font>
+   </Text>
+
+   <Slider fx:id="id_dureeSlider" majorTickUnit="10" max="120" min="0" minorTickCount="1" showTickLabels="true" showTickMarks="true" stylesheets="@style/styleDash.css" value="60" />
+   <Label fx:id="label_dureeMinutes" textFill="RED" />
+
+   <Text fill="#8317d4" strokeType="OUTSIDE" strokeWidth="0.0" text="Calories" textAlignment="CENTER" wrappingWidth="603.7367491722107">
+      <font>
+         <Font name="Arial Rounded MT Bold" size="12.0" />
+      </font>
+   </Text>
+
+   <Slider fx:id="id_caloriesSlider" majorTickUnit="50" max="1000" min="0" minorTickCount="5" showTickLabels="true" showTickMarks="true" stylesheets="@style/styleDash.css" value="500" />
+   <Label fx:id="label_caloriesBrulees" textFill="RED" />
+
+   <Text fill="#8317d4" strokeType="OUTSIDE" strokeWidth="0.0" text="Muscle" textAlignment="CENTER" wrappingWidth="603.7367491722107">
+      <font>
+         <Font name="Arial Rounded MT Bold" size="12.0" />
+      </font>
+   </Text>
+
+   <ChoiceBox fx:id="id_musculesCibles" prefHeight="26.0" prefWidth="620.0" styleClass="box-mdp-oublier" stylesheets="@style/styleDash.css">
+      <items>
+         <FXCollections fx:factory="observableArrayList">
+            <String fx:value="Quadriceps" />
+            <String fx:value="Ischio-jambiers" />
+            <String fx:value="Mollets" />
+            <String fx:value="Pectoraux" />
+            <String fx:value="Dorsaux" />
+            <String fx:value="Abdominaux" />
+            <String fx:value="Biceps" />
+            <String fx:value="Triceps" />
+         </FXCollections>
+      </items>
+   </ChoiceBox>
+   <Label fx:id="label_musculesCibles" textFill="RED" />
+
+   <Button onAction="#ajouterExercice" prefHeight="26.0" prefWidth="633.0" styleClass="button_inscrit" stylesheets="@style/styleDash.css" text="Ajouter un exercice" textFill="WHITE" />
+   <Button fx:id="btnHome" layoutX="661.0" layoutY="28.0" mnemonicParsing="false" onAction="#ReturnHo" prefHeight="26.0" prefWidth="95.0" text="Home" textFill="#bc6e08">
+      <font>
+         <Font name="System Bold Italic" size="12.0" />
+      </font>
+   </Button>
+</VBox>

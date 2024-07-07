@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AfficherExerciceController">
+
+    <TableView fx:id="tableView" layoutX="6.0" layoutY="70.0" prefHeight="307.0" prefWidth="762.0" stylesheets="@style/styleDash.css">
+        <columns>
+            <TableColumn fx:id="nomCol" text="Nom" />
+            <TableColumn fx:id="descriptionCol" prefWidth="104.00000762939453" text="Description" />
+            <TableColumn fx:id="difficulteCol" prefWidth="56.0" text="Difficulté" />
+            <TableColumn fx:id="dureeCol" prefWidth="117.60003662109375" text="Durée (minutes)" />
+            <TableColumn fx:id="caloriesCol" prefWidth="108.0" text="Calories brûlées" />
+            <TableColumn fx:id="musculesCol" prefWidth="120.79995727539062" text="Muscles ciblés" />
+        </columns>
+    </TableView>
+    <Button fx:id="btnHome" layoutX="661.0" layoutY="28.0" mnemonicParsing="false" onAction="#ReturnH" prefHeight="26.0" prefWidth="95.0" text="Home" textFill="#bc6e08">
+        <font>
+            <Font name="System Bold Italic" size="12.0" />
+        </font>
+    </Button>
+   <Label layoutX="52.0" layoutY="25.0" prefHeight="18.0" prefWidth="254.0" text="Listes des Exercices " textFill="#bc6e08">
+      <font>
+         <Font name="Arial Narrow" size="28.0" />
+      </font>
+   </Label>
+
+</AnchorPane>

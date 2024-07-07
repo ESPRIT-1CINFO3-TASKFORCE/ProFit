@@ -1,0 +1,195 @@
+.gradient-background {
+    -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #D91F4E, #FF854C);
+}
+.pie-chart {
+    -fx-pie-label-visible: true;
+    -fx-font-size: 14px;
+}
+
+.chart-pie-label {
+    -fx-fill: white;
+    -fx-font-weight: bold;
+}
+
+.bar-chart {
+    -fx-background-color: #f4f4f4;
+}
+
+.chart-legend {
+    -fx-background-color: #e0e0e0;
+}
+
+.chart-title {
+    -fx-text-fill: #333;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+.chart-bar.series0 {
+    -fx-bar-fill: #79776b; /* Bleu pour le poids */
+}
+
+/* Couleur des barres pour la deuxième série (masse musculaire) */
+.chart-bar.series1 {
+    -fx-bar-fill: #e2a785; /* Rouge pour la masse musculaire */
+}
+.chart-bar.series2 {
+    -fx-bar-fill: #e2a785; /* Rouge pour la masse musculaire */
+}
+
+.card-1 {
+    -fx-background-color: #79776b; /* Couleur de fond blanche */
+    -fx-padding: 10; /* Espacement intérieur */
+    -fx-spacing: 5; /* Espacement entre les éléments */
+    -fx-border-color: #e0e0e0; /* Couleur de la bordure */
+    -fx-border-width: 1; /* Épaisseur de la bordure */
+    -fx-border-radius: 5; /* Coins arrondis */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0.5, 0, 0); /* Ombre portée */
+}
+
+.card-2 {
+    -fx-background-color: #eb6c28; /* Couleur de fond blanche */
+    -fx-padding: 10; /* Espacement intérieur */
+    -fx-spacing: 5; /* Espacement entre les éléments */
+    -fx-border-color: #e0e0e0; /* Couleur de la bordure */
+    -fx-border-width: 1; /* Épaisseur de la bordure */
+    -fx-border-radius: 5; /* Coins arrondis */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0.5, 0, 0); /* Ombre portée */
+}
+.card-3 {
+    -fx-background-color: #e2a785; /* Couleur de fond blanche */
+    -fx-padding: 10; /* Espacement intérieur */
+    -fx-spacing: 5; /* Espacement entre les éléments */
+    -fx-border-color: #e0e0e0; /* Couleur de la bordure */
+    -fx-border-width: 1; /* Épaisseur de la bordure */
+    -fx-border-radius: 5; /* Coins arrondis */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0.5, 0, 0); /* Ombre portée */
+}
+
+
+
+.card {
+    -fx-font-size: 14px; /* Taille de la police */
+    -fx-fill: #333333; /* Couleur du texte */
+}
+.vbox-highlighted {
+    -fx-background-color: #f0f0f0; /* Couleur de fond */
+    -fx-border-color: #ccc; /* Couleur de la bordure */
+    -fx-border-width: 1px; /* Épaisseur de la bordure */
+    -fx-padding: 10px; /* Espacement interne */
+    -fx-spacing: 5px; /* Espacement entre les enfants */
+    -fx-border-radius: 5px; /* Rayon des coins de la bordure */
+    -fx-effect: dropshadow(three-pass-box, #888, 10, 0, 0, 0); /* Ombre portée */
+}
+/* Régime Standard */
+.regime-standard {
+    -fx-background-color: #f0f0f0; /* Gris clair */
+    -fx-border-color: #ccc; /* Gris clair pour la bordure */
+    -fx-border-width: 1px; /* Épaisseur de la bordure */
+    -fx-padding: 10px; /* Espacement interne */
+    -fx-spacing: 5px; /* Espacement entre les enfants */
+    -fx-border-radius: 5px; /* Rayon des coins de la bordure */
+}
+
+.regime-standard .meal {
+    -fx-background-color: #ffffff; /* Blanc pour les repas */
+    -fx-padding: 5px; /* Espacement interne des repas */
+}
+
+/* Régime Végétarien */
+.regime-vegetarian {
+    -fx-background-color: #f9f2eb; /* Orange clair */
+    -fx-border-color: #e0b48c; /* Orange pour la bordure */
+    -fx-border-width: 1px; /* Épaisseur de la bordure */
+    -fx-padding: 10px; /* Espacement interne */
+    -fx-spacing: 5px; /* Espacement entre les enfants */
+    -fx-border-radius: 5px; /* Rayon des coins de la bordure */
+}
+
+.regime-vegetarian .meal {
+    -fx-background-color: #ffeadb; /* Orange clair pour les repas */
+    -fx-padding: 5px; /* Espacement interne des repas */
+}
+
+.regime-protein {
+    -fx-background-color: #d1e9ff; /* Bleu clair */
+    -fx-border-color: #e0b48c; /* Bleu pour la bordure */
+    -fx-border-width: 1px; /* Épaisseur de la bordure */
+    -fx-padding: 10px; /* Espacement interne */
+    -fx-spacing: 5px; /* Espacement entre les enfants */
+    -fx-border-radius: 5px; /* Rayon des coins de la bordure */
+}
+
+.regime-protein .meal {
+    -fx-background-color: #f0f8ff; /* Bleu clair pour les repas */
+    -fx-padding: 5px; /* Espacement interne des repas */
+}
+/* style.css */
+.title-bold {
+    -fx-font-weight: bold;
+    -fx-font-size: 24px; /* Ajustez selon vos besoins */
+    -fx-text-fill: #333; /* Couleur du texte */
+    -fx-padding: 20px 0; /* Espacement au-dessus et en dessous du titre */
+}
+/* style.css */
+.navbar {
+    -fx-background-color: #333;
+    -fx-padding: 10px;
+    -fx-spacing: 10px;
+}
+
+.navbar button {
+    -fx-background-color: #555;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 10px 20px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+.navbar button:hover {
+    -fx-background-color: #777;
+}
+
+.sidebar {
+    -fx-background-color: #444;
+    -fx-padding: 10px;
+    -fx-spacing: 10px;
+}
+
+.sidebarB {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 10px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+.sidebarb {
+    -fx-background-color: #888;
+}
+.sidebarTrans {
+    -fx-background-color: rgba(255, 255, 255, 0.2); /* Fond semi-transparent au survol */
+
+}
+
+.sidebar button {
+    -fx-background-color: transparent; /* Couleur de fond transparente */
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 10px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-border-color: white; /* Ajouter une bordure blanche pour la visibilité */
+    -fx-border-width: 1px;
+    -fx-transition: background-color 0.3s, transform 0.3s; /* Transition pour la couleur de fond et la transformation */
+}
+
+.sidebar button:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.2); /* Fond semi-transparent au survol */
+
+}
+
+.sidebar button:pressed {
+    -fx-background-color: rgba(255, 255, 255, 0.5); /* Couleur de fond lors du clic */
+}
