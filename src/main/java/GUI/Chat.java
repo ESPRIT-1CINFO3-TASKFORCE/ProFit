@@ -16,16 +16,12 @@ public class Chat extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
 
         try {
             // Load the FXML file
             FXMLLoader loader = new FXMLLoader(getClass().getResource("ChatLogin.fxml"));
             Parent root = loader.load();
-
-            // Create the scene with the screen dimensions
-            Scene scene = new Scene(root, screenBounds.getWidth(), screenBounds.getHeight());
-
+            Scene scene = new Scene(root);
             // Set the scene to the stage
             primaryStage.setScene(scene);
             primaryStage.setTitle("ProFit Chat");

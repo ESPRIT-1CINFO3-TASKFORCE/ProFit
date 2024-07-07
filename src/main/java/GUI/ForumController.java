@@ -58,7 +58,6 @@ public class ForumController {
 
 
 
-
     private ForumService forumService = new ForumService();
     private ObservableList<String> forumList = FXCollections.observableArrayList();
 
@@ -169,6 +168,5 @@ public class ForumController {
             e.printStackTrace(); // Handle your exception properly
         }
     }
-
 
 }

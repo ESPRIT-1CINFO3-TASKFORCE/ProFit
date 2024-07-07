@@ -93,14 +93,14 @@ public class TopicController {
     @FXML
     private void goToNewTopic() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("newTopic.fxml"));
-            Parent root = loader.load();
-
-            // Get the current stage and set the new scene
-            Stage stage = (Stage) title.getScene().getWindow();
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("newTopic.fxml"));
+            Parent root = fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setTitle("NOUVEAU SUJET");
             stage.setScene(new Scene(root));
+            stage.show();
         } catch (IOException e) {
-            e.printStackTrace(); // Handle your exception properly
+            e.printStackTrace();
         }
     }
 
