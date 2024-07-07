@@ -2,11 +2,9 @@ package Services;
 
 import Entites.CommentEntity;
 import Entites.ForumEntity;
-import GUI.Forum;
 import Utils.DataSource;
 
 import java.sql.*;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -98,7 +96,7 @@ public class ForumService {
 
     public String getUserNameById(int userId) {
         String username = "";
-        String query = "SELECT nom, prenom FROM user WHERE id = ?";
+        String query = "SELECT nom, prenom FROM users WHERE id = ?";
 
         try (Connection con = DataSource.getInstance().getConnection();
              PreparedStatement pstmt = con.prepareStatement(query)) {

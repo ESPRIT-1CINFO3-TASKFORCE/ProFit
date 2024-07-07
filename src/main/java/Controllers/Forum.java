@@ -1,4 +1,4 @@
-package GUI;
+package Controllers;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -20,7 +20,7 @@ public class Forum extends Application {
 
         try {
             // Load the FXML file
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("forums.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/forums.fxml"));
             Parent root = loader.load();
 
             // Create the scene with the screen dimensions

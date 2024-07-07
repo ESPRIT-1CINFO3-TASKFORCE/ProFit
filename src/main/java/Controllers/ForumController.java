@@ -1,7 +1,6 @@
-package GUI;
+package Controllers;
 
 import Entites.ForumEntity;
-import GUI.Forum;
 import Services.ForumService;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -15,12 +14,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.VBox;
-import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
 
-import javax.swing.*;
-import java.awt.*;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
@@ -73,7 +68,7 @@ public class ForumController {
     @FXML
     private void NavigateToNewTopic() {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("newTopic.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/newTopic.fxml"));
             Parent root = fxmlLoader.load();
             Stage stage = new Stage();
             stage.setTitle("NOUVEAU SUJET");
@@ -154,7 +149,7 @@ public class ForumController {
     // navigate to selected topic
     private void navigateToForumDetails(ForumEntity selectedForum) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("topic.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/topic.fxml"));
             Parent root = loader.load();
 
             // Get the controller of topic.fxml and pass the selected forum

@@ -1,4 +1,4 @@
-package GUI;
+package Controllers;
 
 import Entites.CommentEntity;
 import Entites.ForumEntity;
@@ -78,7 +78,7 @@ public class TopicController {
     @FXML
     private void goBackToForum() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("forums.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/forums.fxml"));
             Parent root = loader.load();
 
             // Get the current stage and set the new scene
@@ -93,7 +93,7 @@ public class TopicController {
     @FXML
     private void goToNewTopic() {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("newTopic.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/newTopic.fxml"));
             Parent root = fxmlLoader.load();
             Stage stage = new Stage();
             stage.setTitle("NOUVEAU SUJET");
@@ -135,7 +135,7 @@ public class TopicController {
             CommentEntity newComment = new CommentEntity();
             ForumEntity forum = new ForumEntity();
             newComment.setForum_id(selectedForumId);
-            newComment.setUser_id(1);  // NO AUTH
+            newComment.setUser_id(38);  // NO AUTH
             newComment.setComment(commentText);
             //newComment.setDate_comment(LocalDateTime.now());
             if (!commentText.isEmpty()) {

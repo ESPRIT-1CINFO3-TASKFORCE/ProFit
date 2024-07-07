@@ -1,4 +1,4 @@
-package GUI;
+package Controllers;
 
 import Entites.MessageEntity;
 import Entites.UserEntity;
@@ -77,7 +77,7 @@ public class ChatController {
     private void proceedToChat() {
         try {
             // Load the Chat.fxml file and initialize the controller
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Chat.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Chat.fxml"));
             loader.setController(this); // Set the controller instance for the loaded FXML
             Parent chatRoot = loader.load();
 

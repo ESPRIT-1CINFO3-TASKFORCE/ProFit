@@ -1,4 +1,4 @@
-package GUI;
+package Controllers;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -19,7 +19,7 @@ public class Chat extends Application {
 
         try {
             // Load the FXML file
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("ChatLogin.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/ChatLogin.fxml"));
             Parent root = loader.load();
             Scene scene = new Scene(root);
             // Set the scene to the stage
