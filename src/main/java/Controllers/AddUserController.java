@@ -3,6 +3,7 @@ package Controllers;
 
 import Entites.UserEntity;
 import Services.UserService;
+import Utils.SessionManager;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -79,6 +80,8 @@ public class AddUserController {
 
     @FXML
     private TextField tfprenom;
+    @FXML
+    private TextField tfrecherche;
 
    /* @FXML
     void AjouterUser(ActionEvent event) {
@@ -130,9 +133,9 @@ public class AddUserController {
             Parent root = loader.load();
             if (linom != null)
                 linom.getScene().setRoot(root);
-            if (tableview != null)
-                tableview.getScene().setRoot(root);
-        } catch (IOException e) {
+            if (tfrecherche != null)
+                tfrecherche.getScene().setRoot(root);
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -143,6 +146,21 @@ public class AddUserController {
         chrole.setValue("ADMIN");
         chrole.setItems(roleList);
 
+    }
+
+    @FXML
+    void logout (ActionEvent event) {
+        if (current_user != null) {
+            UserService.logout(current_user);
+        }
+        SessionManager.clearSession();
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Login.fxml"));
+            Parent root = loader.load();
+            linom.getScene().setRoot(root);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 }

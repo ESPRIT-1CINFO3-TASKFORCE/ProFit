@@ -64,7 +64,7 @@
                </font>
             </Label>
 
-            <Button layoutX="422.0" layoutY="340.0" mnemonicParsing="false" onAction="#saveEditedUser" prefHeight="39.0" prefWidth="163.0" text="Enregistrer" textFill="#cc6a0e">
+            <Button layoutX="422.0" layoutY="279.0" mnemonicParsing="false" onAction="#saveEditedUser" prefHeight="39.0" prefWidth="163.0" text="Enregistrer" textFill="#cc6a0e">
                <font>
                   <Font name="Arial Bold Italic" size="17.0" />
                </font>
@@ -74,12 +74,17 @@
             <TextField fx:id="edtel" layoutX="431.0" layoutY="182.0" />
             <TextField fx:id="edemail" layoutX="430.0" layoutY="142.0" />
             <TextField fx:id="edage" layoutX="429.0" layoutY="106.0" />
-            <Label fx:id="llogin21" layoutX="322.0" layoutY="223.0" text="Role">
+            <Label fx:id="lrole" layoutX="322.0" layoutY="223.0" text="Role">
                <font>
                   <Font name="Arial Bold Italic" size="17.0" />
                </font>
             </Label>
             <ChoiceBox fx:id="chbrole" layoutX="431.0" layoutY="220.0" prefHeight="25.0" prefWidth="149.0" />
+            <Button contentDisplay="BOTTOM" graphicTextGap="6.0" layoutX="449.0" layoutY="336.0" mnemonicParsing="false" onAction="#pagePrecedente" prefHeight="30.0" prefWidth="109.0" text="Retour" textFill="#cd3f0687">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="16.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </children>

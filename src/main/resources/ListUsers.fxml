@@ -14,7 +14,7 @@
     <children>
         <AnchorPane prefHeight="429.0" prefWidth="200.0" style="-fx-background-color: #e47873;">
             <children>
-                <Label fx:id="lmenu" layoutX="66.0" layoutY="43.0" text="MENU">
+                <Label fx:id="lmenu" layoutX="66.0" layoutY="26.0" text="MENU">
                     <font>
                         <Font name="System Bold Italic" size="23.0" />
                     </font>
@@ -26,20 +26,31 @@
                 </ImageView>
             </children>
         </AnchorPane>
-        <TableView fx:id="tableview" layoutX="213.0" layoutY="68.0" prefHeight="260.0" prefWidth="397.0">
+        <TableView fx:id="tableview" layoutX="213.0" layoutY="68.0" prefHeight="268.0" prefWidth="416.0">
             <columns>
-                <TableColumn fx:id="conom" prefWidth="87.20001220703125" text="Nom" />
-                <TableColumn fx:id="coprenom" prefWidth="90.0" text="Prenom" />
-                <TableColumn fx:id="coemail" prefWidth="140.79995727539062" text="Email" />
-                <TableColumn fx:id="corole" prefWidth="79.5999755859375" text="Role" />
+                <TableColumn fx:id="conom" prefWidth="89.2000732421875" text="Nom" />
+                <TableColumn fx:id="coprenom" prefWidth="94.39996337890625" text="Prenom" />
+                <TableColumn fx:id="coemail" prefWidth="147.19998168945312" text="Email" />
+                <TableColumn fx:id="corole" prefWidth="86.4000244140625" text="Role" />
             </columns></TableView>
         <TextField fx:id="tfrecherche" layoutX="213.0" layoutY="18.0" promptText="Rechercher" />
         <Button layoutX="362.0" layoutY="18.0" mnemonicParsing="false" onAction="#chercherUser" text="Chercher" />
         <!-- Ajout des nouveaux boutons sous la TableView -->
-        <Button layoutX="377.0" layoutY="340.0" mnemonicParsing="false" onAction="#handelEdit" text="MODIFIER" />
-        <Button layoutX="455.0" layoutY="340.0" mnemonicParsing="false" onAction="#handelActivate" text="ACTIVER" />
-        <Button layoutX="527.0" layoutY="340.0" mnemonicParsing="false" onAction="#handelDesactivate" text="DESACTIVER" />
-        <Button layoutX="304.0" layoutY="340.0" mnemonicParsing="false" onAction="#AjouterUser" text="AJOUTER" />
-        <Button layoutX="544.0" layoutY="18.0" mnemonicParsing="false" onAction="#logout" text="Déconnexion" />
+        <Button layoutX="348.0" layoutY="357.0" mnemonicParsing="false" onAction="#handelEdit" text="MODIFIER" />
+        <Button layoutX="417.0" layoutY="357.0" mnemonicParsing="false" onAction="#handelActivate" text="ACTIVER" />
+        <Button layoutX="478.0" layoutY="357.0" mnemonicParsing="false" onAction="#handelDesactivate" text="DESACTIVER" />
+        <!-- Ajoutez ce bouton sous les autres boutons existants -->
+        <Button layoutX="560.0" layoutY="357.0" mnemonicParsing="false" onAction="#handleDeleteUser" text="SUPPRIMER" />
+      <Button contentDisplay="BOTTOM" graphicTextGap="6.0" layoutX="213.0" layoutY="354.0" mnemonicParsing="false" onAction="#AjouterUser" prefHeight="30.0" prefWidth="108.0" text="Ajouter" textFill="#cd3f0687">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="16.0" />
+         </font>
+      </Button>
+      <Button contentDisplay="BOTTOM" graphicTextGap="6.0" layoutX="519.0" layoutY="17.0" mnemonicParsing="false" onAction="#logout" prefHeight="25.0" prefWidth="115.0" text="Déconnxion" textFill="#cd3f0687">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="16.0" />
+         </font>
+      </Button>
+
     </children>
 </AnchorPane>

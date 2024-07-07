@@ -56,7 +56,7 @@ public class EditUserController {
     private Label llogin2;
 
     @FXML
-    private Label llogin21;
+    private Label lrole;
 
     @FXML
     private Label lmenu;
@@ -68,6 +68,8 @@ public class EditUserController {
     private Label lprenom;
 
     private UserEntity currentUser;
+    private UpdateUserCallback callback;
+
     @FXML
     private ChoiceBox<String> chbrole = new ChoiceBox<>();
 
@@ -113,14 +115,29 @@ public class EditUserController {
         }
     }
 
-    public void setUserData(UserEntity user) {
+    /*public void setUserData(UserEntity user) {
         this.currentUser = user;
         ednom.setText(user.getNom());
         edprenom.setText(user.getPrenom());
         edemail.setText(user.getEmail());
         edtel.setText(String.valueOf(user.getN_tel()));
-        edrole.setText(user.getRole());
+        chbrole.setValue(user.getRole());
         edage.setText(String.valueOf(user.getAge()));
+    }*/
+
+    public void setUserData(UserEntity user, UpdateUserCallback callback) {
+        this.currentUser = user;
+        this.callback = callback;
+        ednom.setText(user.getNom());
+        edprenom.setText(user.getPrenom());
+        edemail.setText(user.getEmail());
+        edtel.setText(String.valueOf(user.getN_tel()));
+        chbrole.setValue(user.getRole());
+        edage.setText(String.valueOf(user.getAge()));
+    }
+
+    public interface UpdateUserCallback {
+        void onUserUpdated(UserEntity user);
     }
 
     private void refreshFields() {
@@ -128,7 +145,7 @@ public class EditUserController {
         edprenom.setText(currentUser.getPrenom());
         edemail.setText(currentUser.getEmail());
         edtel.setText(String.valueOf(currentUser.getN_tel()));
-        edrole.setText(currentUser.getRole());
+        chbrole.setValue(currentUser.getRole());
         edage.setText(String.valueOf(currentUser.getAge()));
     }
 
@@ -137,5 +154,16 @@ public class EditUserController {
         alert.setTitle(title);
         alert.setContentText(content);
         alert.showAndWait();
+    }
+
+    @FXML
+    void pagePrecedente (ActionEvent event) {
+        FXMLLoader a = new FXMLLoader(getClass().getResource("/ListUsers.fxml"));
+        try {
+            Parent root = a.load();
+            lmenu.getScene().setRoot(root);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

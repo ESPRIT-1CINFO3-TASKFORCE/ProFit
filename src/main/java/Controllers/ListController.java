@@ -132,6 +132,24 @@ public class ListController {
             showAlert("Erreur", "Veuillez sélectionner un utilisateur", Alert.AlertType.WARNING);
         }
     }
+
+    @FXML
+    void handleDeleteUser(ActionEvent event) {
+        UserEntity selectedUser = tableview.getSelectionModel().getSelectedItem();
+        if (selectedUser != null) {
+            try {
+                us.supprimer(selectedUser);
+                refreshTable();
+                showAlert("Succès", "Utilisateur supprimé avec succès", Alert.AlertType.INFORMATION);
+            } catch (SQLException e) {
+                e.printStackTrace();
+                showAlert("Erreur", "Erreur lors de la suppression de l'utilisateur", Alert.AlertType.ERROR);
+            }
+        } else {
+            showAlert("Erreur", "Veuillez sélectionner un utilisateur", Alert.AlertType.WARNING);
+        }
+    }
+
     private void refreshTable() {
         try {
             allusers = FXCollections.observableArrayList(us.readAll());
@@ -140,6 +158,7 @@ public class ListController {
             e.printStackTrace();
         }
     }
+
     private void showAlert(String title, String message, Alert.AlertType alertType) {
         Alert alert = new Alert(alertType);
         alert.setTitle(title);
@@ -147,7 +166,7 @@ public class ListController {
         alert.showAndWait();
     }
 
-    @FXML
+    /*@FXML
     void handelEdit(ActionEvent event) {
         UserEntity selectedUser = tableview.getSelectionModel().getSelectedItem();
         if (selectedUser != null) {
@@ -164,7 +183,46 @@ public class ListController {
                 e.printStackTrace();
             }
         }
+    }*/
+
+    @FXML
+    void handelEdit(ActionEvent event) {
+        UserEntity selectedUser = tableview.getSelectionModel().getSelectedItem();
+        if (selectedUser != null) {
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/ModifierUser.fxml"));
+                Parent editUserView = loader.load();
+                EditUserController editUserController = loader.getController();
+                editUserController.setUserData(selectedUser, new EditUserController.UpdateUserCallback() {
+                    @Override
+                    public void onUserUpdated(UserEntity user) {
+                        refreshTable();
+                    }
+                });
+
+                Stage stage = new Stage();
+                stage.setScene(new Scene(editUserView));
+                stage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else {
+            showAlert("Erreur", "Veuillez sélectionner un utilisateur à modifier", Alert.AlertType.WARNING);
+        }
     }
+
+    /*@FXML
+    void retourmenu(ActionEvent event) {
+        FXMLLoader a = new FXMLLoader(getClass().getResource("/sample.fxml"));
+        try {
+            root = a.load();
+            lmenu.getScene().setRoot(root);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }*/
+
+
 
     @FXML
     void logout (ActionEvent event) {
