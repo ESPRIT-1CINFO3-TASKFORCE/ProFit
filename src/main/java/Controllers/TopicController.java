@@ -2,7 +2,9 @@ package Controllers;
 
 import Entites.CommentEntity;
 import Entites.ForumEntity;
+import Entites.UserEntity;
 import Services.ForumService;
+import Utils.SessionManager;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -46,6 +48,7 @@ public class TopicController {
     private int selectedForumId;
 
     private ForumService forumService = new ForumService();
+    UserEntity currentUser = SessionManager.getSession();
 
     public void setForumDetails(ForumEntity forum) {
         title.setText(forum.getTitre());
@@ -135,7 +138,7 @@ public class TopicController {
             CommentEntity newComment = new CommentEntity();
             ForumEntity forum = new ForumEntity();
             newComment.setForum_id(selectedForumId);
-            newComment.setUser_id(38);  // NO AUTH
+            newComment.setUser_id(currentUser.getId());  // NO AUTH
             newComment.setComment(commentText);
             //newComment.setDate_comment(LocalDateTime.now());
             if (!commentText.isEmpty()) {

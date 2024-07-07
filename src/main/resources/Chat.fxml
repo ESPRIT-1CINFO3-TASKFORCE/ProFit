@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="chatVBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" spacing="15.0" style="-fx-background-color: #EFEFEFff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<VBox fx:id="chatVBox" alignment="CENTER" maxHeight="600.0" maxWidth="900.0" minHeight="600.0" minWidth="900.0" prefHeight="600.0" prefWidth="900.0" spacing="15.0" style="-fx-background-color: #EFEFEFff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ChatController">
    <stylesheets>
       <URL value="@/styles/chatStyle.css" />
    </stylesheets>
@@ -48,7 +48,7 @@
                         </Label>
                      </children>
                   </Pane>
-                  <Button fx:id="UNUSEDBUTTON" layoutX="111.0" layoutY="100.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="188.0" text="UNUSEDBUTTON">
+                  <Button fx:id="homepage" layoutX="111.0" layoutY="100.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="188.0" text="Précedent" onAction="#backToHomePage">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>

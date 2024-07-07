@@ -1,7 +1,9 @@
 package Controllers;
 
 import Entites.ForumEntity;
+import Entites.UserEntity;
 import Services.ForumService;
+import Utils.SessionManager;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -54,6 +56,8 @@ public class ForumController {
 
 
     private ForumService forumService = new ForumService();
+    UserEntity currentUser = SessionManager.getSession();
+
     private ObservableList<String> forumList = FXCollections.observableArrayList();
 
     @FXML
@@ -91,13 +95,13 @@ public class ForumController {
 
     @FXML
     private void addTopic() {
-        if (userId.getText().isEmpty() || titreField.getText().isEmpty() || topicField.getValue().isEmpty() || messageField.getText().isEmpty()) {
+        if (titreField.getText().isEmpty() || topicField.getValue().isEmpty() || messageField.getText().isEmpty()) {
 
             newTopicAlert.setText("Tous les champs sont obligatoires !");
             newTopicAlert.setStyle("-fx-text-fill: red;");
         } else {
             ForumEntity forum = new ForumEntity();
-            forum.setCreateur(Integer.parseInt(userId.getText()));
+            forum.setCreateur(currentUser.getId());
             forum.setTitre(titreField.getText());
             forum.setTopique((String) topicField.getValue());
             forum.setContenu(messageField.getText());

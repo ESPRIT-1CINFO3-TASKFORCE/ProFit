@@ -8,9 +8,12 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -42,20 +45,51 @@ public class SideBarController {
 
         }
     }
-    @FXML
-    void chat(ActionEvent event) {
 
-    }
 
     @FXML
     void coach(ActionEvent event) {
 
     }
+    @FXML
+    void chat(ActionEvent event) {
+        try {
+            // Load the Chat.fxml file
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Chat.fxml"));
+            Parent chatRoot = loader.load();
+
+            // Get the controller associated with Chat.fxml
+            ChatController chatController = loader.getController();
+
+            // Call the proceedToChat method on the ChatController
+            chatController.proceedToChat();
+
+            // Display the chat scene
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(chatRoot));
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     @FXML
     void forum(ActionEvent event) {
+        FXMLLoader a = new FXMLLoader(getClass().getResource("/forums.fxml"));
+        try {
+            Parent root = a.load();
+            Scene scene = new Scene(root, 900, 600);
 
+            // Get the current stage
+            Stage currentStage = (Stage) lprofit.getScene().getWindow();
+            currentStage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
+
+
 
 
     @FXML

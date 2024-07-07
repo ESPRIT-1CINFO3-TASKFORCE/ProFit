@@ -3,6 +3,7 @@ package Controllers;
 import Entites.MessageEntity;
 import Entites.UserEntity;
 import Services.MessageService;
+import Utils.SessionManager;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -11,11 +12,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -32,6 +35,8 @@ import java.util.stream.Collectors;
 public class ChatController {
 
     private MessageService messageService = new MessageService();
+    UserEntity currentUser = SessionManager.getSession();
+
     private BufferedReader serverReader;
     private PrintWriter clientWriter;
     private Socket socket;
@@ -73,13 +78,8 @@ public class ChatController {
     @FXML
     private Button searchUserButton;
 
-    @FXML
-    private void proceedToChat() {
+    void proceedToChat() {
         try {
-            // Load the Chat.fxml file and initialize the controller
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Chat.fxml"));
-            loader.setController(this); // Set the controller instance for the loaded FXML
-            Parent chatRoot = loader.load();
 
             // Establish socket connection to the server
             socket = new Socket("localhost", 9000);
@@ -115,14 +115,14 @@ public class ChatController {
             serverListener.start();
 
             // Hide the login VBox and add the chat VBox to the scene
-            loginVBox.getScene().setRoot(chatRoot);
+            //loginVBox.getScene().setRoot(chatRoot);
         } catch (IOException e) {
             e.printStackTrace();
         }
 
         // Get the user ID and name from the input fields
-        userId = Integer.parseInt(userIdField.getText());
-        userName = userNameField.getText();
+        userId = currentUser.getId();
+        userName = currentUser.getNom();
         //recepteurID = Integer.parseInt(inputRecepteurIDField.getText());
         // Fetch and display messages for the logged-in user and recipient
         try {
@@ -131,11 +131,10 @@ public class ChatController {
             //setupSearch();
 
 
-        } catch(NullPointerException e) {
+        } catch (NullPointerException e) {
             System.out.println(e);
         }
     }
-
 
 
     @FXML
@@ -164,13 +163,13 @@ public class ChatController {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
             String formattedDateTime = dateTime.format(formatter);
             // Send the fetched message to the server
+            System.out.println(userName);
             clientWriter.println(" [" + formattedDateTime + "] " + userName + ": " + lastMessage.getMessage());
 
             // Clear the input field
             messageInputField.clear();
         }
     }
-
 
 
     public void fetchAndDisplayMessages(int recepteur) {
@@ -206,9 +205,8 @@ public class ChatController {
         scrollPane.setPrefViewportHeight(450); // Set your desired height
 
         // Replace the existing container with the ScrollPane
-       //container.getChildren().setAll(scrollPane);
+        //container.getChildren().setAll(scrollPane);
     }
-
 
 
     public void chatUserList() {
@@ -239,7 +237,6 @@ public class ChatController {
         // Set up the search field listener
         setupSearch(filteredList);
     }
-
 
 
     private void setupSearch(FilteredList<UserEntity> filteredList) {
@@ -280,4 +277,18 @@ public class ChatController {
     }
 
 
+    @FXML
+    private void backToHomePage() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/SideBar.fxml"));
+            Parent root = loader.load();
+
+            // Get the current stage and set the new scene
+            Stage stage = (Stage) messageInputField.getScene().getWindow();
+            stage.setScene(new Scene(root));
+        } catch (IOException e) {
+            e.printStackTrace(); // Handle your exception properly
+        }
+
+    }
 }
