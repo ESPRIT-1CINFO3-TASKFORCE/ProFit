@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ForumController">
+    <BorderPane>
+        <bottom>
+            <Pane prefHeight="62.0" prefWidth="900.0" style="-fx-background-color: #f7855b;" BorderPane.alignment="CENTER">
+            <children>
+                      <ImageView fitHeight="38.0" fitWidth="119.0" layoutX="391.0" layoutY="12.0">
+                          <image>
+                              <Image url="@../assets/profittitle.PNG" />
+                          </image>
+                      </ImageView>
+            </children></Pane>
+        </bottom>
+        <top>
+            <Pane prefHeight="146.0" prefWidth="874.0" style="-fx-background-color: #CACACA;" BorderPane.alignment="CENTER">
+                <children>
+               <Pane prefHeight="78.0" prefWidth="900.0" style="-fx-background-color: #f7855b;">
+                  <children>
+                     <Pane layoutY="24.0" prefHeight="69.0" prefWidth="900.0" style="-fx-background-color: #E87659;">
+                        <effect>
+                           <Reflection />
+                        </effect>
+                     </Pane>
+                     <Label layoutX="96.0" layoutY="31.0" text="FORUM">
+                        <font>
+                           <Font name="System Bold" size="18.0" />
+                        </font>
+                     </Label>
+                      <Pane layoutX="709.0" layoutY="-5.0" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: #A3A3A3;">
+                          <children>
+                              <ImageView fitHeight="209.0" fitWidth="209.0" layoutX="-34.0" layoutY="-20.0" pickOnBounds="true" preserveRatio="true">
+                                  <image>
+                                      <Image url="@../assets/logo.png" />
+                                  </image>
+                              </ImageView>
+                          </children>
+                      </Pane>
+                  </children></Pane>
+                    <Label layoutX="92.0" layoutY="105.0" text="PUBLIER UN NOUVEAU SUJET">
+                        <font>
+                            <Font name="SansSerif Bold" size="24.0" />
+                        </font>
+                    </Label>
+               <TextField fx:id="userId" layoutX="612.0" layoutY="111.0" prefHeight="27.0" prefWidth="61.0" promptText="user id" />
+                </children></Pane>
+        </top>
+        <center>
+            <Pane prefHeight="410.0" prefWidth="900.0" BorderPane.alignment="CENTER">
+                <children>
+                    <TextField fx:id="titreField" layoutX="133.0" layoutY="29.0" prefHeight="41.0" prefWidth="338.0" />
+                    <Label layoutX="41.0" layoutY="29.0" prefHeight="42.0" prefWidth="98.0" text="TITRE">
+                        <font>
+                            <Font name="System Bold Italic" size="14.0" />
+                        </font>
+                    </Label>
+                    <Label layoutX="35.0" layoutY="186.0" prefHeight="42.0" prefWidth="98.0" text="MESSAGE">
+                        <font>
+                            <Font name="System Bold Italic" size="14.0" />
+                        </font>
+                    </Label>
+                    <Label layoutX="41.0" layoutY="105.0" prefHeight="42.0" prefWidth="98.0" text="TOPIQUE">
+                        <font>
+                            <Font name="System Bold Italic" size="14.0" />
+                        </font>
+                    </Label>
+                    <ComboBox fx:id="topicField" layoutX="133.0" layoutY="112.0" prefHeight="40.0" prefWidth="338.0" promptText="Topic" style="-fx-background-color: #ffffff;">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="MUSCULATION" />
+                                <String fx:value="CARDIO" />
+                                <String fx:value="FITNESS" />
+                            </FXCollections>
+                        </items>
+                    </ComboBox>               <TextArea fx:id="messageField" layoutX="132.0" layoutY="186.0" prefHeight="102.0" prefWidth="340.0" />
+                    <Button layoutX="131.0" layoutY="337.0" mnemonicParsing="false" onAction="#addTopic" prefHeight="40.0" prefWidth="191.0" style="-fx-background-color: #76b5c5;" text="POSTULER" textFill="WHITE">
+                        <font>
+                            <Font name="System Bold" size="18.0" />
+                        </font>
+                    </Button>
+               <Button layoutX="340.0" layoutY="337.0" mnemonicParsing="false" onAction="#cancelTopic" prefHeight="23.0" prefWidth="131.0" style="-fx-background-color: #f7855b;" text="ANNULER" textFill="WHITE">
+                  <font>
+                     <Font name="System Bold" size="18.0" />
+                  </font>
+               </Button>
+               <Label fx:id="newTopicAlert" layoutX="202.0" layoutY="304.0" prefHeight="17.0" prefWidth="200.0" text="" textFill="BLACK" />
+
+                </children>
+            </Pane>
+        </center>
+        <right>
+            <Pane prefHeight="391.0" prefWidth="386.0" style="-fx-background-color: #F1F1F1;" BorderPane.alignment="CENTER">
+                <children>
+                    <Pane layoutX="70.0" layoutY="12.0" prefHeight="358.0" prefWidth="283.0" style="-fx-background-color: #161b20;">
+                        <children>
+                            <ImageView fitHeight="308.0" fitWidth="255.0" layoutX="14.0" layoutY="25.0">
+                                <image>
+                                    <Image url="@../assets/forumimage.PNG" />
+                                </image>
+                            </ImageView>
+                        </children>
+                    </Pane>
+                </children>
+            </Pane>
+        </right>
+    </BorderPane>
+
+
+
+
+
+
+
+</VBox>
