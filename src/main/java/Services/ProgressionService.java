@@ -51,11 +51,11 @@ public class ProgressionService {
 
     // Méthode pour ajouter une progression à la base de données
     public int getIdByEmailAjoutProg(String email) {
-        String idByEmail = "SELECT p.id FROM progression p JOIN user u ON p.id=u.id where email= ?";
+        String idByEmail = "SELECT p.id FROM progression p JOIN users u ON p.id=u.id where email= ?";
         //String idByEmail="SELECT u.id FROM user u WHERE u.email = ?";
         int userId = -1;
 
-        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/profit_db", "root", "");
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/profit2_db", "root", "");
              PreparedStatement ps = connection.prepareStatement(idByEmail)) {
 
             ps.setString(1, email);
@@ -73,7 +73,7 @@ public class ProgressionService {
     public void AjouterProgression(ProgressionEntity progression) throws SQLException {
         String insertProgressionSQL = "INSERT INTO progression (id, poids, longueur, date_inscri) VALUES (?, ?, ?, ?)";
 
-        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/profit_db", "root", "");
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/profit2_db", "root", "");
              PreparedStatement ps = connection.prepareStatement(insertProgressionSQL)) {
 
             ps.setInt(1, progression.getId());
@@ -89,7 +89,7 @@ public class ProgressionService {
 
    public List<ProgressionEntity> readAll() throws SQLException {
         List<ProgressionEntity> progressions = new ArrayList<>();
-        String query = "SELECT p.id_prg, p.id, p.poids, p.longueur, p.IMC, p.date_inscri, p.description, p.masse_musc, u.email FROM progression p JOIN user u ON p.id = u.id;";
+        String query = "SELECT p.id_prg, p.id, p.poids, p.longueur, p.IMC, p.date_inscri, p.description, p.masse_musc, u.email FROM progression p JOIN users u ON p.id = u.id;";
         try (Statement statement = connection.createStatement();
              ResultSet resultSet = statement.executeQuery(query)) {
             while (resultSet.next()) {
@@ -200,9 +200,9 @@ public class ProgressionService {
     {
         String join="SELECT p.id, u.nom, u.prenom " +
                 "FROM progression p " +
-                "JOIN user u ON p.id = u.id";
+                "JOIN users u ON p.id = u.id";
         List<ProgressionEntity> progressions = new ArrayList<>();
-        try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/profit_db", "root", "");
+        try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/profit2_db", "root", "");
              PreparedStatement pstmt = conn.prepareStatement(join)) {
 
             ResultSet rs = pstmt.executeQuery();
@@ -228,7 +228,7 @@ public class ProgressionService {
     public List<ProgressionEntity> getDESCPOIDSdeatils() {
         List<ProgressionEntity> progressions = new ArrayList<>();
         String query = "SELECT poids, description FROM progression WHERE id = 1234 ORDER BY date_inscri DESC LIMIT 1"; // Ajustez selon votre table
-        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/profit_db", "root", "");
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/profit2_db", "root", "");
              PreparedStatement statement = connection.prepareStatement(query);
              ResultSet resultSet = statement.executeQuery()) {
 
@@ -253,7 +253,7 @@ public class ProgressionService {
 
     public List<ProgressionEntity> chercherParEmail(String email) throws SQLException {
         List<ProgressionEntity> progressions = new ArrayList<>();
-        String query = "SELECT p.poids, p.longueur, p.IMC, p.date_inscri, p.description, u.email FROM progression p JOIN user u ON p.id = u.id WHERE u.email =?";
+        String query = "SELECT p.poids, p.longueur, p.IMC, p.date_inscri, p.description, u.email FROM progression p JOIN users u ON p.id = u.id WHERE u.email =?";
 
         try (PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setString(1, email);
@@ -281,7 +281,7 @@ public class ProgressionService {
 
 
     private static void insererIMCDansBaseDeDonnees(int id, int poids, double longueur, double imc, String description, LocalDate date_inscri) {
-        String DB_URL = "jdbc:mysql://localhost:3306/profit_db";
+        String DB_URL = "jdbc:mysql://localhost:3306/profit2_db";
         String DB_USER = "root";
         String DB_PASSWORD = "";
 
@@ -328,11 +328,11 @@ public class ProgressionService {
 
 
     public List<ProgressionEntity> getProgressionsByEmail(String email) {
-        String DB_URL = "jdbc:mysql://localhost:3306/profit_db";
+        String DB_URL = "jdbc:mysql://localhost:3306/profit2_db";
         String DB_USER = "root";
         String DB_PASSWORD = "";
         List<ProgressionEntity> progressions = new ArrayList<>();
-        String query = "SELECT p.*, u.nom, u.prenom, r.nom_regime, r.date_fin FROM progression p JOIN user u ON p.id = u.id JOIN régime r ON p.id = r.id_client WHERE u.email = ?";
+        String query = "SELECT p.*, u.nom, u.prenom, r.nom_regime, r.date_fin FROM progression p JOIN users u ON p.id = u.id JOIN régime r ON p.id = r.id_client WHERE u.email = ?";
 
         try (Connection conn = DriverManager.getConnection(DB_URL,DB_USER,DB_PASSWORD);
              PreparedStatement pstmt = conn.prepareStatement(query)) {

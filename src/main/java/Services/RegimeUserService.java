@@ -8,11 +8,11 @@ public class RegimeUserService {
 
 
     public int getIdByEmail(String email) {
-        String idByEmail = "SELECT id FROM user WHERE email = ?";
+        String idByEmail = "SELECT id FROM users WHERE email = ?";
         int userId = -1;
 
         try {
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/profit_db", "root", "");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/profit2_db", "root", "");
             PreparedStatement ps = conn.prepareStatement(idByEmail);
             ps.setString(1, email);
 
@@ -43,7 +43,7 @@ public class RegimeUserService {
         ResultSet rsRegime = null;
 
         try {
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/profit_db", "root", "");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/profit2_db", "root", "");
             conn.setAutoCommit(false);
 
             /*// Insérer dans la table user
