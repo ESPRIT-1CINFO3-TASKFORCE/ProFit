@@ -1,4 +1,4 @@
-package GUI;
+package Controllers;
 
 public class interfaceGraphiqueTest {
 }
