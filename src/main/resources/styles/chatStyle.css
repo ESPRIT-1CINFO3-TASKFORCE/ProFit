@@ -1,0 +1,63 @@
+#scrollPane {
+    -fx-background-color: transparent; /* Set the background color of the ScrollPane */
+    -fx-border-color: transparent; /* Optional: Set border to transparent if needed */
+}
+
+#scrollPane .viewport {
+    -fx-background-color: #ffffff; /* Set the background color of the viewport where the content is */
+}
+
+#messagesContainer {
+    -fx-padding: 10; /* Add padding to the VBox */
+    -fx-background-color: #ffffff; /* Optional: Set the background color of the VBox */
+}
+
+#scrollPane .scroll-bar:vertical .thumb {
+    -fx-background-color: #585858; /* Color of the thumb (the draggable part of the scroll bar) */
+
+}
+
+#scrollPane .scroll-bar:vertical .increment-button,
+#scrollPane .scroll-bar:vertical .decrement-button {
+    -fx-background-color: #7E7E7E; /* Color of the thumb (the draggable part of the scroll bar) */
+}
+
+
+#messageInputField {
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+}
+
+#sendMessageButton {
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-background-color: transparent;
+}
+
+#sendMessageButton:hover .image-view {
+    -fx-opacity: 0.8; /* Change the opacity on hover */
+}
+
+#sendMessageButton:pressed .image-view {
+    -fx-opacity: 0.5; /* Change the opacity on hover */
+}
+
+
+#searchUserField {
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+}
+
+#searchUserButton {
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-background-color: transparent;
+}
+
+#searchUserButton:hover .image-view {
+    -fx-opacity: 0.8; /* Change the opacity on hover */
+}
+
+#searchUserButton:pressed .image-view {
+    -fx-opacity: 0.5; /* Change the opacity on hover */
+}

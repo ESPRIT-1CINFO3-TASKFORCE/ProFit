@@ -1,9 +1,12 @@
 package Services;
 
 import Entites.MessageEntity;
+import Entites.UserEntity;
 import Utils.DataSource;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MessageService {
 
@@ -63,14 +66,11 @@ public class MessageService {
         return conversation.toString();
     }
 
-    public String getNameById(int userId) {
-        Connection con = null;
-        try {
-            con = DataSource.getInstance().getConnection();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-        String sql = "SELECT name FROM user WHERE id = ?";
+
+    public String getNameById(int userId) throws SQLException {
+
+        Connection con = DataSource.getInstance().getConnection();
+        String sql = "SELECT name FROM users WHERE id = ?";
 
         try (PreparedStatement stmt = con.prepareStatement(sql)) {
             stmt.setInt(1, userId);
@@ -116,5 +116,29 @@ public class MessageService {
     }
 
 
-}
+    public List<UserEntity> getSearchUserList() {
+        List<UserEntity> userList = new ArrayList<>();
+        String query = "SELECT id, nom, prenom, role FROM users";
 
+        try (Connection con = DataSource.getInstance().getConnection();
+             PreparedStatement pstmt = con.prepareStatement(query)) {
+            ResultSet resultSet = pstmt.executeQuery();
+            while (resultSet.next()) {
+                int id = resultSet.getInt(1);
+                String nom = resultSet.getString(2);
+                String prenom = resultSet.getString(3);
+                String role = resultSet.getString(4);
+
+                // Create a User object and add it to userList
+                UserEntity user = new UserEntity(id, nom, prenom, role);
+                userList.add(user);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace(); // Handle your exception properly
+        }
+
+        return userList;
+    }
+
+}

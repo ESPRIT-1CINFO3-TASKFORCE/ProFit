@@ -63,6 +63,15 @@ public class UserEntity {
     }
 
 
+
+    public UserEntity(int id, String nom, String prenom, String role) {
+        this.id = id;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.role = role;
+    }
+
+
     // Getters et Setters
     public int getId() {
         return id;
@@ -174,21 +183,7 @@ public class UserEntity {
     // Méthodes Object (toString, equals, hashCode)
     @Override
     public String toString() {
-        return "UserEntity{" +
-                "id=" + id +
-                ", age=" + age +
-                ", poids=" + poids +
-                ", longeur=" + longeur +
-                ", note_c=" + note_c +
-                ", note_n=" + note_n +
-                ", n_tel=" + n_tel +
-                ", nom='" + nom + '\'' +
-                ", prenom='" + prenom + '\'' +
-                ", login='" + login + '\'' +
-                ", mdp='" + mdp + '\'' +
-                ", email='" + email + '\'' +
-                ", role=" + role +
-                '}';
+        return nom+" "+prenom+" - "+role;
     }
 
     @Override

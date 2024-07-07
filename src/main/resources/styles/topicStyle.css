@@ -1,0 +1,55 @@
+#newTopic, #backtoForum, #commentaire {
+    -fx-background-color: #06668C;
+    -fx-text-fill: #F0F0F0;
+}
+
+#newTopic:hover, #backtoForum:hover, #commentaire:hover {
+    -fx-background-color: #427AA1;
+}
+
+#MESSAGE {
+    -fx-background-radius: 30px;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+#commentId {
+    -fx-background-color: #f0f0f0; /* Light gray background */
+    -fx-padding: 10px; /* Padding around each cell */
+    -fx-border-color: #cccccc; /* Border color */
+    -fx-border-width: 1px; /* Border width */
+}
+
+/* Style for the cells inside the ListView */
+.list-cell {
+    -fx-padding: 5px;
+    -fx-background-color: white; /* Cell background */
+    -fx-border-color: #e0e0e0; /* Cell border color */
+    -fx-border-width: 0 0 1px 0; /* Bottom border only */
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+}
+
+/* Override text color when selected */
+.list-cell:focused {
+    -fx-text-fill: black; /* Text color when focused */
+}
+
+.list-cell:selected {
+    -fx-background-color: #CACACA; /* Background color when selected */
+    -fx-text-fill: black; /* Text color when selected */
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+}
+
+#commentId .scroll-bar:vertical {
+    -fx-background-color: #e0e0e0; /* Background color of the vertical scroll bar */
+}
+
+#commentId .scroll-bar:vertical .increment-button,
+#commentId .scroll-bar:vertical .decrement-button {
+    -fx-background-color: #cccccc; /* Color of the increment and decrement buttons */
+}
+
+#commentId .scroll-bar:vertical .thumb {
+    -fx-background-color: #427AA1; /* Color of the thumb (the draggable part of the scroll bar) */
+}
