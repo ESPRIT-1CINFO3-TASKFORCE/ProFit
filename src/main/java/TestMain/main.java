@@ -1,5 +1,6 @@
 package TestMain;
 
+
 import Entites.UserEntity;
 import Services.UserService;
 
@@ -9,7 +10,7 @@ import static java.sql.DriverManager.getConnection;
 
 public class main {
     public static void main(String[] args) {
-       // Ajout dans la base de données a travers le main
+        // Ajout dans la base de données a travers le main
         try {
             // Créer une instance de UserService
             UserService userService = new UserService();
@@ -34,12 +35,5 @@ public class main {
 
             System.out.println("Utilisateur ajouté avec succès !");
         } catch (SQLException e) {
-            e.printStackTrace();
         }
-
-
-}
-}
-
-
-
+    }}
