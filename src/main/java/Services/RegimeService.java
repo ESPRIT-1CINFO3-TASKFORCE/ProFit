@@ -28,7 +28,7 @@ public class RegimeService {
     private static RegimeService instance;
 
     // Méthode privée pour le constructeur privé du singleton
-    private RegimeService() {}
+    public RegimeService() {}
 
     // Méthode publique pour obtenir l'instance unique du singleton
     public static RegimeService getInstance() {
@@ -134,159 +134,32 @@ public class RegimeService {
     }
 
 
+    //**************recuperer nom regime et date début***************
+    public List<RegimeEntity> getNomDateRegimAvecUserDetails(int idClient) {
+        List<RegimeEntity> regimess = new ArrayList<>();
+        String regime = "SELECT r.nom_regime, r.date_fin FROM régime r JOIN users u ON r.id_client = u.id WHERE u.id = ? ORDER BY date_fin DESC LIMIT 1;";
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/profit2_db", "root", "");
+             PreparedStatement statement = connection.prepareStatement(regime)) {
 
+            statement.setInt(1, idClient); // Set the idClient parameter
+            try (ResultSet resultSet = statement.executeQuery()) {
+                while (resultSet.next()) {
+                    RegimeEntity regim = new RegimeEntity();
+                    regim.setNom_regime(resultSet.getString("nom_regime"));
+                    regim.setDate_fin(LocalDate.parse(resultSet.getString("date_fin")));
+                    regimess.add(regim);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   /* private Connection con1= DataSource.getInstance().getCon();
-    private Statement ste;
-
-    //établir la connexion BD
-    public RegimeService(){
-
-        try {
-            ste=con1.createStatement();
-        } catch (SQLException e) {
-            System.out.println(e);
-        }
-    }
-/*
-    //Ajouter Regime
-    public void AjouterRegime(RegimeEntity regime) throws SQLException
-    {
-        String req="INSERT INTO `régime` (`id_regime`, `id_client`, `nom_regime`, `description`, `date_debut`, `date_fin`) " +
-                "VALUES ( '\"+RegimeEntity.getId_regime+\"', '\"+RegimeEntity.getId_client+\"' ,'\"+RegimeEntity.getNom_regime+\"' ,'\"+RegimeEntity.getDescription+\"' ,'\"+RegimeEntity.getDate_debut+\"' ,'\"+RegimeEntity.getDate_fin+\"' );" ;
-        ste.executeUpdate(req);
-
-
-
-    }
-
-
-    //Afficher regime
-    public List<RegimeEntity> readAll() throws SQLException {
-        List<RegimeEntity> l1 = new ArrayList<>();
-        String aff = "SELECT * FROM régime;";
-
-        ResultSet res = ste.executeQuery(aff);
-        while (res.next()) {
-            int id_regime = res.getInt(1);
-            int id_client = res.getInt(2);
-            String nom_regime = res.getString("nom_regime");
-            String description = res.getString("description");
-            Date date_debut = res.getDate("date_debut");
-            Date date_fin = res.getDate("date_fin");
-
-            RegimeEntity r1 = new RegimeEntity(id_regime, id_client, nom_regime, description, date_debut, date_fin);
-            l1.add(r1);
-        }
-            return l1;
-        }
-
-
-
-    //Afficher regime par id client
-
-    public void afficherRegimesParIdClient(Long id_client) throws SQLException {
-        String query = "SELECT * FROM régime WHERE id_client = ?";
-
-        try (PreparedStatement preparedStatement = con1.prepareStatement(query)) {
-            preparedStatement.setLong(1, id_client);
-
-            try (ResultSet res = preparedStatement.executeQuery()) {
-                while (res.next()) {
-                    int id_regime = res.getInt("id_regime");
-                    String nom_regime = res.getString("nom_regime");
-                    String description = res.getString("description");
-                    java.util.Date date_debut = res.getDate("date_debut");
-                    java.util.Date date_fin = res.getDate("date_fin");
-
-                    System.out.println("ID Régime: " + id_regime);
-                    System.out.println("Nom Régime: " + nom_regime);
-                    System.out.println("Description: " + description);
-                    System.out.println("Date début: " + date_debut);
-                    System.out.println("Date fin: " + date_fin);
-                    System.out.println("------------------------------------");
+                    // Ajoutez des messages de debug
+                    System.out.println("NomRégime from DB: " + resultSet.getString("nom_regime"));
+                    System.out.println("date_fin from DB: " + resultSet.getDate("date_fin"));
                 }
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            throw e;
         }
+        return regimess;
     }
 
-
-
-
-
-
-    //modifier un regime
-
-    public void modifierRegime(Long id, RegimeEntity regimeDetails) throws SQLException {
-        String modif = "UPDATE régime SET id_regime = ?, nom_regime = ?, description = ?, date_debut = ?, date_fin = ? WHERE id_client = ?";
-                   //PreparedStatement pour eviter les erreur lors de l'injection
-        try (PreparedStatement preparedStatement = con1.prepareStatement(modif)) {
-            preparedStatement.setInt(1, regimeDetails.getId_regime());
-            preparedStatement.setString(2, regimeDetails.getNom_regime());
-            preparedStatement.setString(3, regimeDetails.getDescription());
-
-            // Conversion des dates en java.sql.Date
-            Date dateDebut = new Date(regimeDetails.getDate_debut().getTime());
-            Date dateFin = new Date(regimeDetails.getDate_fin().getTime());
-
-            preparedStatement.setDate(4, dateDebut);
-            preparedStatement.setDate(5, dateFin);
-            preparedStatement.setLong(6, id);
-                       //rowsUpdated utilisé pour pour vérifier si l'opération de mise à jour a réussi
-            int rowsUpdated = preparedStatement.executeUpdate();
-            if (rowsUpdated > 0) {
-                System.out.println("Modification réussie!");
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-            throw e;
-        }
-    }
-
-
-
-    //supprimer un regime
-    // Méthode pour supprimer un régime par ID
-    public void deleteRegime(Long id) throws SQLException {
-        String deleteSQL = "DELETE FROM régime WHERE id_client = ?";
-
-        try (PreparedStatement preparedStatement = con1.prepareStatement(deleteSQL)) {
-            preparedStatement.setLong(1, id);
-            //rpws
-
-            int rowsDeleted = preparedStatement.executeUpdate();
-            if (rowsDeleted > 0) {
-                System.out.println("Régime supprimé avec succès!");
-            } else {
-                System.out.println("Aucun régime trouvé avec l'ID: " + id);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-            throw e;
-        }
-    }
-*/
 
 }
 

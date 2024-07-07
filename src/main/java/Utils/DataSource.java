@@ -13,7 +13,7 @@ public class DataSource {
     }
 
     private void init() throws SQLException {
-        final String DB_URL = "jdbc:mysql://localhost:3306/profit_db";
+        final String DB_URL = "jdbc:mysql://localhost:3306/profit2_db";
         final String USER = "root";
         final String PASS = "";
 

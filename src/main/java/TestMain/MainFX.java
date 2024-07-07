@@ -11,21 +11,26 @@ import java.io.IOException;
 public class MainFX extends Application {
 
 
+
+
+
     @Override
-    public void start(Stage stage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Accueil.fxml"));
+    public void start(Stage stage) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/PageInitial.fxml"));
+
+
         try {
             Parent root = loader.load();
-            Scene scene =new Scene(root);
+            Scene scene = new Scene(root);
             stage.setScene(scene);
-            stage.setTitle("PROFIT");
+            stage.setTitle("Affichage des Progressions");
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
+            throw new RuntimeException(e);
         }
     }
-    public static void main(String[] args) {
-        launch(args);
 
-    }
+
+
 }

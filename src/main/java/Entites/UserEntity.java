@@ -59,8 +59,10 @@ public class UserEntity {
 
     }
 
+
     public UserEntity(String nom, String prenom, String email, String role) {
     }
+
 
 
     // Getters et Setters

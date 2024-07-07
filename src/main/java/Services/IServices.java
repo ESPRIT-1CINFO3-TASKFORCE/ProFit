@@ -15,5 +15,13 @@ public interface IServices <T>{
 
     T findbyId(int e) throws SQLException;
 
+
+    //List<T> readAll() throws SQLException;
+
+
+
     List<UserEntity> readAll() throws SQLException;
+
 }
+
+
