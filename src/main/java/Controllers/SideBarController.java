@@ -8,9 +8,12 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -59,9 +62,22 @@ public class SideBarController {
 
 
     @FXML
-    void nutritionniste(ActionEvent event) {
+    void nutritionniste(ActionEvent event) throws IOException {
+        FXMLLoader l = new FXMLLoader(getClass().getResource("/PageInitial.fxml"));//donner notre resources ,donner l'interface a naviguer
+        try {
+            Parent root = l.load();//recharger notre resources
 
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.setTitle("Acceuil nutritionniste");
+            stage.show();
+        } catch (IOException e) {
+            System.out.println(e);
+        }
     }
+
+
 
     @FXML
     void planning(ActionEvent event) {
