@@ -44,6 +44,39 @@ public class ListController {
     private TableColumn<UserEntity, String> corole;
     @FXML
     private TextField tfrecherche;
+    @FXML
+    void chat(ActionEvent event) {}
+
+    @FXML
+    void coach(ActionEvent event) {}
+
+    @FXML
+    void forum(ActionEvent event) {}
+
+    @FXML
+    void nutritionniste(ActionEvent event) {}
+
+    @FXML
+    void planning(ActionEvent event) {}
+
+    @FXML
+    void store(ActionEvent event) {}
+
+    @FXML
+    private Label lprofit;
+
+    @FXML
+    void naviguerversliste(ActionEvent event) {
+
+        FXMLLoader a = new FXMLLoader(getClass().getResource("/ListUsers.fxml"));
+        try {
+            Parent root = a.load();
+            tfrecherche.getScene().setRoot(root);
+        } catch (IOException e) {
+            e.printStackTrace();
+
+        }
+    }
 
     public void initialize() {
 
@@ -69,12 +102,15 @@ public class ListController {
     }
 
     @FXML
+    private Label lajout;
+
+    @FXML
     void AjouterUser(ActionEvent event) {
 
         FXMLLoader a = new FXMLLoader(getClass().getResource("/AjouterUser.fxml"));
         try {
             root = a.load();
-            lmenu.getScene().setRoot(root);
+            tfrecherche.getScene().setRoot(root);
         } catch (IOException e) {
             e.printStackTrace();
 
@@ -233,7 +269,7 @@ public class ListController {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/Login.fxml"));
             Parent root = loader.load();
-            lmenu.getScene().setRoot(root);
+            tfrecherche.getScene().setRoot(root);
         } catch (IOException e) {
             e.printStackTrace();
         }

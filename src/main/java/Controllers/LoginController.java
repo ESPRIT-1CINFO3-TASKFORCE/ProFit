@@ -131,16 +131,16 @@ public class LoginController implements Initializable {
             FXMLLoader loader = new FXMLLoader();
             switch (role) {
                 case "ADMIN":
-                    loader.setLocation(getClass().getResource("/ListUsers.fxml"));
+                    loader.setLocation(getClass().getResource("/SideBar.fxml"));
                     break;
                 case "COACH":
-                    loader.setLocation(getClass().getResource("/CoachInterface.fxml"));
+                    loader.setLocation(getClass().getResource("/SideBar.fxml"));
                     break;
                 case "NUTRITIONNISTE":
-                    loader.setLocation(getClass().getResource("/NutritionistInterface.fxml"));
+                    loader.setLocation(getClass().getResource("/SideBar.fxml"));
                     break;
                 case "ADHERENT":
-                    loader.setLocation(getClass().getResource("/AdherentInterface.fxml"));
+                    loader.setLocation(getClass().getResource("/SideBar.fxml"));
                     break;
                 default:
                     return;
@@ -167,8 +167,6 @@ public class LoginController implements Initializable {
             }
         }
     }
-
-
 
     @FXML
     private Label lfitness;

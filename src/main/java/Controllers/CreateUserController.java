@@ -83,7 +83,7 @@ public class CreateUserController {
             user.setN_tel(Integer.parseInt(txtnumber.getText()));
             user.setLogin(user.getPrenom().toLowerCase().substring(0, 1) + user.getNom().toLowerCase().replace(" ", "") + user.getAge());
             user.setMdp(generatePassword());
-            user.setRole("Adherent");
+            user.setRole("ADHERENT");
 
             if (!us.getUserByEmail(user.getEmail())) {
                 us.ajouter(user);

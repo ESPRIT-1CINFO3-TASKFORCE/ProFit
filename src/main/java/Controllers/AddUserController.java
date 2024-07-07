@@ -31,6 +31,44 @@ public class AddUserController {
     private Connection connection;
     UserService us = new UserService(connection);
 
+
+    @FXML
+    void chat(ActionEvent event) {}
+
+    @FXML
+    void coach(ActionEvent event) {}
+
+    @FXML
+    void forum(ActionEvent event) {}
+
+    @FXML
+    private Label lprofit;
+
+    @FXML
+    private Label lajout;
+
+    @FXML
+    void naviguerversliste(ActionEvent event) {
+
+        FXMLLoader a = new FXMLLoader(getClass().getResource("/ListUsers.fxml"));
+        try {
+            Parent root = a.load();
+            lajout.getScene().setRoot(root);
+        } catch (IOException e) {
+            e.printStackTrace();
+
+        }
+    }
+
+    @FXML
+    void nutritionniste(ActionEvent event) {}
+
+    @FXML
+    void planning(ActionEvent event) {}
+
+    @FXML
+    void store(ActionEvent event) {}
+
     @FXML
     private ChoiceBox<String> chrole = new ChoiceBox<>();
     @FXML

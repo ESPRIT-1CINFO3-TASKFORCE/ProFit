@@ -49,20 +49,20 @@
             </Button>
          </children>
       </VBox>
-      <Label fx:id="lprofit" layoutX="249.0" layoutY="72.0" prefHeight="38.0" prefWidth="334.0" text="Bienvenue chez PROFIT ">
-         <font>
-            <Font name="Bernard MT Condensed" size="34.0" />
-         </font>
-      </Label>
-      <ImageView fitHeight="206.0" fitWidth="250.0" layoutX="292.0" layoutY="139.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@source/logo.png" />
-         </image>
-      </ImageView>
-      <Button contentDisplay="BOTTOM" graphicTextGap="6.0" layoutX="527.0" layoutY="20.0" mnemonicParsing="false" onAction="#logout" prefHeight="30.0" prefWidth="118.0" text="Déconnxion" textFill="#cd3f0687">
+      <Button contentDisplay="BOTTOM" graphicTextGap="6.0" layoutX="518.0" layoutY="14.0" mnemonicParsing="false" onAction="#logout" prefHeight="30.0" prefWidth="116.0" text="Déconnxion" textFill="#cd3f0687">
          <font>
             <Font name="Arial Rounded MT Bold" size="16.0" />
          </font>
       </Button>
+      <Label fx:id="lprofit" layoutX="259.0" layoutY="90.0" prefHeight="38.0" prefWidth="334.0" text="Bienvenue chez PROFIT ">
+         <font>
+            <Font name="Bernard MT Condensed" size="34.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="206.0" fitWidth="250.0" layoutX="313.0" layoutY="187.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@source/logo.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
