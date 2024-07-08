@@ -22,7 +22,7 @@ public class SideBarController {
 
     public static UserEntity current_user;
     public static ObservableList<UserEntity> allusers;
-    Parent root = null;sta
+    Parent root = null;
     ObservableList<String> roleList = FXCollections.observableArrayList("ADMIN", "COACH", "NUTRITIONNISTE", "ADHERENT");
     private Connection connection;
     UserService us = new UserService(connection);
