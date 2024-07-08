@@ -61,3 +61,12 @@
 #searchUserButton:pressed .image-view {
     -fx-opacity: 0.5; /* Change the opacity on hover */
 }
+
+#backToHomePage {
+    -fx-background-color: #06668C;
+    -fx-text-fill: #F0F0F0;
+}
+
+#backToHomePage:hover {
+    -fx-background-color: #427AA1;
+}

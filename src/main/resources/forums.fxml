@@ -39,6 +39,13 @@
                         <effect>
                            <Reflection />
                         </effect>
+                        <children>
+                           <Label fx:id="currentUserId" layoutX="97.0" layoutY="35.0" prefHeight="29.0" prefWidth="212.0" text="username">
+                              <font>
+                                 <Font name="System Bold" size="18.0" />
+                              </font>
+                           </Label>
+                        </children>
                      </Pane>
                      <Label layoutX="96.0" layoutY="31.0" text="FORUM">
                         <font>
@@ -63,6 +70,11 @@
                   </children>
                </Pane>
                <Pane layoutY="148.0" prefHeight="9.0" prefWidth="900.0" style="-fx-background-color: #585858;" />
+               <Button fx:id="goBackToSideBar" layoutX="420.0" layoutY="100.0" mnemonicParsing="false" onAction="#backToHomePage" prefHeight="31.0" prefWidth="147.0" text="PRECEDENT">
+                  <font>
+                     <Font name="System Bold" size="18.0" />
+                  </font>
+               </Button>
             </children>
          </Pane>
       </top>

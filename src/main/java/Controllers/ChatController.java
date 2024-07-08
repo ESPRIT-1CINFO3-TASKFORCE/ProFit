@@ -2,6 +2,7 @@ package Controllers;
 
 import Entites.MessageEntity;
 import Entites.UserEntity;
+import Services.ForumService;
 import Services.MessageService;
 import Utils.SessionManager;
 import javafx.application.Platform;
@@ -25,6 +26,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -35,6 +37,8 @@ import java.util.stream.Collectors;
 public class ChatController {
 
     private MessageService messageService = new MessageService();
+    private ForumService forumService = new ForumService();
+
     UserEntity currentUser = SessionManager.getSession();
 
     private BufferedReader serverReader;
@@ -54,6 +58,8 @@ public class ChatController {
     private VBox messagesContainer;
     @FXML
     private TextField messageInputField;
+    @FXML
+    private Button sendMessageButton;
 
     @FXML
     private Button proceedButton;
@@ -77,6 +83,9 @@ public class ChatController {
     private TextField searchUserField;
     @FXML
     private Button searchUserButton;
+
+    @FXML
+    private Label currentUserId;
 
     void proceedToChat() {
         try {
@@ -104,6 +113,7 @@ public class ChatController {
 
                             // Fetch and display messages in the chat interface
                             fetchAndDisplayMessages(recepteurID);
+
                         });
                     }
 
@@ -123,6 +133,10 @@ public class ChatController {
         // Get the user ID and name from the input fields
         userId = currentUser.getId();
         userName = currentUser.getNom();
+        currentUserId.setText(forumService.getUserNameById(currentUser.getId()));
+        messageInputField.setDisable(true);
+        sendMessageButton.setDisable(true);
+
         //recepteurID = Integer.parseInt(inputRecepteurIDField.getText());
         // Fetch and display messages for the logged-in user and recipient
         try {
@@ -163,9 +177,7 @@ public class ChatController {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
             String formattedDateTime = dateTime.format(formatter);
             // Send the fetched message to the server
-            System.out.println(userName);
             clientWriter.println(" [" + formattedDateTime + "] " + userName + ": " + lastMessage.getMessage());
-
             // Clear the input field
             messageInputField.clear();
         }
@@ -226,7 +238,8 @@ public class ChatController {
                 fetchAndDisplayMessages(this.recepteurID);
                 receptName.setText(newValue.getNom() + " " + newValue.getPrenom());
                 receptRole.setText(newValue.getRole());
-
+                messageInputField.setDisable(false);
+                sendMessageButton.setDisable(false);
                 System.out.println("ENVOYEUR:" + userId);
                 System.out.println("RECEPTEUR:" + recepteurID);
             } else {

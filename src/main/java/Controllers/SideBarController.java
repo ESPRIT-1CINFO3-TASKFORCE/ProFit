@@ -1,6 +1,7 @@
 package Controllers;
 
 import Entites.UserEntity;
+import Services.ForumService;
 import Services.UserService;
 import Utils.SessionManager;
 import javafx.collections.FXCollections;
@@ -20,19 +21,35 @@ import java.sql.Connection;
 
 public class SideBarController {
 
+
+
     public static UserEntity current_user;
     public static ObservableList<UserEntity> allusers;
     Parent root = null;
     ObservableList<String> roleList = FXCollections.observableArrayList("ADMIN", "COACH", "NUTRITIONNISTE", "ADHERENT");
     private Connection connection;
     UserService us = new UserService(connection);
+    UserEntity currentUser = SessionManager.getSession();
+    ForumService forumService = new ForumService();
+
+
+
 
     @FXML
     private Label lprofit;
 
     @FXML
     private TextField tfrecherche;
+    @FXML
+    private Label tfNom;
 
+
+
+    @FXML
+    public void initialize() {
+        tfNom.setText(forumService.getUserNameById(currentUser.getId()));
+
+    }
     @FXML
     void naviguerversliste(ActionEvent event) {
 
