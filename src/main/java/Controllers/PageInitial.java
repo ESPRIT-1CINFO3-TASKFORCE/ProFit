@@ -12,6 +12,10 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class PageInitial {
+
+
+
+
     @FXML
     void BouttonNaviguerAfficherProg(ActionEvent event) throws IOException {
             FXMLLoader l = new FXMLLoader(getClass().getResource("/TestAffichage.fxml"));//donner notre resources ,donner l'interface a naviguer
