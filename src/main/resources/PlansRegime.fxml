@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="589.0" prefWidth="708.0" stylesheets="@dashborad.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.PlansRegime">
+<AnchorPane prefHeight="692.0" prefWidth="743.0" stylesheets="@dashborad.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.PlansRegime">
    <children>
       <Label layoutX="58.0" prefHeight="44.0" prefWidth="350.0" text="Ajouter Regime Semainier" textFill="#db8925">
          <font>
@@ -503,16 +503,16 @@
             </Text>
          </children>
       </VBox>
-      <Button layoutX="246.0" layoutY="548.0" minHeight="18.0" mnemonicParsing="false" onAction="#ajouterRegime" prefHeight="29.0" prefWidth="172.0" text="Enregistrer" />
-      <TextField fx:id="tfemail" layoutX="527.0" layoutY="9.0" />
+      <Button layoutX="220.0" layoutY="631.0" minHeight="18.0" mnemonicParsing="false" onAction="#ajouterRegime" prefHeight="37.0" prefWidth="341.0" styleClass="buttonv" stylesheets="@dashborad.css" text="Enregistrer" />
+      <TextField fx:id="tfemail" layoutX="469.0" layoutY="40.0" />
       <TextField fx:id="tfnomRegime" layoutX="534.0" layoutY="517.0" />
-      <TextField fx:id="tfDatDebut" layoutX="534.0" layoutY="541.0" />
-      <TextField fx:id="tfDatFin" layoutX="531.0" layoutY="572.0" />
+      <TextField fx:id="tfDatDebut" layoutX="534.0" layoutY="549.0" />
+      <TextField fx:id="tfDatFin" layoutX="534.0" layoutY="584.0" />
       <Label layoutX="430.0" layoutY="529.0" text="Nom Régime" />
-      <Label layoutX="433.0" layoutY="553.0" text="Date_début:" />
-      <Label layoutX="433.0" layoutY="576.0" text="Date_fin:" />
-      <Label layoutX="478.0" layoutY="13.0" text="email" />
-      <Button fx:id="navigationHome" layoutX="9.0" layoutY="582.0" mnemonicParsing="false" onAction="#navigationHome" text="HOME" />
+      <Label layoutX="433.0" layoutY="563.0" text="Date_début:" />
+      <Label layoutX="433.0" layoutY="588.0" text="Date_fin:" />
+      <Label layoutX="426.0" layoutY="44.0" text="email" />
+      <Button fx:id="navigationHome" layoutX="634.0" layoutY="7.0" mnemonicParsing="false" onAction="#navigationHome" text="HOME" />
    </children>
    <styleClass>
       <String fx:value="regime-standard" />

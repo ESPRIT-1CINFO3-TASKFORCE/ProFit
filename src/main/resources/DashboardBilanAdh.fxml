@@ -29,7 +29,7 @@
          </styleClass>
            
         </BarChart>
-      <Label layoutX="132.0" layoutY="8.0" prefHeight="44.0" prefWidth="209.0" text="Dashbord Adherant" textFill="#ebac5f">
+      <Label layoutX="132.0" layoutY="8.0" prefHeight="44.0" prefWidth="209.0" stylesheets="@dashborad.css" text="Dashbord Adherant" textFill="#ebac5f">
          <font>
             <Font name="Arial Black" size="18.0" />
          </font>
@@ -58,15 +58,15 @@
       </VBox>
       <AnchorPane layoutY="-2.0" prefHeight="527.0" prefWidth="126.0" style="-fx-background-color: #e6964b;">
          <children>
-            <ImageView fitHeight="140.0" fitWidth="110.0" layoutX="11.0" layoutY="14.0">
+            <ImageView fitHeight="161.0" fitWidth="110.0" layoutX="8.0" layoutY="141.0">
                <image>
                   <Image url="@source/logo.jpg" />
                </image>
             </ImageView>
          </children>
       </AnchorPane>
-      <Button fx:id="navigationHome" layoutX="635.0" layoutY="483.0" mnemonicParsing="false" onAction="#navigationHome" text="HOME" />
-      <Button fx:id="SerachDashboardbtn" layoutX="500.0" layoutY="46.0" mnemonicParsing="false" onAction="#SerachDashboardbtn" prefHeight="27.0" prefWidth="69.0" text="chercher" />
-      <TextField fx:id="colemailDash" layoutX="341.0" layoutY="46.0" />
+      <Button fx:id="navigationHome" layoutX="648.0" layoutY="8.0" mnemonicParsing="false" onAction="#navigationHome" text="HOME" />
+      <Button fx:id="SerachDashboardbtn" layoutX="507.0" layoutY="40.0" mnemonicParsing="false" onAction="#SerachDashboardbtn" prefHeight="33.0" prefWidth="95.0" styleClass="buttonv" stylesheets="@dashborad.css" text="chercher" />
+      <TextField fx:id="colemailDash" layoutX="341.0" layoutY="40.0" prefHeight="33.0" prefWidth="159.0" />
     </children>
 </AnchorPane>

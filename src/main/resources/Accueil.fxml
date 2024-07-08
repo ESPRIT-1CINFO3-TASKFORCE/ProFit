@@ -14,35 +14,40 @@
             <Image url="@source/profitacc.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="145.0" fitWidth="155.0" layoutX="297.0" layoutY="91.0">
+      <ImageView fitHeight="94.0" fitWidth="89.0">
          <image>
             <Image url="@source/logo.png" />
          </image>
       </ImageView>
-      <Label fx:id="lfitness" layoutX="273.0" layoutY="233.0" text="Fitness and Healthy">
+      <Label fx:id="lfitness" layoutX="349.0" layoutY="161.0" prefHeight="45.0" prefWidth="279.0" stylesheets="@dashborad.css" text="Fitness and Healthy">
          <font>
             <Font name="Bernard MT Condensed" size="30.0" />
          </font>
       </Label>
-      <Label fx:id="lconnect" layoutX="273.0" layoutY="53.0" text="Connect your body">
+      <Label fx:id="lconnect" layoutX="216.0" layoutY="106.0" prefHeight="61.0" prefWidth="300.0" text="Connect your body">
          <font>
             <Font name="Bernard MT Condensed" size="30.0" />
          </font>
       </Label>
-      <Button contentDisplay="BOTTOM" graphicTextGap="6.0" layoutX="495.0" layoutY="55.0" mnemonicParsing="false" onAction="#connexion" text="Se connecter" textFill="#c7560087">
+      <Button contentDisplay="BOTTOM" graphicTextGap="6.0" layoutX="325.0" layoutY="259.0" mnemonicParsing="false" onAction="#connexion" prefHeight="36.0" prefWidth="271.0" styleClass="buttonv" stylesheets="@dashborad.css" text="Se connecter" textFill="#c7560087">
          <font>
             <Font name="Arial Rounded MT Bold" size="17.0" />
          </font>
       </Button>
-      <Label fx:id="linscription" layoutX="313.0" layoutY="320.0" text="Vous n'avez pas de compte ? Rejoignez-nous !  ">
+      <Label fx:id="linscription" layoutX="300.0" layoutY="369.0" text="Vous n'avez pas de compte ? Rejoignez-nous !  ">
          <font>
             <Font name="Arial" size="15.0" />
          </font>
       </Label>
-      <Button contentDisplay="BOTTOM" graphicTextGap="6.0" layoutX="423.0" layoutY="353.0" mnemonicParsing="false" onAction="#inscription" text="S'inscrire" textFill="#c7560087">
+      <Button contentDisplay="BOTTOM" graphicTextGap="6.0" layoutX="325.0" layoutY="303.0" mnemonicParsing="false" onAction="#inscription" prefHeight="29.0" prefWidth="271.0" styleClass="buttonv" stylesheets="@dashborad.css" text="S'inscrire" textFill="#c7560087">
          <font>
             <Font name="Arial Rounded MT Bold" size="17.0" />
          </font>
       </Button>
+      <Label fx:id="lfitness1" layoutX="254.0" layoutY="14.0" prefHeight="45.0" prefWidth="279.0" stylesheets="@dashborad.css" text="WELCOME!">
+         <font>
+            <Font name="System Bold Italic" size="30.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

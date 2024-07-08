@@ -194,3 +194,20 @@
     -fx-background-color: rgba(255, 255, 255, 0.5); /* Couleur de fond lors du clic */
 }
 
+.buttonv {
+    -fx-background-color: #CFDBD5; /* Couleur de fond */
+    -fx-text-fill: white; /* Couleur du texte */
+    -fx-font-size: 14px; /* Taille de la police */
+    -fx-font-weight: bold; /* Gras */
+    -fx-padding: 8px 16px; /* Espacement intérieur */
+    -fx-background-radius: 5px; /* Rayon des coins */
+}
+.titlee {
+    -fx-font-size: 20px; /* Taille de la police */
+    -fx-font-weight: bold; /* Gras */
+    -fx-text-fill: #F99F72; /* Couleur du texte */
+    -fx-padding: 10px 0; /* Espacement intérieur (haut, bas) */
+    -fx-border-width: 0 0 1 0; /* Bordure basse (facultatif) */
+    -fx-border-color: #CCCCCC; /* Couleur de la bordure basse (facultatif) */
+}
+

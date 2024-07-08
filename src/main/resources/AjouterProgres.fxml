@@ -11,9 +11,9 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="601.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AjouterProgresController">
    <children>
-      <Button layoutX="241.0" layoutY="322.0" mnemonicParsing="false" onAction="#AjouterProg" prefHeight="27.0" prefWidth="208.0" text="Ajouter Progression" textFill="#1b1712cc">
+      <Button layoutX="241.0" layoutY="312.0" minHeight="18.0" mnemonicParsing="false" onAction="#AjouterProg" prefHeight="38.0" prefWidth="247.0" styleClass="buttonv" stylesheets="@dashborad.css" text="Ajouter Progression" textFill="#1b1712cc">
          <font>
-            <Font name="Comic Sans MS" size="13.0" />
+            <Font name="Comic Sans MS" size="11.0" />
          </font>
       </Button>
       <TextField fx:id="tfEmail" layoutX="287.0" layoutY="104.0" />
@@ -33,13 +33,13 @@
       <TextField fx:id="tfLongueur" layoutX="287.0" layoutY="164.0" />
       <TextField fx:id="tfdateInscri" layoutX="287.0" layoutY="199.0" />
       <Label layoutX="164.0" layoutY="168.0" text="Longueur" />
-      <Button layoutX="241.0" layoutY="358.0" mnemonicParsing="false" onAction="#navigation" prefHeight="27.0" prefWidth="208.0" text="Afficher Progressions" textFill="#1b1712cc">
+      <Button layoutX="241.0" layoutY="358.0" minHeight="18.0" mnemonicParsing="false" onAction="#navigation" prefHeight="38.0" prefWidth="247.0" styleClass="buttonv" stylesheets="@dashborad.css" text="Afficher Progressions" textFill="#1b1712cc">
          <font>
             <Font name="Comic Sans MS" size="13.0" />
          </font>
       </Button>
       <Accordion layoutY="83.0" />
-      <Label layoutX="228.0" layoutY="39.0" prefHeight="44.0" prefWidth="350.0" text="Ajouter une progression" textFill="#db6b20">
+      <Label layoutX="190.0" layoutY="29.0" prefHeight="55.0" prefWidth="381.0" styleClass="titlee" stylesheets="@dashborad.css" text="Ajouter une progression" textAlignment="CENTER" textFill="#db6b20">
          <font>
             <Font name="Arial Black" size="18.0" />
          </font>
