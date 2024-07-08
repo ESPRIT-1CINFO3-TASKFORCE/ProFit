@@ -64,5 +64,6 @@
             <Font name="Arial Rounded MT Bold" size="16.0" />
          </font>
       </Button>
+      <Label fx:id="tfNom" layoutX="484.0" layoutY="131.0" prefHeight="20.0" prefWidth="95.0" text="Label" />
    </children>
 </AnchorPane>

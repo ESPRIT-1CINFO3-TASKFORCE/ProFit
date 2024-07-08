@@ -28,6 +28,7 @@ public class SideBarController {
     ObservableList<String> roleList = FXCollections.observableArrayList("ADMIN", "COACH", "NUTRITIONNISTE", "ADHERENT");
     private Connection connection;
     UserService us = new UserService(connection);
+    UserEntity currentUser = SessionManager.getSession();
 
 
 
@@ -37,7 +38,37 @@ public class SideBarController {
 
     @FXML
     private TextField tfrecherche;
+    @FXML
+    private Label tfNom;
 
+
+
+    @FXML
+    public void initialize() {
+        // Obtenez l'utilisateur courant depuis le SessionManager
+
+
+        // Vérifiez que l'utilisateur courant n'est pas null pour éviter les NullPointerException
+        if (currentUser != null) {
+            // Récupérez le nom et le prénom de l'utilisateur courant
+            String nom = currentUser.getNom();
+            String prenom = currentUser.getPrenom();
+
+            // Affichez les valeurs de nom et prenom pour le débogage
+            System.out.println("Nom: " + nom);
+            System.out.println("Prénom: " + prenom);
+
+            // Concaténez le nom et le prénom
+            String nomComplet = (nom != null ? nom : "") + " " + (prenom != null ? prenom : "");
+
+            // Affichez le nom complet dans le TextField approprié
+            tfNom.setText(nomComplet);
+        } else {
+            // Gérez le cas où aucun utilisateur n'est connecté
+            System.out.println("Aucun utilisateur n'est connecté.");
+            tfNom.setText("Aucun utilisateur n'est connecté.");
+        }
+    }
     @FXML
     void naviguerversliste(ActionEvent event) {
 
