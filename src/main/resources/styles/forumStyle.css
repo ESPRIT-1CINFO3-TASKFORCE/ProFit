@@ -59,3 +59,12 @@
 #newTopic:hover {
     -fx-background-color: #427AA1;
 }
+
+#goBackToSideBar {
+    -fx-background-color: #06668C;
+    -fx-text-fill: #F0F0F0;
+}
+
+#goBackToSideBar:hover {
+    -fx-background-color: #427AA1;
+}

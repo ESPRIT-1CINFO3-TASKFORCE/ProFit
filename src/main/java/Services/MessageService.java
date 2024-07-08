@@ -3,7 +3,9 @@ package Services;
 import Entites.MessageEntity;
 import Entites.UserEntity;
 import Utils.DataSource;
+import Utils.SessionManager;
 
+import javax.mail.Session;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -118,7 +120,10 @@ public class MessageService {
 
     public List<UserEntity> getSearchUserList() {
         List<UserEntity> userList = new ArrayList<>();
-        String query = "SELECT id, nom, prenom, role FROM users";
+        UserEntity currentUser = SessionManager.getSession();
+        int currentUserId = currentUser.getId();
+
+        String query = "SELECT id, nom, prenom, role FROM users WHERE id != " + currentUserId;
 
         try (Connection con = DataSource.getInstance().getConnection();
              PreparedStatement pstmt = con.prepareStatement(query)) {

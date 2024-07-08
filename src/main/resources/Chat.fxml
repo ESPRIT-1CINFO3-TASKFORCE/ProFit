@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="chatVBox" alignment="CENTER" maxHeight="600.0" maxWidth="900.0" minHeight="600.0" minWidth="900.0" prefHeight="600.0" prefWidth="900.0" spacing="15.0" style="-fx-background-color: #EFEFEFff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ChatController">
+<VBox fx:id="chatVBox" alignment="CENTER" maxHeight="600.0" maxWidth="900.0" minHeight="600.0" minWidth="900.0" prefHeight="600.0" prefWidth="900.0" spacing="15.0" style="-fx-background-color: #EFEFEFff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ChatController">
    <stylesheets>
       <URL value="@/styles/chatStyle.css" />
    </stylesheets>
@@ -40,15 +40,22 @@
                            <effect>
                               <Reflection />
                            </effect>
+                           <children>
+                              <Label fx:id="currentUserId" layoutX="94.0" layoutY="26.0" prefHeight="29.0" prefWidth="212.0" text="username">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
                         </Pane>
-                        <Label layoutX="96.0" layoutY="31.0" text="FORUM">
+                        <Label layoutX="96.0" layoutY="31.0" text="CHAT">
                            <font>
                               <Font name="System Bold" size="18.0" />
                            </font>
                         </Label>
                      </children>
                   </Pane>
-                  <Button fx:id="homepage" layoutX="111.0" layoutY="100.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="188.0" text="Précedent" onAction="#backToHomePage">
+                  <Button fx:id="backToHomePage" layoutX="111.0" layoutY="100.0" mnemonicParsing="false" onAction="#backToHomePage" prefHeight="39.0" prefWidth="188.0" text="Précedent">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
@@ -108,16 +115,12 @@
             <Pane prefHeight="382.0" prefWidth="200.0" style="-fx-background-color: #CACACA;" BorderPane.alignment="CENTER">
                <children>
                   <TextField fx:id="searchUserField" layoutX="5.0" layoutY="2.0" prefHeight="25.0" prefWidth="147.0" promptText="Tapez votre recherche..." />
-                  <Button fx:id="searchUserButton" layoutX="147.0" layoutY="-7.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="34.0" text="">
-                     <graphic>
-                        <ImageView fitHeight="35.0" fitWidth="36.0">
-                           <image>
-                              <Image url="@assets/searchButton.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
                   <ListView fx:id="searchUserList" layoutX="6.0" layoutY="35.0" prefHeight="331.0" prefWidth="187.0" />
+                  <ImageView fitHeight="35.0" fitWidth="36.0" layoutX="152.0" layoutY="-1.0">
+                     <image>
+                        <Image url="@assets/searchButton.png" />
+                     </image>
+                  </ImageView>
                </children>
             </Pane>
          </left>

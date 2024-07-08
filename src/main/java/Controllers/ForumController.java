@@ -53,7 +53,8 @@ public class ForumController {
     @FXML
     private TableColumn<ForumEntity, String> dateColumn;
 
-
+    @FXML
+    private Label currentUserId;
 
     private ForumService forumService = new ForumService();
     UserEntity currentUser = SessionManager.getSession();
@@ -64,6 +65,9 @@ public class ForumController {
     private void initialize() {
         try {
             loadForums();
+            if (currentUserId != null) {
+                currentUserId.setText(forumService.getUserNameById(currentUser.getId()));
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -72,21 +76,28 @@ public class ForumController {
     @FXML
     private void NavigateToNewTopic() {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/newTopic.fxml"));
-            Parent root = fxmlLoader.load();
-            Stage stage = new Stage();
-            stage.setTitle("NOUVEAU SUJET");
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/newTopic.fxml"));
+            Parent root = loader.load();
+            // Get the current stage and set the new scene
+            Stage stage = (Stage) forumTablePane.getScene().getWindow();
             stage.setScene(new Scene(root));
-            stage.show();
         } catch (IOException e) {
-            e.printStackTrace();
+            e.printStackTrace(); // Handle your exception properly
         }
     }
 
     @FXML
     private void cancelTopic() {
-        closeWindow();
-    }
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/forums.fxml"));
+            Parent root = loader.load();
+
+            // Get the current stage and set the new scene
+            Stage stage = (Stage) topicField.getScene().getWindow();
+            stage.setScene(new Scene(root));
+        } catch (IOException e) {
+            e.printStackTrace(); // Handle your exception properly
+        }    }
 
     private void closeWindow() {
         Stage stage = (Stage) titreField.getScene().getWindow();
@@ -166,6 +177,21 @@ public class ForumController {
         } catch (IOException e) {
             e.printStackTrace(); // Handle your exception properly
         }
+    }
+
+    @FXML
+    private void backToHomePage() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/SideBar.fxml"));
+            Parent root = loader.load();
+
+            // Get the current stage and set the new scene
+            Stage stage = (Stage) forumTablePane.getScene().getWindow();
+            stage.setScene(new Scene(root));
+        } catch (IOException e) {
+            e.printStackTrace(); // Handle your exception properly
+        }
+
     }
 
 }
