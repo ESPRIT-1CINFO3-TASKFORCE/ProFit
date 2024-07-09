@@ -25,6 +25,8 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
@@ -156,7 +158,8 @@ public class DashboardBilanAdh {
                     System.out.println("Error setting text fields: " + e.getMessage());
                 }
 
-            });})
+            });
+        })
         ;
 
 
@@ -164,13 +167,14 @@ public class DashboardBilanAdh {
 
         if (!regimes.isEmpty()) {
             RegimeEntity regime = regimes.get(0); // Supposons que vous voulez afficher le premier résultat
-            tfNomRegime.setText("NomRegime :" +regime.getNom_regime());
-            tfDatefin.setText("date fin :"+regime.getDate_fin().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")));
+            tfNomRegime.setText("NomRegime :" + regime.getNom_regime());
+            tfDatefin.setText("date fin :" + regime.getDate_fin().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")));
 
         }
 
 
     }
+
     @FXML
     void navigationHome(ActionEvent event) throws IOException {
         FXMLLoader l = new FXMLLoader(getClass().getResource("/PageInitial.fxml"));//donner notre resources ,donner l'interface a naviguer
@@ -190,63 +194,57 @@ public class DashboardBilanAdh {
     }
 
 
-
-
-    /*@FXML
+    @FXML
     void SerachDashboardbtn(ActionEvent event) {
+        String email = colemailDash.getText();
+        updateDashboardData(email);
+    }
 
-    }*/
+    private void updateDashboardData(String email) {
+        List<ProgressionEntity> progressions = ProgressionService.getInstance().getProgressionsByEmail(email);
+        System.out.println("Progressions retrieved for email " + email + ": " + progressions.size());
 
-        @FXML
-        void SerachDashboardbtn(ActionEvent event) {
-            String email = colemailDash.getText();
-            updateDashboardData(email);
-        }
+        // Trier les progressions par date d'inscription
+        Collections.sort(progressions, Comparator.comparing(ProgressionEntity::getDate_inscri));
 
-        private void updateDashboardData(String email) {
-            List<ProgressionEntity> progressions = ProgressionService.getInstance().getProgressionsByEmail(email);
-            System.out.println("Progressions retrieved for email " + email + ": " + progressions.size());
+        if (!progressions.isEmpty()) {
+            ProgressionEntity latestProgression = progressions.get(progressions.size() - 1);
 
-            if (!progressions.isEmpty()) {
-                ProgressionEntity latestProgression = progressions.get(0);
+            String nomPrenom = (latestProgression.getNom() != null ? latestProgression.getNom() : "") + " " +
+                    (latestProgression.getPrenom() != null ? latestProgression.getPrenom() : "");
+            tfnomPrenom.setText(nomPrenom);
 
-                String nomPrenom = (latestProgression.getNom() != null ? latestProgression.getNom() : "") + " " +
-                        (latestProgression.getPrenom() != null ? latestProgression.getPrenom() : "");
-                tfnomPrenom.setText(nomPrenom);
+            String poidsText = "Poids : " + latestProgression.getPoids() + " kg";
+            tfpoids.setText(poidsText);
 
-                String poidsText = "Poids : " + latestProgression.getPoids() + " kg";
-                tfpoids.setText(poidsText);
+            String descriptionText = "Description :" + (latestProgression.getDescription() != null ? latestProgression.getDescription() : "");
+            tfdescription.setText(descriptionText);
 
-                String descriptionText = "Description :" + (latestProgression.getDescription() != null ? latestProgression.getDescription() : "");
-                tfdescription.setText(descriptionText);
+            tfNomRegime.setText("NomRegime :" + latestProgression.getNomregime());
+            tfDatefin.setText("date fin :" + latestProgression.getDate_finR().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")));
 
-                tfNomRegime.setText("NomRegime :" + latestProgression.getNomregime());
-                tfDatefin.setText("date fin :" + latestProgression.getDate_finR().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")));
+            StatistiquePoidsDate.getData().clear();
+            XYChart.Series<String, Integer> poidsSeries = new XYChart.Series<>();
+            poidsSeries.setName("Évolution du poids");
+            XYChart.Series<String, Integer> IMCSeries = new XYChart.Series<>();
+            IMCSeries.setName("Évolution de IMC");
 
-                StatistiquePoidsDate.getData().clear();
-                XYChart.Series<String, Integer> poidsSeries = new XYChart.Series<>();
-                poidsSeries.setName("Évolution du poids");
-                XYChart.Series<String, Integer> IMCSeries = new XYChart.Series<>();
-                IMCSeries.setName("Évolution de IMC");
-
-                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-                for (ProgressionEntity progression : progressions) {
-                    String dateFormatted = progression.getDate_inscri().format(formatter);
-                    poidsSeries.getData().add(new XYChart.Data<>(dateFormatted, progression.getPoids()));
-                    IMCSeries.getData().add(new XYChart.Data<>(dateFormatted, progression.getIMC()));
-                }
-                StatistiquePoidsDate.getData().addAll(poidsSeries, IMCSeries);
-            } else {
-                tfnomPrenom.setText("");
-                tfpoids.setText("");
-                tfdescription.setText("");
-                tfNomRegime.setText("");
-                tfDatefin.setText("");
-                StatistiquePoidsDate.getData().clear();
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            for (ProgressionEntity progression : progressions) {
+                String dateFormatted = progression.getDate_inscri().format(formatter);
+                poidsSeries.getData().add(new XYChart.Data<>(dateFormatted, progression.getPoids()));
+                IMCSeries.getData().add(new XYChart.Data<>(dateFormatted, progression.getIMC()));
             }
+            StatistiquePoidsDate.getData().addAll(poidsSeries, IMCSeries);
+        } else {
+            tfnomPrenom.setText("");
+            tfpoids.setText("");
+            tfdescription.setText("");
+            tfNomRegime.setText("");
+            tfDatefin.setText("");
+            StatistiquePoidsDate.getData().clear();
         }
-
-
+    }
 }
 
 

@@ -125,4 +125,19 @@ public class PageInitial {
 
 
     }
+
+    @FXML
+    void BouttonNaviguerAcceuilPrin(ActionEvent event) throws IOException {
+        FXMLLoader l = new FXMLLoader(getClass().getResource("/SideBar.fxml"));//donner notre resources ,donner l'interface a naviguer
+        try {
+            Parent root = l.load();//recharger notre resources
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.setTitle("Aceeuil Principal");
+            stage.show();
+        } catch (IOException e) {
+            System.out.println(e);
+        }
+    }
 }

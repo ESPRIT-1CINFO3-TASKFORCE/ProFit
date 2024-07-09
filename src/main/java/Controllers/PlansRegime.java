@@ -230,7 +230,7 @@ public class PlansRegime  {
         // Convert WritableImage to BufferedImage
         BufferedImage bufferedImage = SwingFXUtils.fromFXImage(snapshot, null);
 
-        String pdfPath = "interface_snapshot.pdf";
+        String pdfPath = "Planning de régime.pdf";
 
         try (PDDocument document = new PDDocument()) {
             PDPage page = new PDPage();

@@ -21,6 +21,7 @@
             <Button layoutY="127.0" mnemonicParsing="false" onAction="#BouttonNaviguerAfficherProg" styleClass="sidebarB" stylesheets="@dashborad.css" text="Afficher Progression" />
             <Button layoutX="-1.0" layoutY="165.0" mnemonicParsing="false" onAction="#BouttonNaviguerDashboardAdh" prefHeight="38.0" prefWidth="149.0" styleClass="sidebarB" stylesheets="@dashborad.css" text="Dashbord Adherant" />
             <Button layoutX="5.0" layoutY="203.0" mnemonicParsing="false" onAction="#BouttonNaviguerPlanningRegime" prefHeight="38.0" prefWidth="137.0" styleClass="sidebarB" stylesheets="@dashborad.css" text="Planning Régime" />
+            <Button layoutX="12.0" layoutY="241.0" mnemonicParsing="false" onAction="#BouttonNaviguerAcceuilPrin" prefHeight="38.0" prefWidth="137.0" styleClass="sidebarB" stylesheets="@dashborad.css" text="Acceuil Principale" />
          </children>
          <styleClass>
             <String fx:value="sidebar" />
