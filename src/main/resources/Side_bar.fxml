@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="459.0" prefWidth="694.0" stylesheets="@CSS/style_dash.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.SidBarController">
+   <children>
+      <AnchorPane prefHeight="459.0" prefWidth="229.0" style="-fx-background-color: #ed8f50;">
+         <children>
+            <Label layoutX="51.0" layoutY="143.0" prefHeight="18.0" prefWidth="58.0" text="Accueil">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font></Label>
+            <Label layoutX="51.0" layoutY="181.0" prefHeight="18.0" prefWidth="58.0" text="Cours">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font></Label>
+            <Label layoutX="51.0" layoutY="259.0" prefHeight="18.0" prefWidth="58.0" text="Profil">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font></Label>
+            <Label layoutX="49.0" layoutY="298.0" prefHeight="26.0" prefWidth="98.0" text="Paramétre">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font></Label>
+            <Button fx:id="tfgestion" layoutX="51.0" layoutY="332.0" mnemonicParsing="false" onAction="#GestionProduit" prefHeight="38.0" prefWidth="171.0" style="-fx-background-color: #fff5ef;" styleClass="search-button" stylesheets="@CSS/product-box.css" text="Gestion de produit">
+               <font>
+                  <Font size="16.0" />
+               </font></Button>
+            <ImageView fitHeight="166.0" fitWidth="153.0" layoutX="38.0" layoutY="-10.0">
+               <image>
+                  <Image url="@SOURCE/dcdb1b22-4ef1-48d3-bb3d-51132a26f572.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="26.0" fitWidth="27.0" layoutX="14.0" layoutY="143.0">
+               <image>
+                  <Image url="@SOURCE/accueil.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="26.0" fitWidth="27.0" layoutX="14.0" layoutY="184.0">
+               <image>
+                  <Image url="@SOURCE/e-book.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="26.0" fitWidth="27.0" layoutX="14.0" layoutY="259.0">
+               <image>
+                  <Image url="@SOURCE/homme.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="26.0" fitWidth="27.0" layoutX="14.0" layoutY="298.0">
+               <image>
+                  <Image url="@SOURCE/parametres-cog.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="26.0" fitWidth="27.0" layoutX="14.0" layoutY="338.0">
+               <image>
+                  <Image url="@SOURCE/produit.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="tfstore" layoutX="52.0" layoutY="221.0" mnemonicParsing="false" onAction="#store" prefHeight="37.0" prefWidth="171.0" style="-fx-background-color: #fff5ef;" styleClass="search-button" stylesheets="@CSS/product-box.css" text="Store">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="26.0" fitWidth="27.0" layoutX="14.0" layoutY="389.0">
+               <image>
+                  <Image url="@SOURCE/e-book.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="51.0" layoutY="383.0" mnemonicParsing="false" onAction="#Commande" prefHeight="37.0" prefWidth="171.0" style="-fx-background-color: #fff5ef;" styleClass="search-button" stylesheets="@CSS/product-box.css" text="Gestion Commande">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="37.0" fitWidth="27.0" layoutX="14.0" layoutY="226.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@SOURCE/boutique.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="198.0" fitWidth="284.0" layoutX="325.0" layoutY="145.0">
+         <image>
+            <Image url="@SOURCE/accueillir.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

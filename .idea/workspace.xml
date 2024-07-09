@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="19f57df4-e2f3-490a-86e2-cd5a451d0bc7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/commande_details.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/AfficherProduitController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/AjouterProuduitController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/CommandeDashController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/ItemController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/PanierCommandeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/SidBarController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/StoreController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/UpdateController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Entites/CommandeDetailsEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Entites/LigneCommandeEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Entites/LignePanierEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Entites/ProduitDetailsEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Services/PDFExporter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Services/ProductSelectionListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/TestMain/MainFx.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/AjouterProduit.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/CSS/fullpackstyling.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/CSS/product-box.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/CSS/style_commande.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/CSS/style_dash.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/CSS/style_navbarre.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/CSS/style_panier.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/CommandeDash.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Item.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/PanierCommande.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/SOURCE/arrow_back.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/SOURCE/boutique.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/SOURCE/dcdb1b22-4ef1-48d3-bb3d-51132a26f572.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/SOURCE/des-ordures.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/SOURCE/faire-des-exercices.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/SOURCE/fichier-pdf.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/SOURCE/icons8-box-64.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/SOURCE/icons8-pdf-64.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/SOURCE/icons8-search-50.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/SOURCE/panier.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/SOURCE/proteine-de-lactoserum.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/SOURCE/traits.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Side_bar.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Store.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Update.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/afficherProduit.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entites/PanierEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entites/PanierEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entites/ProduitEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entites/ProduitEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entites/StoreEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entites/CommandeEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entites/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entites/UserEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Services/IServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/IServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Services/PanierService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/PanierService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Services/ProduitService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/ProduitService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Services/StoreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/CommandeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/TestMain/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TestMain/main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utils/DataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utils/DataSource.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2iyPwfJjhS5RFwMVfM9Zi2GRALt" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Maven.Porfit [org.openjfx:javafx-maven-plugin:0.0.8:run].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.9-jbrsdk-17.0.9-4caba194b151-b614c381" />
+        <option value="jdk-22-openjdk-22-4caba194b151-f504ca98" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="19f57df4-e2f3-490a-86e2-cd5a451d0bc7" name="Changes" comment="" />
+      <created>1720460085642</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1720460085642</updated>
+      <workItem from="1720460090696" duration="2662000" />
+      <workItem from="1720531688488" duration="1275000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

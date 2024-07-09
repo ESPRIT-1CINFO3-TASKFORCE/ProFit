@@ -5,31 +5,33 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DataSource {
-    private  String url="jdbc:mysql://localhost:3306/pidev";
-    private  String login="root";
-    private  String pwd="";
-    private static DataSource data;
 
-    private Connection con;
+    private static DataSource instance = null;
+    private Connection conn = null;
 
+    private DataSource() {
+    }
 
-    private DataSource(){
-        try {
-            con= DriverManager.getConnection(url,login,pwd);
-            System.out.println("connexion établie");
-        } catch (SQLException e) {
+    private void init() throws SQLException {
+        final String DB_URL = "jdbc:mysql://localhost:3306/profit2_db";
+        final String USER = "root";
+        final String PASS = "";
 
-            System.out.println(e);
+        conn = DriverManager.getConnection(DB_URL, USER, PASS);
+
+        System.out.println("Connected to database");
+    }
+
+    public Connection getConnection() {
+        return conn;
+    }
+
+    public static DataSource getInstance() throws SQLException {
+        if (instance != null && !instance.getConnection().isClosed()) {
+        } else {
+            instance = new DataSource();
+            instance.init();
         }
+        return instance;
     }
-    public Connection getCon() {
-        return con;
-    }
-
-    public static DataSource getInstance() {
-        if(data==null)
-            data=new DataSource();
-        return data;
-    }
-
 }

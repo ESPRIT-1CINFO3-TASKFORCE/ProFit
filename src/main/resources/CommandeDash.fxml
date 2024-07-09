@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="clickpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="936.0" stylesheets="@CSS/style_dash.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.CommandeDashController">
+   <children>
+      <Pane layoutX="166.0" layoutY="46.0" prefHeight="59.0" prefWidth="768.0" style="-fx-background-color: #ffac78;">
+         <children>
+            <Label layoutX="31.0" layoutY="8.0" stylesheets="@CSS/fullpackstyling.css" text="Gestion/Commandes" textFill="WHITE" />
+            <Label layoutX="31.0" layoutY="24.0" prefHeight="27.0" prefWidth="162.0" text="Liste Commandes" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="694.0" layoutY="24.0" prefHeight="27.0" prefWidth="68.0" text="  Admin">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <GridPane layoutX="88.0" layoutY="204.0" prefHeight="416.0" prefWidth="753.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="500.0" minHeight="0.0" prefHeight="300.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="8.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <TableView fx:id="commandeTableView" prefHeight="366.0" prefWidth="868.0" stylesheets="@CSS/fullpackstyling.css">
+               <columns>
+                  <TableColumn fx:id="id_commandeColumn" text="#Réf" />
+                  <TableColumn fx:id="date_commandeColumn" maxWidth="265.0" minWidth="-1.0" prefWidth="155.20001220703125" text="         Date Commande" />
+                  <TableColumn fx:id="id_clientColumn" maxWidth="377.0" minWidth="0.0" prefWidth="142.4000244140625" text="             Client" />
+                  <TableColumn fx:id="total_commandeColumn" maxWidth="421.0" minWidth="67.0" prefWidth="144.79998779296875" text="        Total Commande" />
+                  <TableColumn fx:id="etat" maxWidth="421.0" minWidth="67.0" prefWidth="116.0" text="              État" />
+                  <TableColumn fx:id="changerEtat" maxWidth="421.0" minWidth="67.0" prefWidth="119.99993896484375" text="      Changer État" />
+               </columns>
+            </TableView>
+            <HBox alignment="CENTER_LEFT" prefHeight="18.0" prefWidth="754.0" spacing="15.0" GridPane.rowIndex="1">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#handleExportPDFButtonAction" prefHeight="26.0" prefWidth="54.0" style="-fx-background-color: #ffac78;" styleClass="add-btn">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <stylesheets>
+                        <URL value="@CSS/fullpackstyling.css" />
+                        <URL value="@CSS/product-box.css" />
+                     </stylesheets>
+                     <graphic>
+                        <ImageView fitHeight="33.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@SOURCE/fichier-pdf.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Pane maxHeight="30.0" prefHeight="30.0" prefWidth="362.0">
+                     <children>
+                        <TextField fx:id="searchField" prefHeight="30.0" prefWidth="228.0" promptText="Rechercher" stylesheets="@CSS/product-box.css">
+                           <padding>
+                              <Insets left="30.0" />
+                           </padding>
+                        </TextField>
+                        <ImageView fitHeight="17.0" fitWidth="27.0" layoutX="7.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@SOURCE/icons8-search-50.png" />
+                           </image></ImageView>
+                        <Button layoutX="249.0" layoutY="3.0" mnemonicParsing="false" onAction="#chercherCommande" styleClass="search-button" stylesheets="@CSS/product-box.css" text="Chercher" />
+                     </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Pane>
+               </children>
+               <padding>
+                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+               </padding>
+            </HBox>
+         </children>
+      </GridPane>
+      <HBox alignment="CENTER" layoutX="20.0" layoutY="131.0" prefHeight="73.0" prefWidth="889.0" spacing="70.0">
+         <children>
+            <Pane fx:id="pane_1" onMouseClicked="#onPane1Clicked" prefHeight="73.0" prefWidth="199.0" style="-fx-background-color: FFA38F;" styleClass="pane_1" stylesheets="@CSS/fullpackstyling.css">
+               <children>
+                  <Label fx:id="cmd" layoutX="14.0" layoutY="34.0" prefHeight="17.0" prefWidth="68.0" text="555" textFill="#919090">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="8.0" layoutY="7.0" prefHeight="27.0" prefWidth="148.0" text="Total Commandes" textFill="#919090">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Pane>
+            <Pane fx:id="pane_2" prefHeight="73.0" prefWidth="210.0" style="-fx-background-color: FFD18E;" styleClass="pane_1" stylesheets="@CSS/fullpackstyling.css">
+               <children>
+                  <Label layoutX="12.0" layoutY="7.0" prefHeight="27.0" prefWidth="184.0" text="Commandes En Cours" textFill="#919090">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="cmdencours" layoutX="14.0" layoutY="34.0" prefHeight="17.0" prefWidth="68.0" text="555" textFill="#919090">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Pane>
+            <Pane fx:id="pane_4" prefHeight="73.0" prefWidth="210.0" style="-fx-background-color: E9FF97;" styleClass="pane_1" stylesheets="@CSS/fullpackstyling.css">
+               <children>
+                  <Label layoutX="26.0" layoutY="2.0" prefHeight="27.0" prefWidth="148.0" text="Commandes Livré" textFill="#919090">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="cmdnonlivre" layoutX="26.0" layoutY="29.0" prefHeight="17.0" prefWidth="68.0" text="555" textFill="#919090">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Pane>
+         </children>
+         <padding>
+            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+         </padding>
+      </HBox>
+      <Button layoutX="788.0" layoutY="605.0" mnemonicParsing="false" onAction="#Home" prefHeight="30.0" prefWidth="53.0" styleClass="search-button" stylesheets="@CSS/product-box.css">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="22.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@SOURCE/arrow_back.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <ImageView fitHeight="122.0" fitWidth="126.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@SOURCE/dcdb1b22-4ef1-48d3-bb3d-51132a26f572.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="59.0" fitWidth="68.0" layoutX="865.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@SOURCE/homme.png" />
+         </image>
+      </ImageView>
+   </children>
+</Pane>

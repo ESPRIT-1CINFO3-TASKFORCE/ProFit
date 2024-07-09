@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="637.0" prefWidth="1109.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.StoreController">
+   <children>
+      <BorderPane layoutX="6.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <left>
+            <VBox prefHeight="200.0" prefWidth="435.0" styleClass="right-bar" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane prefHeight="26.0" prefWidth="327.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <Button layoutX="277.0" layoutY="25.0" mnemonicParsing="false" onAction="#chercher" prefHeight="37.0" prefWidth="94.0" styleClass="search-button" stylesheets="@CSS/product-box.css" text="Chercher" />
+                        <TextField fx:id="nomp" layoutX="63.0" layoutY="26.0" prefHeight="34.0" prefWidth="191.0" styleClass="search-box" stylesheets="@CSS/product-box.css" />
+                     </children>
+                  </Pane>
+                  <VBox fx:id="chosenProduitCard" alignment="CENTER" prefHeight="392.0" prefWidth="262.0" style="-fx-background-color: #ffac78;" stylesheets="@CSS/product-box.css">
+                     <VBox.margin>
+                        <Insets left="50.0" right="50.0" />
+                     </VBox.margin>
+                     <children>
+                        <HBox prefHeight="60.0" prefWidth="335.0">
+                           <children>
+                              <Label fx:id="ProduitNameLable" prefHeight="48.0" prefWidth="276.0" text="Peach" textFill="#232020">
+                                 <font>
+                                    <Font name="Arial" size="25.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="ProduitPriceLabel" prefHeight="57.0" prefWidth="171.0" text="\\$2.99" textFill="#0d0c0c">
+                                 <font>
+                                    <Font name="Arial" size="25.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets left="20.0" top="30.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <ImageView fx:id="ProduitImg" fitHeight="118.0" fitWidth="266.0" pickOnBounds="true" preserveRatio="true">
+
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </ImageView>
+                        <HBox alignment="CENTER" prefHeight="73.0" prefWidth="344.0">
+                           <children>
+                              <Label prefHeight="53.0" prefWidth="167.0" text="     Quantité :" textFill="WHITE">
+                                 <font>
+                                    <Font name="Cambria" size="24.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="qnt" prefHeight="26.0" prefWidth="100.0" styleClass="search-box" stylesheets="@CSS/product-box.css" />
+                           </children>
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="45.0" prefWidth="200.0">
+                           <VBox.margin>
+                              <Insets bottom="20.0" top="20.0" />
+                           </VBox.margin>
+                           <children>
+                              <Separator prefHeight="0.0" prefWidth="118.0" />
+                              <Separator prefHeight="0.0" prefWidth="118.0" />
+                           </children>
+                        </HBox>
+                        <Button mnemonicParsing="false" onAction="#ajouterPanier" prefHeight="50.0" prefWidth="270.0" styleClass="add-btn" stylesheets="@CSS/product-box.css" text="Ajouter au  Panier" textFill="#0d0d0d">
+                           <font>
+                              <Font name="Arial" size="18.0" />
+                           </font>
+                        </Button>
+                        <HBox alignment="CENTER" prefHeight="56.0" prefWidth="314.0" />
+                     </children>
+                     <styleClass>
+                        <String fx:value="chosen-fruit-card" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                  </VBox>
+                  <Pane prefHeight="0.0" prefWidth="383.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <Button layoutX="65.0" layoutY="16.0" mnemonicParsing="false" onAction="#BackHome" prefHeight="32.0" prefWidth="54.0" styleClass="search-button" stylesheets="@CSS/product-box.css">
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true" styleClass="search-button">
+                                 <image>
+                                    <Image url="@SOURCE/arrow_back.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></Button>
+                     </children></Pane>
+               </children>
+            </VBox>
+         </left>
+         <center>
+            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="65.0" prefWidth="200.0">
+                     <VBox.margin>
+                        <Insets left="20.0" right="20.0" />
+                     </VBox.margin>
+                     <children>
+                        <Pane prefHeight="65.0" prefWidth="393.0" HBox.hgrow="ALWAYS" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="614.0" prefWidth="684.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <ScrollPane fx:id="scroll" prefHeight="576.0" prefWidth="691.0" styleClass="transparent" stylesheets="@CSS/product-box.css">
+                           <content>
+                              <GridPane fx:id="grid" prefHeight="0.0" prefWidth="0.0">
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                                 </rowConstraints>
+                              </GridPane>
+                           </content>
+                           <HBox.margin>
+                              <Insets top="10.0" />
+                           </HBox.margin>
+                        </ScrollPane>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </center>
+         <top>
+            <Pane prefHeight="80.0" prefWidth="1110.0" styleClass="root1" stylesheets="@CSS/style_dash.css" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="372.0" layoutY="14.0" prefHeight="49.0" prefWidth="366.0" styleClass="search-box" text="       ProFit STORE" textFill="#aeaeae">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                     <stylesheets>
+                        <URL value="@CSS/fullpackstyling.css" />
+                        <URL value="@CSS/product-box.css" />
+                     </stylesheets>
+                  </Label>
+                  <Button layoutX="1025.0" layoutY="13.0" mnemonicParsing="false" onAction="#Panier" prefHeight="51.0" prefWidth="71.0" styleClass="search-button" stylesheets="@CSS/product-box.css">
+                     <graphic>
+                        <ImageView fitHeight="55.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@SOURCE/panier.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <ImageView fitHeight="163.0" fitWidth="109.0" layoutX="-8.0" layoutY="-9.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@SOURCE/dcdb1b22-4ef1-48d3-bb3d-51132a26f572.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </top>
+      </BorderPane>
+   </children>
+</AnchorPane>

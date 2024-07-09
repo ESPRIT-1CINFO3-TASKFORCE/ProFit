@@ -9,9 +9,9 @@ public interface IServices <T>{
 
     void supprimer(T t) throws SQLException;
 
-    void  update(T t) throws SQLException;
+    void  update(T t,int id) throws SQLException;
 
-    T findbyId(int e) throws SQLException;
+    T findbyId(String e) throws SQLException;
 
     List<T> readAll() throws SQLException;
 }
