@@ -25,12 +25,12 @@
     -fx-font-weight: bold;
 }
 .chart-bar.series0 {
-    -fx-bar-fill: #79776b; /* Bleu pour le poids */
+    -fx-bar-fill:  FFA38F; /* Bleu pour le poids */
 }
 
 /* Couleur des barres pour la deuxième série (masse musculaire) */
 .chart-bar.series1 {
-    -fx-bar-fill: #e2a785; /* Rouge pour la masse musculaire */
+    -fx-bar-fill:  FFD18E; /* Rouge pour la masse musculaire */
 }
 .chart-bar.series2 {
     -fx-bar-fill: #e2a785; /* Rouge pour la masse musculaire */

@@ -5,105 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="19f57df4-e2f3-490a-86e2-cd5a451d0bc7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/cssdialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interface_snapshot.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/profit2_db.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/AddUserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/AfficherProgres.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/AjouterProgresController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/Chat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/ChatController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/CreateUserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/DashboardBilanAdh.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/EditUserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/ForgotPwdController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/FormulaireModifierProgres.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/Forum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/ForumController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/HomeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/ImageView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/ListController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/LoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/PageInitial.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/PlansRegime.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/SideBarController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/TestAffichage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/TopicController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/interfaceGraphiqueTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Entites/CommentEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Entites/RegimeEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Entites/RegimeUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Entites/Repas.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Entites/Semaine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Services/RegimeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Services/RegimeUserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/TestMain/MainFX.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Utils/ChatClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Utils/ChatServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Utils/SessionManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Accueil.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/AjouterProgres.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/AjouterUser.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Chat.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ChatLogin.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/CreerUser.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/DashboardBilanAdh.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FormulaireModifierProgres.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ListUsers.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Login.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/MdpOublier.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ModifierUser.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/PageInitial.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/PlansRegime.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/SideBar.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/SideBarTest.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Success.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/TestAffichage.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/5e9eddd9-5736-4945-9f55-20136583dc94-cover.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/ausdauertraining.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/forumimage.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/gym-background-enough-blank-space-light-white-tone-modern-style-generative-ai_527096-25225.avif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/profittitle.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/searchButton.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/sendButton.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/woman-silhouette-profile-10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/dashborad.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/forums.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/logging.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/newTopic.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/source/logo.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/source/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/source/profitacc.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/source/turn-off.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/styles/chatStyle.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/styles/forumStyle.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/styles/topicStyle.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/topic.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commande_details.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/commande_details.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/AfficherProduitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/AfficherProduitController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/PanierCommandeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/PanierCommandeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/StoreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/StoreController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Entites/ForumEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entites/ForumEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Entites/MessageEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entites/MessageEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Entites/ProgressionEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entites/ProgressionEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Entites/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entites/UserEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Entites/régime.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Services/ForumService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/ForumService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Services/IServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/IServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Services/MessageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/MessageService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Services/ProduitService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/ProduitService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Services/ProgressionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/ProgressionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Services/RégimeService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TestMain/MainFx.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TestMain/MainFx.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TestMain/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TestMain/main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/SidBarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/SidBarController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/AjouterProgres.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AjouterProgres.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/CreerUser.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/CreerUser.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/DashboardBilanAdh.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/DashboardBilanAdh.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FormulaireModifierProgres.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FormulaireModifierProgres.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/ListUsers.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ListUsers.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/PageInitial.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/PageInitial.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/PlansRegime.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/PlansRegime.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/SideBar.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/SideBar.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Side_bar.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Side_bar.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/TestAffichage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/TestAffichage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dashborad.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dashborad.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,13 +40,14 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.ChatServer.executor": "Run",
     "Application.MainFX.executor": "Run",
     "Application.main.executor": "Run",
     "Maven.Porfit [org.openjfx:javafx-maven-plugin:0.0.8:run].executor": "Run",
     "Maven.ProFit [org.openjfx:javafx-maven-plugin:0.0.8:run].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Merging main",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
@@ -144,6 +61,26 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="ChatServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Utils.ChatServer" />
+      <module name="ProFit" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ChatServer" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -162,7 +99,7 @@
       <updated>1720460085642</updated>
       <workItem from="1720460090696" duration="2662000" />
       <workItem from="1720531688488" duration="1956000" />
-      <workItem from="1720534493249" duration="2306000" />
+      <workItem from="1720534493249" duration="11134000" />
     </task>
     <servers />
   </component>

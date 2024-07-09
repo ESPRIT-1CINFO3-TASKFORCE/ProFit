@@ -1,48 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.String?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="642.0" stylesheets="@dashborad.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.PageInitial">
+<AnchorPane prefHeight="391.0" prefWidth="688.0" stylesheets="@CSS/style_dash.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.PageInitial">
    <children>
-      <AnchorPane prefHeight="400.0" prefWidth="148.0" style="-fx-background-color: #e4a771;" stylesheets="@dashborad.css">
-         <children>
-            <Label layoutX="28.0" layoutY="-11.0" prefHeight="75.0" prefWidth="105.0" styleClass="title-bold" stylesheets="@dashborad.css" text="ProFit" textOverrun="CENTER_WORD_ELLIPSIS">
-               <font>
-                  <Font name="System Italic" size="18.0" />
-               </font>
-            </Label>
-            <Button layoutX="1.0" layoutY="89.0" mnemonicParsing="false" onAction="#BouttonNaviguerAjouterProg" styleClass="sidebarB" stylesheets="@dashborad.css" text="Ajouter Progreggion" />
-            <Button layoutY="127.0" mnemonicParsing="false" onAction="#BouttonNaviguerAfficherProg" styleClass="sidebarB" stylesheets="@dashborad.css" text="Afficher Progression" />
-            <Button layoutX="-1.0" layoutY="165.0" mnemonicParsing="false" onAction="#BouttonNaviguerDashboardAdh" prefHeight="38.0" prefWidth="149.0" styleClass="sidebarB" stylesheets="@dashborad.css" text="Dashbord Adherant" />
-            <Button layoutX="5.0" layoutY="203.0" mnemonicParsing="false" onAction="#BouttonNaviguerPlanningRegime" prefHeight="38.0" prefWidth="137.0" styleClass="sidebarB" stylesheets="@dashborad.css" text="Planning Régime" />
-            <Button layoutX="12.0" layoutY="241.0" mnemonicParsing="false" onAction="#BouttonNaviguerAcceuilPrin" prefHeight="38.0" prefWidth="137.0" styleClass="sidebarB" stylesheets="@dashborad.css" text="Acceuil Principale" />
-         </children>
-         <styleClass>
-            <String fx:value="sidebar" />
-            <String fx:value="sidebarB" />
-         </styleClass>
-      </AnchorPane>
-      <Label layoutX="177.0" layoutY="101.0" text="Bienvenue dans votre espace nutritionnel personnel, ">
+      <Label layoutX="119.0" layoutY="172.0" text="Bienvenue dans votre espace nutritionnel personnel, " textFill="#ffac78">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="177.0" layoutY="128.0" text="où je suis là pour vous guider vers une vie plus saine .">
+      <Label layoutX="129.0" layoutY="200.0" text="où je suis là pour vous guider vers une vie plus saine ." textFill="#ffac78">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>
       </Label>
-      <Button layoutX="553.0" layoutY="23.0" minWidth="17.0" mnemonicParsing="false" onAction="#logout" prefHeight="31.0" prefWidth="17.0" />
-      <ImageView fitHeight="45.0" fitWidth="53.0" layoutX="551.0" layoutY="16.0">
-         <image>
-            <Image url="@source/turn-off.png" />
-         </image>
-      </ImageView>
+      <Pane layoutY="33.0" prefHeight="58.0" prefWidth="688.0" styleClass="main-content" stylesheets="@CSS/style_commande.css">
+         <children>
+            <ImageView fitHeight="26.0" fitWidth="20.0" layoutX="109.0" layoutY="17.0">
+               <image>
+                  <Image url="@SOURCE/accueil.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="198.0" layoutY="8.0" mnemonicParsing="false" onAction="#BouttonNaviguerAfficherProg" styleClass="sidebarB" stylesheets="@dashborad.css" text="Afficher Progression" />
+            <Button layoutX="354.0" layoutY="8.0" mnemonicParsing="false" onAction="#BouttonNaviguerPlanningRegime" prefHeight="41.0" prefWidth="126.0" styleClass="sidebarB" stylesheets="@dashborad.css" text="Planning Régime" />
+            <Button layoutX="109.0" layoutY="9.0" mnemonicParsing="false" onAction="#BouttonNaviguerAcceuilPrin" prefHeight="41.0" prefWidth="96.0" styleClass="sidebarB" stylesheets="@dashborad.css" text="Acceuil " />
+            <Button layoutX="489.0" layoutY="9.0" mnemonicParsing="false" onAction="#BouttonNaviguerDashboardAdh" prefHeight="41.0" prefWidth="145.0" styleClass="sidebarB" stylesheets="@dashborad.css" text="Dashbord Adherant" />
+            <ImageView fitHeight="59.0" fitWidth="48.0" layoutX="640.0" layoutY="-10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@SOURCE/homme.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="626.0" layoutY="28.0" prefHeight="27.0" prefWidth="55.0" text="  Admin">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="185.0" layoutY="20.0">
+               <image>
+                  <Image url="@SOURCE/e-book.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="344.0" layoutY="21.0">
+               <image>
+                  <Image url="@SOURCE/calendar-days.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="479.0" layoutY="22.0">
+               <image>
+                  <Image url="@SOURCE/proteine-de-lactoserum.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="135.0" fitWidth="126.0" layoutX="-17.0" layoutY="-39.0">
+               <image>
+                  <Image url="@SOURCE/dcdb1b22-4ef1-48d3-bb3d-51132a26f572.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Button layoutX="625.0" layoutY="346.0" minWidth="17.0" mnemonicParsing="false" onAction="#logout" prefHeight="34.0" prefWidth="48.0" styleClass="search-button" stylesheets="@CSS/product-box.css">
+         <graphic>
+            <ImageView fitHeight="32.0" fitWidth="50.0">
+               <image>
+                  <Image url="@source/turn-off.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
    </children>
 </AnchorPane>

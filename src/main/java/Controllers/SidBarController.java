@@ -44,4 +44,14 @@ public class SidBarController {
             throw new RuntimeException(e);
         }
     }
+    @FXML
+    void acceuil(ActionEvent event) {
+        FXMLLoader L = new FXMLLoader(getClass().getResource("/Accueil.fxml"));
+        try {
+            Parent root = L.load();
+            tfgestion.getScene().setRoot(root);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

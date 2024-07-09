@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -7,43 +8,66 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="601.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AjouterProgresController">
+<AnchorPane prefHeight="400.0" prefWidth="601.0" stylesheets="@CSS/style_dash.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AjouterProgresController">
    <children>
-      <Button layoutX="241.0" layoutY="312.0" minHeight="18.0" mnemonicParsing="false" onAction="#AjouterProg" prefHeight="38.0" prefWidth="247.0" styleClass="buttonv" stylesheets="@dashborad.css" text="Ajouter Progression" textFill="#1b1712cc">
+      <Button layoutX="21.0" layoutY="160.0" minHeight="18.0" mnemonicParsing="false" onAction="#AjouterProg" prefHeight="38.0" prefWidth="158.0" style="-fx-background-color: #ffac78;" styleClass="search-button" text="Ajouter Progression" textFill="#ffffffcc">
          <font>
-            <Font name="Comic Sans MS" size="11.0" />
+            <Font size="14.0" />
          </font>
+         <stylesheets>
+            <URL value="@dashborad.css" />
+            <URL value="@CSS/product-box.css" />
+         </stylesheets>
       </Button>
-      <TextField fx:id="tfEmail" layoutX="287.0" layoutY="104.0" />
-      <TextField fx:id="tfPoids" layoutX="287.0" layoutY="134.0" />
-      <Label layoutX="159.0" layoutY="108.0" prefHeight="18.0" prefWidth="111.0" text="Email" textFill="#100f0f" />
-      <AnchorPane prefHeight="400.0" prefWidth="131.0" style="-fx-background-color: #ed8f50;">
-         <children>
-            <Accordion layoutY="351.0" prefHeight="55.0" prefWidth="135.0" />
-            <ImageView fitHeight="200.0" fitWidth="151.0" layoutX="-8.0" layoutY="103.0">
-               <image>
-                  <Image url="@source/logo.jpg" />
-               </image>
-            </ImageView>
-         </children></AnchorPane>
-      <Label layoutX="163.0" layoutY="138.0" text="Poids" />
-      <Label layoutX="159.0" layoutY="203.0" text="Date_inscription" />
-      <TextField fx:id="tfLongueur" layoutX="287.0" layoutY="164.0" />
-      <TextField fx:id="tfdateInscri" layoutX="287.0" layoutY="199.0" />
-      <Label layoutX="164.0" layoutY="168.0" text="Longueur" />
-      <Button layoutX="241.0" layoutY="358.0" minHeight="18.0" mnemonicParsing="false" onAction="#navigation" prefHeight="38.0" prefWidth="247.0" styleClass="buttonv" stylesheets="@dashborad.css" text="Afficher Progressions" textFill="#1b1712cc">
+      <TextField fx:id="tfEmail" layoutX="399.0" layoutY="118.0" prefHeight="27.0" prefWidth="151.0" styleClass="search-box" stylesheets="@CSS/product-box.css" />
+      <TextField fx:id="tfPoids" layoutX="397.0" layoutY="166.0" prefHeight="27.0" prefWidth="150.0" styleClass="search-box" stylesheets="@CSS/product-box.css" />
+      <Label layoutX="273.0" layoutY="118.0" prefHeight="27.0" prefWidth="79.0" text="Email :" textFill="#100f0f" />
+      <Label layoutX="273.0" layoutY="166.0" prefHeight="27.0" prefWidth="59.0" text="Poids :" />
+      <Label layoutX="273.0" layoutY="255.0" prefHeight="38.0" prefWidth="104.0" text="Date_inscription :" />
+      <TextField fx:id="tfLongueur" layoutX="399.0" layoutY="208.0" prefHeight="27.0" prefWidth="151.0" styleClass="search-box" stylesheets="@CSS/product-box.css" />
+      <TextField fx:id="tfdateInscri" layoutX="397.0" layoutY="261.0" prefHeight="27.0" prefWidth="151.0" styleClass="search-box" stylesheets="@CSS/product-box.css" />
+      <Label layoutX="273.0" layoutY="202.0" prefHeight="38.0" prefWidth="79.0" text="Longueur :" />
+      <Button layoutX="21.0" layoutY="221.0" minHeight="18.0" mnemonicParsing="false" onAction="#navigation" prefHeight="38.0" prefWidth="158.0" style="-fx-background-color: #ffac78;" styleClass="search-button" stylesheets="@CSS/product-box.css" text="Afficher Progressions" textFill="#ffffffcc">
          <font>
-            <Font name="Comic Sans MS" size="13.0" />
+            <Font size="13.0" />
          </font>
       </Button>
       <Accordion layoutY="83.0" />
-      <Label layoutX="190.0" layoutY="29.0" prefHeight="55.0" prefWidth="381.0" styleClass="titlee" stylesheets="@dashborad.css" text="Ajouter une progression" textAlignment="CENTER" textFill="#db6b20">
-         <font>
-            <Font name="Arial Black" size="18.0" />
-         </font>
-      </Label>
-      <Button fx:id="navigationHome" layoutX="578.0" layoutY="-2.0" mnemonicParsing="false" onAction="#navigationHome" text="HOME" />
+      <Button fx:id="navigationHome" layoutX="592.0" layoutY="362.0" mnemonicParsing="false" onAction="#navigationHome" prefHeight="24.0" prefWidth="50.0" styleClass="search-button" stylesheets="@CSS/product-box.css">
+         <graphic>
+            <ImageView fitHeight="13.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@SOURCE/arrow_back.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <ImageView fitHeight="116.0" fitWidth="104.0" layoutY="2.0">
+         <image>
+            <Image url="@source/logo.jpg" />
+         </image>
+      </ImageView>
+      <Pane layoutX="110.0" layoutY="31.0" prefHeight="58.0" prefWidth="577.0" styleClass="main-content" stylesheets="@CSS/style_commande.css">
+         <children>
+            <Label layoutX="39.0" layoutY="21.0" prefHeight="27.0" prefWidth="364.0" text="Ajouter une progression" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="39.0" layoutY="1.0" prefHeight="27.0" prefWidth="151.0" text="Gestion/Progression" textFill="WHITE" />
+            <ImageView fitHeight="59.0" fitWidth="68.0" layoutX="519.0" layoutY="-28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@SOURCE/homme.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="510.0" layoutY="31.0" prefHeight="27.0" prefWidth="68.0" text="  Admin">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

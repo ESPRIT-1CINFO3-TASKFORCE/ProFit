@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -17,47 +19,51 @@
                 <Image url="@source/profitacc.jpg" />
             </image>
         </ImageView>
-        <TextField fx:id="tflogin" layoutX="422.0" layoutY="204.0" prefHeight="25.0" prefWidth="181.0" />
-        <TextField fx:id="tfmdp" layoutX="422.0" layoutY="238.0" prefHeight="25.0" prefWidth="181.0" />
+        <TextField fx:id="tflogin" layoutX="422.0" layoutY="204.0" prefHeight="25.0" prefWidth="181.0" styleClass="search-box" stylesheets="@CSS/product-box.css" />
         <ImageView fitHeight="85.0" fitWidth="174.0" layoutX="14.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@source/logo.png" />
             </image>
         </ImageView>
-        <Button contentDisplay="BOTTOM" graphicTextGap="6.0" layoutX="338.0" layoutY="306.0" mnemonicParsing="false" onAction="#signin" prefHeight="36.0" prefWidth="245.0" styleClass="buttonv" stylesheets="@dashborad.css" text="Connexion" textFill="#15151787">
+        <Button contentDisplay="BOTTOM" graphicTextGap="6.0" layoutX="340.0" layoutY="301.0" mnemonicParsing="false" onAction="#signin" prefHeight="37.0" prefWidth="214.0" style="-fx-background-color: #ffffff;" styleClass="search-button" text="Connexion" textFill="#ffac78">
+            <font>
+                <Font name="Arial Rounded MT Bold" size="16.0" />
+            </font>
+         <stylesheets>
+            <URL value="@dashborad.css" />
+            <URL value="@CSS/product-box.css" />
+         </stylesheets>
+        </Button>
+        <Button contentDisplay="BOTTOM" graphicTextGap="6.0" layoutX="340.0" layoutY="349.0" mnemonicParsing="false" onAction="#forgotpassword" prefHeight="37.0" prefWidth="214.0" style="-fx-background-color: #ffffff;" styleClass="search-button" stylesheets="@CSS/product-box.css" text="Mot de Passe oublié ?" textFill="#ffad7a">
             <font>
                 <Font name="Arial Rounded MT Bold" size="16.0" />
             </font>
         </Button>
-        <Button contentDisplay="BOTTOM" graphicTextGap="6.0" layoutX="340.0" layoutY="349.0" mnemonicParsing="false" onAction="#forgotpassword" prefHeight="36.0" prefWidth="245.0" styleClass="buttonv" stylesheets="@dashborad.css" text="Mot de Passe oublié ?" textFill="#cd3f0687">
+        <Label fx:id="lmdp" layoutX="274.0" layoutY="248.0" text="Mot de Passe">
             <font>
-                <Font name="Arial Rounded MT Bold" size="16.0" />
-            </font>
-        </Button>
-        <Label fx:id="lmdp" layoutX="268.0" layoutY="238.0" text="Mot de Passe">
-            <font>
-                <Font name="Arial Bold Italic" size="22.0" />
+                <Font size="22.0" />
             </font>
         </Label>
-        <Label fx:id="llogin" layoutX="349.0" layoutY="204.0" text="Login">
+        <Label fx:id="llogin" layoutX="352.0" layoutY="201.0" text="Login">
             <font>
-                <Font name="Arial Bold Italic" size="21.0" />
+                <Font size="21.0" />
             </font>
         </Label>
-        <Button contentDisplay="BOTTOM" graphicTextGap="6.0" layoutX="14.0" layoutY="385.0" mnemonicParsing="false" onAction="#pagePrecedente" prefHeight="36.0" prefWidth="69.0" text="Retour" textFill="#cd3f0687">
+        <Button contentDisplay="BOTTOM" graphicTextGap="6.0" layoutX="14.0" layoutY="385.0" mnemonicParsing="false" onAction="#pagePrecedente" prefHeight="36.0" prefWidth="69.0" style="-fx-background-color: #ffffff;" styleClass="search-button" stylesheets="@CSS/product-box.css" text="Retour" textFill="#ffac78">
             <font>
                 <Font name="Arial Rounded MT Bold" size="16.0" />
             </font>
         </Button>
       <Label layoutX="230.0" layoutY="31.0" prefHeight="40.0" prefWidth="398.0" text="Connectez-vous pour accéder">
          <font>
-            <Font name="System Bold Italic" size="28.0" />
+            <Font name="System Bold" size="28.0" />
          </font>
       </Label>
-      <Label layoutX="393.0" layoutY="74.0" prefHeight="40.0" prefWidth="257.0" text=" à notre plateforme">
+      <Label layoutX="300.0" layoutY="72.0" prefHeight="40.0" prefWidth="257.0" text=" à notre plateforme">
          <font>
-            <Font name="System Bold Italic" size="28.0" />
+            <Font name="System Bold" size="28.0" />
          </font>
       </Label>
+      <PasswordField fx:id="tfpmdp" layoutX="421.0" layoutY="251.0" prefHeight="26.0" prefWidth="182.0" styleClass="search-box" stylesheets="@CSS/product-box.css" />
     </children>
 </AnchorPane>

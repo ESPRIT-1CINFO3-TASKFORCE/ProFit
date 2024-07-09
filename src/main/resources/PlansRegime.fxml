@@ -11,9 +11,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="632.0" prefWidth="743.0" stylesheets="@dashborad.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.PlansRegime">
+<AnchorPane prefHeight="632.0" prefWidth="743.0" stylesheets="@CSS/style_dash.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.PlansRegime">
    <children>
-      <Label layoutX="58.0" prefHeight="44.0" prefWidth="350.0" text="Ajouter Regime Semainier" textFill="#db8925">
+      <Label layoutX="77.0" layoutY="18.0" prefHeight="44.0" prefWidth="350.0" text="Ajouter Regime Semainier" textFill="#ffac78">
          <font>
             <Font name="Arial Black" size="18.0" />
          </font>
@@ -83,7 +83,7 @@
             <String fx:value="vbox-highlighted" />
          </styleClass>
       </VBox>
-      <ImageView fitHeight="62.0" fitWidth="60.0">
+      <ImageView fitHeight="87.0" fitWidth="93.0" layoutX="-9.0" layoutY="-3.0">
          <image>
             <Image url="@source/logo.jpg" />
          </image>
@@ -212,9 +212,9 @@
             </Text>
          </children>
       </VBox>
-      <Text fill="#77736f" layoutX="18.0" layoutY="559.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Régime pour PERTE de poids" />
-      <Text layoutX="14.0" layoutY="527.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Régime HEALTHY" />
-      <Text fill="#9f5e03" layoutX="16.0" layoutY="543.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Régime pour GAGNE de poids" />
+      <Text fill="#77736f" layoutX="14.0" layoutY="567.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Régime pour PERTE de poids" />
+      <Text layoutX="14.0" layoutY="525.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Régime HEALTHY" />
+      <Text fill="#9f5e03" layoutX="14.0" layoutY="548.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Régime pour GAGNE de poids" />
       <VBox layoutX="77.0" layoutY="251.0" prefHeight="119.0" prefWidth="96.0" style="-fx-background-color: #f8c088;" stylesheets="@dashborad.css">
          <styleClass>
             <String fx:value="vbox-highlighted" />
@@ -503,16 +503,23 @@
             </Text>
          </children>
       </VBox>
-      <Button layoutX="139.0" layoutY="587.0" minHeight="18.0" mnemonicParsing="false" onAction="#ajouterRegime" prefHeight="37.0" prefWidth="341.0" styleClass="buttonv" stylesheets="@dashborad.css" text="Enregistrer" />
-      <TextField fx:id="tfemail" layoutX="469.0" layoutY="40.0" />
-      <TextField fx:id="tfnomRegime" layoutX="569.0" layoutY="518.0" />
-      <TextField fx:id="tfDatDebut" layoutX="569.0" layoutY="549.0" />
-      <TextField fx:id="tfDatFin" layoutX="569.0" layoutY="584.0" />
-      <Label layoutX="481.0" layoutY="529.0" text="Nom Régime" />
-      <Label layoutX="485.0" layoutY="553.0" text="Date_début:" />
-      <Label layoutX="501.0" layoutY="588.0" text="Date_fin:" />
-      <Label layoutX="426.0" layoutY="44.0" text="email" />
-      <Button fx:id="navigationHome" layoutX="634.0" layoutY="7.0" mnemonicParsing="false" onAction="#navigationHome" text="HOME" />
+      <Button layoutX="227.0" layoutY="577.0" minHeight="18.0" mnemonicParsing="false" onAction="#ajouterRegime" prefHeight="38.0" prefWidth="205.0" style="-fx-background-color: #ffac78;" styleClass="search-button" stylesheets="@CSS/product-box.css" text="Enregistrer" textFill="WHITE" />
+      <TextField fx:id="tfemail" layoutX="469.0" layoutY="40.0" styleClass="search-box" stylesheets="@CSS/product-box.css" />
+      <TextField fx:id="tfnomRegime" layoutX="569.0" layoutY="518.0" styleClass="search-box" stylesheets="@CSS/product-box.css" />
+      <TextField fx:id="tfDatDebut" layoutX="569.0" layoutY="549.0" styleClass="search-box" stylesheets="@CSS/product-box.css" />
+      <TextField fx:id="tfDatFin" layoutX="569.0" layoutY="584.0" styleClass="search-box" stylesheets="@CSS/product-box.css" />
+      <Label layoutX="483.0" layoutY="521.0" prefHeight="18.0" prefWidth="86.0" text="Nom Régime :" />
+      <Label layoutX="485.0" layoutY="553.0" prefHeight="18.0" prefWidth="80.0" text="Date_début :" />
+      <Label layoutX="485.0" layoutY="587.0" prefHeight="18.0" prefWidth="51.0" text="Date_fin :" />
+      <Label layoutX="416.0" layoutY="44.0" prefHeight="18.0" prefWidth="39.0" text="email :" />
+      <Button fx:id="navigationHome" layoutX="682.0" layoutY="30.0" mnemonicParsing="false" onAction="#navigationHome" styleClass="search-button" stylesheets="@CSS/product-box.css">
+         <graphic>
+            <ImageView fitHeight="19.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@SOURCE/arrow_back.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
    </children>
    <styleClass>
       <String fx:value="regime-standard" />

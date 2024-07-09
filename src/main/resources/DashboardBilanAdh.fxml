@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.String?>
+<?import java.net.URL?>
 <?import javafx.scene.chart.BarChart?>
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.NumberAxis?>
@@ -14,9 +15,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="709.0" styleClass="card" stylesheets="@dashborad.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.DashboardBilanAdh">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="709.0" styleClass="pane_1" stylesheets="@CSS/style_dash.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.DashboardBilanAdh">
     <children>
-        <BarChart fx:id="StatistiquePoidsDate" layoutX="163.0" layoutY="215.0" prefHeight="255.0" prefWidth="461.0" stylesheets="@dashborad.css">
+        <BarChart fx:id="StatistiquePoidsDate" layoutX="81.0" layoutY="225.0" prefHeight="255.0" prefWidth="541.0" stylesheets="@dashborad.css">
             <xAxis>
                 <CategoryAxis fx:id="idxdate" label="Date" />
             </xAxis>
@@ -29,44 +30,47 @@
          </styleClass>
            
         </BarChart>
-      <Label layoutX="132.0" layoutY="8.0" prefHeight="44.0" prefWidth="209.0" stylesheets="@dashborad.css" text="Dashbord Adherant" textFill="#ebac5f">
+      <Label layoutX="110.0" layoutY="52.0" prefHeight="44.0" prefWidth="235.0" stylesheets="@dashborad.css" text="Dashbord Adherant" textFill="#ffac78">
          <font>
             <Font name="Arial Black" size="18.0" />
          </font>
       </Label>
-      <VBox fx:id="card1" layoutX="126.0" layoutY="94.0" prefHeight="67.0" prefWidth="183.0" styleClass="card-1" stylesheets="@dashborad.css">
+      <VBox fx:id="card1" layoutX="66.0" layoutY="146.0" prefHeight="67.0" prefWidth="183.0" style="-fx-background-color: FFA38F;" styleClass="pane_1" stylesheets="@CSS/fullpackstyling.css">
          <children>
-            <Text fx:id="idnom" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="card" text="Nom et Prénom:" />
-            <Label fx:id="tfnomPrenom" text="Label" />
+            <Text fx:id="idnom" fill="#919090" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="card" text="    Nom et Prénom:" wrappingWidth="154.64887237548828" />
+            <Label fx:id="tfnomPrenom" prefHeight="20.0" prefWidth="147.0" text="    Label" textFill="#919090" />
          </children>
       </VBox>
-      <VBox layoutX="317.0" layoutY="94.0" prefHeight="68.0" prefWidth="190.0" stylesheets="@dashborad.css">
-         <styleClass>
-            <String fx:value="card-1" />
-            <String fx:value="card-2" />
-         </styleClass>
+      <VBox layoutX="257.0" layoutY="146.0" prefHeight="68.0" prefWidth="190.0" style="-fx-background-color: FFD18E;" styleClass="pane_1">
          <children>
-            <Label fx:id="tfpoids" prefHeight="18.0" prefWidth="110.0" text="Label" />
-            <Label fx:id="tfdescription" prefHeight="13.0" prefWidth="139.0" text="Label" />
+            <Label fx:id="tfpoids" prefHeight="18.0" prefWidth="158.0" text="    Label" textFill="#919090" />
+            <Label fx:id="tfdescription" prefHeight="18.0" prefWidth="158.0" text="    Label" textFill="#919090" />
+         </children>
+         <stylesheets>
+            <URL value="@dashborad.css" />
+            <URL value="@CSS/fullpackstyling.css" />
+         </stylesheets>
+      </VBox>
+      <VBox layoutX="453.0" layoutY="146.0" prefHeight="68.0" prefWidth="190.0" style="-fx-background-color: E9FF97;" styleClass="pane_1" stylesheets="@CSS/fullpackstyling.css">
+         <children>
+            <Label fx:id="tfNomRegime" prefHeight="20.0" prefWidth="160.0" text="  Label" textFill="#919090" />
+            <Label fx:id="tfDatefin" prefHeight="20.0" prefWidth="161.0" text="  Label" textFill="#919090" />
          </children>
       </VBox>
-      <VBox layoutX="513.0" layoutY="94.0" prefHeight="68.0" prefWidth="190.0" styleClass="card-3" stylesheets="@dashborad.css">
-         <children>
-            <Label fx:id="tfNomRegime" text="Label" />
-            <Label fx:id="tfDatefin" text="Label" />
-         </children>
-      </VBox>
-      <AnchorPane layoutY="-2.0" prefHeight="527.0" prefWidth="126.0" style="-fx-background-color: #e6964b;">
-         <children>
-            <ImageView fitHeight="161.0" fitWidth="110.0" layoutX="8.0" layoutY="141.0">
+      <Button fx:id="navigationHome" layoutX="648.0" layoutY="481.0" mnemonicParsing="false" onAction="#navigationHome" prefHeight="24.0" prefWidth="46.0" styleClass="search-button" stylesheets="@CSS/product-box.css">
+         <graphic>
+            <ImageView fitHeight="15.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@source/logo.jpg" />
+                  <Image url="@SOURCE/arrow_back.png" />
                </image>
             </ImageView>
-         </children>
-      </AnchorPane>
-      <Button fx:id="navigationHome" layoutX="648.0" layoutY="8.0" mnemonicParsing="false" onAction="#navigationHome" text="HOME" />
-      <Button fx:id="SerachDashboardbtn" layoutX="507.0" layoutY="40.0" mnemonicParsing="false" onAction="#SerachDashboardbtn" prefHeight="33.0" prefWidth="95.0" styleClass="buttonv" stylesheets="@dashborad.css" text="chercher" />
-      <TextField fx:id="colemailDash" layoutX="341.0" layoutY="40.0" prefHeight="33.0" prefWidth="159.0" />
+         </graphic></Button>
+      <Button fx:id="SerachDashboardbtn" layoutX="547.0" layoutY="96.0" mnemonicParsing="false" onAction="#SerachDashboardbtn" prefHeight="33.0" prefWidth="95.0" style="-fx-background-color: #ffac78;" styleClass="search-button" stylesheets="@CSS/product-box.css" text="chercher" textFill="WHITE" />
+      <TextField fx:id="colemailDash" layoutX="346.0" layoutY="96.0" prefHeight="33.0" prefWidth="159.0" styleClass="search-box" stylesheets="@CSS/product-box.css" />
+      <ImageView fitHeight="132.0" fitWidth="110.0" layoutY="8.0">
+         <image>
+            <Image url="@source/logo.jpg" />
+         </image>
+      </ImageView>
     </children>
 </AnchorPane>

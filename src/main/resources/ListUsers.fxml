@@ -4,33 +4,30 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="426.0" prefWidth="644.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ListController">
+<AnchorPane prefHeight="426.0" prefWidth="644.0" stylesheets="@CSS/style_dash.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ListController">
     <children>
-        <TableView fx:id="tableview" layoutX="213.0" layoutY="68.0" prefHeight="268.0" prefWidth="416.0">
+        <TableView fx:id="tableview" layoutX="213.0" layoutY="68.0" prefHeight="268.0" prefWidth="416.0" stylesheets="@CSS/fullpackstyling.css">
             <columns>
                 <TableColumn fx:id="conom" prefWidth="89.2000732421875" text="Nom" />
                 <TableColumn fx:id="coprenom" prefWidth="94.39996337890625" text="Prenom" />
                 <TableColumn fx:id="coemail" prefWidth="147.19998168945312" text="Email" />
                 <TableColumn fx:id="corole" prefWidth="86.4000244140625" text="Role" />
             </columns></TableView>
-        <TextField fx:id="tfrecherche" layoutX="213.0" layoutY="18.0" promptText="Rechercher" />
-        <Button layoutX="362.0" layoutY="18.0" mnemonicParsing="false" onAction="#chercherUser" text="Chercher" />
+        <TextField fx:id="tfrecherche" layoutX="213.0" layoutY="18.0" promptText="Rechercher" styleClass="search-box" stylesheets="@CSS/product-box.css" />
+        <Button layoutX="362.0" layoutY="18.0" mnemonicParsing="false" onAction="#chercherUser" styleClass="search-button" stylesheets="@CSS/product-box.css" text="Chercher" />
         <!-- Ajout des nouveaux boutons sous la TableView -->
-        <Button layoutX="348.0" layoutY="357.0" mnemonicParsing="false" onAction="#handelEdit" text="MODIFIER" />
-        <Button layoutX="417.0" layoutY="357.0" mnemonicParsing="false" onAction="#handelActivate" text="ACTIVER" />
-        <Button layoutX="478.0" layoutY="357.0" mnemonicParsing="false" onAction="#handelDesactivate" text="DESACTIVER" />
+        <Button layoutX="348.0" layoutY="357.0" mnemonicParsing="false" onAction="#handelEdit" styleClass="search-button" stylesheets="@CSS/product-box.css" text="MODIFIER" />
+        <Button layoutX="417.0" layoutY="357.0" mnemonicParsing="false" onAction="#handelActivate" styleClass="search-button" stylesheets="@CSS/product-box.css" text="ACTIVER" />
+        <Button layoutX="478.0" layoutY="357.0" mnemonicParsing="false" onAction="#handelDesactivate" styleClass="search-button" stylesheets="@CSS/product-box.css" text="DESACTIVER" />
         <!-- Ajoutez ce bouton sous les autres boutons existants -->
-        <Button layoutX="560.0" layoutY="357.0" mnemonicParsing="false" onAction="#handleDeleteUser" text="SUPPRIMER" />
-      <Button contentDisplay="BOTTOM" graphicTextGap="6.0" layoutX="213.0" layoutY="354.0" mnemonicParsing="false" onAction="#AjouterUser" prefHeight="30.0" prefWidth="108.0" text="Ajouter" textFill="#cd3f0687">
-         <font>
-            <Font name="Arial Rounded MT Bold" size="16.0" />
-         </font>
-      </Button>
-      <Button contentDisplay="BOTTOM" graphicTextGap="6.0" layoutX="519.0" layoutY="17.0" mnemonicParsing="false" onAction="#logout" prefHeight="25.0" prefWidth="115.0" text="Déconnxion" textFill="#cd3f0687">
+        <Button layoutX="560.0" layoutY="357.0" mnemonicParsing="false" onAction="#handleDeleteUser" styleClass="search-button" stylesheets="@CSS/product-box.css" text="SUPPRIMER" />
+      <Button contentDisplay="BOTTOM" graphicTextGap="6.0" layoutX="213.0" layoutY="354.0" mnemonicParsing="false" onAction="#AjouterUser" prefHeight="30.0" prefWidth="108.0" style="-fx-background-color: #ffac78;" styleClass="search-button" stylesheets="@CSS/product-box.css" text="Ajouter" textFill="WHITE">
          <font>
             <Font name="Arial Rounded MT Bold" size="16.0" />
          </font>
@@ -74,6 +71,15 @@
             </Button>
          </children>
       </VBox>
+      <Button layoutX="591.0" layoutY="11.0" minWidth="17.0" mnemonicParsing="false" onAction="#logout" prefHeight="34.0" prefWidth="48.0" styleClass="search-button" stylesheets="@CSS/product-box.css">
+         <graphic>
+            <ImageView fitHeight="32.0" fitWidth="50.0">
+               <image>
+                  <Image url="@source/turn-off.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
 
     </children>
 </AnchorPane>

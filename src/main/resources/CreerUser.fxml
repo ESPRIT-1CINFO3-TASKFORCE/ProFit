@@ -15,10 +15,10 @@
             <Image url="@source/profitacc.jpg" />
          </image>
       </ImageView>
-      <TextField fx:id="txtname" layoutX="431.0" layoutY="109.0" prefHeight="25.0" prefWidth="132.0" />
-      <TextField fx:id="txtprename" layoutX="431.0" layoutY="141.0" prefHeight="25.0" prefWidth="132.0" />
-      <TextField fx:id="txtemail" layoutX="431.0" layoutY="206.0" prefHeight="25.0" prefWidth="132.0" />
-      <TextField fx:id="txtnumber" layoutX="431.0" layoutY="238.0" prefHeight="25.0" prefWidth="132.0" />
+      <TextField fx:id="txtname" layoutX="431.0" layoutY="109.0" prefHeight="25.0" prefWidth="132.0" styleClass="search-box" stylesheets="@CSS/product-box.css" />
+      <TextField fx:id="txtprename" layoutX="431.0" layoutY="141.0" prefHeight="25.0" prefWidth="132.0" styleClass="search-box" stylesheets="@CSS/product-box.css" />
+      <TextField fx:id="txtemail" layoutX="431.0" layoutY="206.0" prefHeight="25.0" prefWidth="132.0" styleClass="search-box" stylesheets="@CSS/product-box.css" />
+      <TextField fx:id="txtnumber" layoutX="431.0" layoutY="238.0" prefHeight="25.0" prefWidth="132.0" styleClass="search-box" stylesheets="@CSS/product-box.css" />
       <Label fx:id="labnumber" layoutX="295.0" layoutY="242.0" prefHeight="20.0" prefWidth="101.0" text="Téléphone">
          <font>
             <Font name="Arial Bold Italic" size="17.0" />
@@ -49,16 +49,16 @@
             <Font name="Arial Bold Italic" size="24.0" />
          </font>
       </Label>
-      <Button contentDisplay="BOTTOM" graphicTextGap="6.0" layoutX="455.0" layoutY="316.0" mnemonicParsing="false" onAction="#pagePrecedente" prefHeight="30.0" prefWidth="109.0" text="Retour" textFill="#cd3f0687">
+      <Button contentDisplay="BOTTOM" graphicTextGap="6.0" layoutX="14.0" layoutY="367.0" mnemonicParsing="false" onAction="#pagePrecedente" prefHeight="38.0" prefWidth="83.0" style="-fx-background-color: #ffffff;" styleClass="search-button" stylesheets="@CSS/product-box.css" text="Retour" textFill="#ffad7a">
          <font>
             <Font name="Arial Rounded MT Bold" size="16.0" />
          </font>
       </Button>
-      <Button contentDisplay="BOTTOM" graphicTextGap="6.0" layoutX="455.0" layoutY="275.0" mnemonicParsing="false" onAction="#createUser" prefHeight="30.0" prefWidth="109.0" text="Eregistrer" textFill="#cd3f0687">
+      <Button contentDisplay="BOTTOM" graphicTextGap="6.0" layoutX="427.0" layoutY="287.0" mnemonicParsing="false" onAction="#createUser" prefHeight="27.0" prefWidth="140.0" style="-fx-background-color: #ffffff;" styleClass="search-button" stylesheets="@CSS/product-box.css" text="Enregistrer" textFill="#ffac78">
          <font>
             <Font name="Arial Rounded MT Bold" size="16.0" />
          </font>
       </Button>
-      <TextField fx:id="txtage" layoutX="431.0" layoutY="173.0" prefHeight="25.0" prefWidth="132.0" />
+      <TextField fx:id="txtage" layoutX="431.0" layoutY="173.0" prefHeight="25.0" prefWidth="132.0" styleClass="search-box" stylesheets="@CSS/product-box.css" />
    </children>
 </AnchorPane>
