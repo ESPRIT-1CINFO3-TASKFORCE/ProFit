@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="chatVBox" alignment="CENTER" maxHeight="600.0" maxWidth="900.0" minHeight="600.0" minWidth="900.0" prefHeight="600.0" prefWidth="900.0" spacing="15.0" style="-fx-background-color: #EFEFEFff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ChatController">
+   <stylesheets>
+      <URL value="@/styles/chatStyle.css" />
+   </stylesheets>
+   <children>
+      <BorderPane>
+         <bottom>
+            <Pane prefHeight="62.0" prefWidth="900.0" style="-fx-background-color: #f7855b;" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="38.0" fitWidth="119.0" layoutX="391.0" layoutY="12.0">
+                     <image>
+                        <Image url="@assets/profittitle.PNG" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </bottom>
+         <top>
+            <Pane prefHeight="156.0" prefWidth="900.0" style="-fx-background-color: #CACACA;" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane prefHeight="78.0" prefWidth="900.0" style="-fx-background-color: #f7855b;">
+                     <children>
+                        <Pane layoutY="29.0" prefHeight="69.0" prefWidth="900.0" style="-fx-background-color: #E87659;">
+                           <effect>
+                              <Reflection />
+                           </effect>
+                           <children>
+                              <Label fx:id="currentUserId" layoutX="94.0" layoutY="26.0" prefHeight="29.0" prefWidth="212.0" text="username">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <Label layoutX="96.0" layoutY="31.0" text="CHAT">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Button fx:id="backToHomePage" layoutX="111.0" layoutY="100.0" mnemonicParsing="false" onAction="#backToHomePage" prefHeight="39.0" prefWidth="188.0" text="Précedent">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Button>
+                  <Pane layoutX="674.0" layoutY="-2.0" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: #A3A3A3;">
+                     <children>
+                        <ImageView fitHeight="209.0" fitWidth="209.0" layoutX="-33.0" layoutY="-20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@assets/logo.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane layoutY="148.0" prefHeight="6.0" prefWidth="900.0" style="-fx-background-color: #585858;" />
+               </children>
+            </Pane>
+         </top>
+         <right>
+            <Pane prefHeight="382.0" prefWidth="200.0" style="-fx-background-color: #CACACA;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label fx:id="receptName" layoutX="18.0" layoutY="14.0" prefHeight="20.0" prefWidth="173.0" text="" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="receptRole" layoutX="66.0" layoutY="45.0" prefHeight="20.0" prefWidth="114.0" text="" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children></Pane>
+         </right>
+         <center>
+            <Pane fx:id="container" BorderPane.alignment="CENTER">
+               <children>
+                  <ScrollPane fx:id="scrollPane" fitToWidth="true" hbarPolicy="NEVER" layoutX="11.0" layoutY="7.0" prefHeight="302.0" prefWidth="479.0">
+                     <VBox fx:id="messagesContainer" spacing="5.0" />
+                  </ScrollPane>
+                  <Pane layoutX="11.0" layoutY="316.0" prefHeight="59.0" prefWidth="479.0" style="-fx-background-color: #ffffff;">
+                     <children>
+                        <TextField fx:id="messageInputField" layoutX="9.0" layoutY="11.0" prefHeight="38.0" prefWidth="394.0" promptText="Tapez votre message ici..." />
+                        <Button fx:id="sendMessageButton" layoutX="410.0" layoutY="3.0" mnemonicParsing="false" onAction="#sendMessage" prefHeight="51.0" prefWidth="38.0" text="">
+                           <graphic>
+                              <ImageView fitHeight="45.0" fitWidth="46.0">
+                                 <image>
+                                    <Image url="@assets/sendButton.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+         </center>
+         <left>
+            <Pane prefHeight="382.0" prefWidth="200.0" style="-fx-background-color: #CACACA;" BorderPane.alignment="CENTER">
+               <children>
+                  <TextField fx:id="searchUserField" layoutX="5.0" layoutY="2.0" prefHeight="25.0" prefWidth="147.0" promptText="Tapez votre recherche..." />
+                  <ListView fx:id="searchUserList" layoutX="6.0" layoutY="35.0" prefHeight="331.0" prefWidth="187.0" />
+                  <ImageView fitHeight="35.0" fitWidth="36.0" layoutX="152.0" layoutY="-1.0">
+                     <image>
+                        <Image url="@assets/searchButton.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </left>
+      </BorderPane>
+   </children>
+    <!-- Other chat interface components -->
+</VBox>

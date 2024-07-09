@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<VBox fx:id="loginVBox" spacing="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #FBCEB1;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="Controllers.ChatController">
+    <children>
+        <Label text="IDENTIFIANT:" textAlignment="CENTER" />
+        <TextField fx:id="userIdField" />
+        <Label text="NOM:" />
+        <TextField fx:id="userNameField" />
+        <Label text="DESTINATAIRE:" />
+        <TextField fx:id="inputRecepteurIDField" />
+        <Button fx:id="proceedButton" onAction="#proceedToChat" style="-fx-background-color: #8B4000;" text="CONNEXION" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font></Button>
+    </children>
+    <padding>
+        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+    </padding>
+
+</VBox>

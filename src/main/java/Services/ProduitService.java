@@ -1,13 +1,14 @@
 package Services;
 
 import Entites.ProduitEntity;
+import Entites.UserEntity;
 import Utils.DataSource;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProduitService implements IServices<ProduitEntity> {
+public  class ProduitService implements IServices<ProduitEntity> {
     private Connection conn;
 
     {
@@ -29,6 +30,8 @@ public class ProduitService implements IServices<ProduitEntity> {
             System.out.println(e);
         }
     }
+    //public List<UserEntity> readAll() throws SQLException;
+
     public void ajouter(ProduitEntity p) throws SQLException
     {
         PreparedStatement pre= conn.prepareStatement("INSERT INTO `produit`(`id_pro`, `nom_p`, `prix`, `qnt`, `image`) VALUES ( ?,?,?,?,?);");
@@ -76,7 +79,7 @@ public class ProduitService implements IServices<ProduitEntity> {
     }
 
     @Override
-    public List<ProduitEntity> readAll() throws SQLException {
+    public List<ProduitEntity> readAll1() throws SQLException {
         List<ProduitEntity> produits = new ArrayList<>();
         ResultSet rs = ste.executeQuery("SELECT * FROM `produit`;");
         while (rs.next()) {
@@ -89,6 +92,16 @@ public class ProduitService implements IServices<ProduitEntity> {
             ));
         }
         return produits;
+    }
+
+    @Override
+    public List<UserEntity> readAll() throws SQLException {
+        return null;
+    }
+
+    @Override
+    public UserEntity findbyId(int e) throws SQLException {
+        return null;
     }
 }
 

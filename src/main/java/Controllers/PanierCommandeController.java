@@ -75,7 +75,7 @@ public class PanierCommandeController{
             PanierEntity panier = panierService.getPanier(panierId);
             if (panier != null) {
                 // Supposez que le client a un ID 1, vous pouvez ajuster cette ligne en fonction de votre application
-                commandeService.creerCommande(1, panier);
+                commandeService.creerCommande(2208, panier);
                 showAlert("Success", "Votre commande est gérer avec succès!");
 
                 panierService.viderPanier(panierId);

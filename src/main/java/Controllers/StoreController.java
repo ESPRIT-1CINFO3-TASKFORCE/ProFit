@@ -74,7 +74,7 @@ public class StoreController implements Initializable, ProductSelectionListener 
 
     private List<ProduitEntity> getData() {
         try {
-            return produitService.readAll();
+            return produitService.readAll1();
         } catch (SQLException e) {
             e.printStackTrace();
             return new ArrayList<>();

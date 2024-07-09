@@ -68,7 +68,7 @@ ProduitService pro = new ProduitService();
     }
 
     private void loadData() throws SQLException {
-        List<ProduitEntity> list = pro.readAll();
+        List<ProduitEntity> list = pro.readAll1();
         ObservableList<ProduitEntity> data = FXCollections.observableArrayList(list);
         Table.setItems(data);
     }
