@@ -49,24 +49,24 @@
             </Button>
          </children>
       </VBox>
-      <Label fx:id="lprofit" layoutX="249.0" layoutY="72.0" prefHeight="38.0" prefWidth="334.0" text="Bienvenue chez PROFIT ">
+      <Label fx:id="lprofit" layoutX="225.0" layoutY="107.0" prefHeight="50.0" prefWidth="392.0" text="Bienvenue chez PROFIT ">
          <font>
-            <Font name="Bernard MT Condensed" size="34.0" />
+            <Font size="36.0" />
          </font>
       </Label>
-      <ImageView fitHeight="206.0" fitWidth="250.0" layoutX="292.0" layoutY="139.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="81.0" fitWidth="71.0" layoutX="565.0" layoutY="322.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@source/logo.png" />
          </image>
       </ImageView>
-      <Button contentDisplay="BOTTOM" graphicTextGap="6.0" layoutX="527.0" layoutY="20.0" mnemonicParsing="false" onAction="#logout" prefHeight="30.0" prefWidth="118.0" text="Déconnxion" textFill="#cd3f0687">
+      <Button contentDisplay="BOTTOM" graphicTextGap="6.0" layoutX="511.0" layoutY="7.0" mnemonicParsing="false" onAction="#logout" prefHeight="30.0" prefWidth="109.0" styleClass="buttonv" stylesheets="@dashborad.css" text="Déconnxion" textFill="#cd3f0687">
          <font>
             <Font name="Arial Rounded MT Bold" size="16.0" />
          </font>
       </Button>
-      <Label fx:id="tfNom" layoutX="433.0" layoutY="131.0" prefHeight="20.0" prefWidth="200.0" text="Label">
+      <Label fx:id="tfNom" layoutX="358.0" layoutY="183.0" prefHeight="20.0" prefWidth="153.0" text="Label">
          <font>
-            <Font name="System Bold Italic" size="12.0" />
+            <Font name="System Italic" size="18.0" />
          </font></Label>
    </children>
 </AnchorPane>
