@@ -17,38 +17,47 @@
                 <Image url="@source/profitacc.jpg" />
             </image>
         </ImageView>
-        <TextField fx:id="tflogin" layoutX="440.0" layoutY="79.0" />
-        <TextField fx:id="tfmdp" layoutX="440.0" layoutY="141.0" />
-        <ImageView fitHeight="200.0" fitWidth="174.0" layoutX="259.0" layoutY="185.0" pickOnBounds="true" preserveRatio="true">
+        <TextField fx:id="tflogin" layoutX="422.0" layoutY="204.0" prefHeight="25.0" prefWidth="181.0" />
+        <TextField fx:id="tfmdp" layoutX="422.0" layoutY="238.0" prefHeight="25.0" prefWidth="181.0" />
+        <ImageView fitHeight="85.0" fitWidth="174.0" layoutX="14.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@source/logo.png" />
             </image>
         </ImageView>
-        <Button contentDisplay="BOTTOM" graphicTextGap="6.0" layoutX="485.0" layoutY="185.0" mnemonicParsing="false" onAction="#signin" text="Connexion" textFill="#15151787">
+        <Button contentDisplay="BOTTOM" graphicTextGap="6.0" layoutX="338.0" layoutY="306.0" mnemonicParsing="false" onAction="#signin" prefHeight="36.0" prefWidth="245.0" styleClass="buttonv" stylesheets="@dashborad.css" text="Connexion" textFill="#15151787">
             <font>
                 <Font name="Arial Rounded MT Bold" size="16.0" />
             </font>
         </Button>
-        <Button contentDisplay="BOTTOM" graphicTextGap="6.0" layoutX="389.0" layoutY="334.0" mnemonicParsing="false" onAction="#forgotpassword" prefHeight="30.0" prefWidth="200.0" text="Mot de Passe oublié ?" textFill="#cd3f0687">
+        <Button contentDisplay="BOTTOM" graphicTextGap="6.0" layoutX="340.0" layoutY="349.0" mnemonicParsing="false" onAction="#forgotpassword" prefHeight="36.0" prefWidth="245.0" styleClass="buttonv" stylesheets="@dashborad.css" text="Mot de Passe oublié ?" textFill="#cd3f0687">
             <font>
                 <Font name="Arial Rounded MT Bold" size="16.0" />
             </font>
         </Button>
-        <Label fx:id="lmdp" layoutX="292.0" layoutY="144.0" text="Mot de Passe">
+        <Label fx:id="lmdp" layoutX="268.0" layoutY="238.0" text="Mot de Passe">
             <font>
-                <Font name="Arial Bold Italic" size="17.0" />
+                <Font name="Arial Bold Italic" size="22.0" />
             </font>
         </Label>
-        <Label fx:id="llogin" layoutX="295.0" layoutY="82.0" text="Login">
+        <Label fx:id="llogin" layoutX="349.0" layoutY="204.0" text="Login">
             <font>
-                <Font name="Arial Bold Italic" size="17.0" />
+                <Font name="Arial Bold Italic" size="21.0" />
             </font>
         </Label>
-        <Button contentDisplay="BOTTOM" graphicTextGap="6.0" layoutX="495.0" layoutY="371.0" mnemonicParsing="false" onAction="#pagePrecedente" prefHeight="30.0" prefWidth="96.0" text="Retour" textFill="#cd3f0687">
+        <Button contentDisplay="BOTTOM" graphicTextGap="6.0" layoutX="14.0" layoutY="385.0" mnemonicParsing="false" onAction="#pagePrecedente" prefHeight="36.0" prefWidth="69.0" text="Retour" textFill="#cd3f0687">
             <font>
                 <Font name="Arial Rounded MT Bold" size="16.0" />
             </font>
         </Button>
+      <Label layoutX="230.0" layoutY="31.0" prefHeight="40.0" prefWidth="398.0" text="Connectez-vous pour accéder">
+         <font>
+            <Font name="System Bold Italic" size="28.0" />
+         </font>
+      </Label>
+      <Label layoutX="393.0" layoutY="74.0" prefHeight="40.0" prefWidth="257.0" text=" à notre plateforme">
+         <font>
+            <Font name="System Bold Italic" size="28.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>
-
