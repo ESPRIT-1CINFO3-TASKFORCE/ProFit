@@ -70,3 +70,19 @@
 #backToHomePage:hover {
     -fx-background-color: #427AA1;
 }
+
+#searchUserList {
+    -fx-background-color: #ffffff;
+    -fx-font-size: 12px; /* Make the text larger */
+    -fx-font-weight: bold; /* Make the text bold */
+}
+
+.list-cell:hover {
+    -fx-background-color: #8f8f8f; /* Change background color on hover */
+    -fx-text-fill: #000000; /* Change text color on hover */
+}
+
+.list-cell:pressed {
+    -fx-background-color: #8f8f8f; /* Change background color on hover */
+    -fx-text-fill: #000000; /* Change text color on hover */
+}

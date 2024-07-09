@@ -76,16 +76,21 @@
          <right>
             <Pane prefHeight="382.0" prefWidth="200.0" style="-fx-background-color: #CACACA;" BorderPane.alignment="CENTER">
                <children>
-                  <Label fx:id="receptName" layoutX="18.0" layoutY="14.0" prefHeight="20.0" prefWidth="173.0" text="" textAlignment="CENTER">
+                  <Label fx:id="receptName" layoutX="14.0" layoutY="14.0" prefHeight="18.0" prefWidth="157.0" text="" textAlignment="CENTER">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
-                  <Label fx:id="receptRole" layoutX="66.0" layoutY="45.0" prefHeight="20.0" prefWidth="114.0" text="" textAlignment="CENTER">
+                  <Label fx:id="receptRole" layoutX="57.0" layoutY="61.0" prefHeight="19.0" prefWidth="87.0" text="" textAlignment="CENTER">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
+                  <ImageView fitHeight="279.0" fitWidth="204.0" layoutX="28.0" layoutY="89.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/athlete.PNG" />
+                     </image>
+                  </ImageView>
                </children></Pane>
          </right>
          <center>
@@ -115,7 +120,7 @@
             <Pane prefHeight="382.0" prefWidth="200.0" style="-fx-background-color: #CACACA;" BorderPane.alignment="CENTER">
                <children>
                   <TextField fx:id="searchUserField" layoutX="5.0" layoutY="2.0" prefHeight="25.0" prefWidth="147.0" promptText="Tapez votre recherche..." />
-                  <ListView fx:id="searchUserList" layoutX="6.0" layoutY="35.0" prefHeight="331.0" prefWidth="187.0" />
+                  <ListView fx:id="searchUserList" fixedCellSize="35.0" layoutX="6.0" layoutY="35.0" prefHeight="331.0" prefWidth="187.0" />
                   <ImageView fitHeight="35.0" fitWidth="36.0" layoutX="152.0" layoutY="-1.0">
                      <image>
                         <Image url="@assets/searchButton.png" />
