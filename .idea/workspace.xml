@@ -5,34 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="19f57df4-e2f3-490a-86e2-cd5a451d0bc7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/athlete.PNG" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/SidBarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/SidBarController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/AjouterProgres.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AjouterProgres.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/CreerUser.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/CreerUser.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/DashboardBilanAdh.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/DashboardBilanAdh.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/FormulaireModifierProgres.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FormulaireModifierProgres.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ListUsers.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ListUsers.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/PageInitial.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/PageInitial.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/PlansRegime.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/PlansRegime.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SideBar.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/SideBar.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Side_bar.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Side_bar.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/TestAffichage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/TestAffichage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/dashborad.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dashborad.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/ForumController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ForumController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/TestMain/MainFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TestMain/MainFX.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/TestMain/MainFx.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Chat.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Chat.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/styles/chatStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/styles/chatStyle.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
-  &quot;customColor&quot;: &quot;&quot;,
-  &quot;associatedIndex&quot;: 8
-}</component>
+    &quot;customColor&quot;: &quot;&quot;,
+    &quot;associatedIndex&quot;: 8
+    }</component>
   <component name="ProjectId" id="2iyPwfJjhS5RFwMVfM9Zi2GRALt" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -47,7 +46,7 @@
     "Maven.ProFit [org.openjfx:javafx-maven-plugin:0.0.8:run].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Merging main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
@@ -55,13 +54,13 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "SDKs",
+    "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.0",
+    "project.structure.side.proportion": "0.45517242",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.MainFX">
     <configuration name="ChatServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Utils.ChatServer" />
       <module name="ProFit" />
@@ -75,8 +74,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MainFX" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="TestMain.MainFX" />
+      <module name="ProFit" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="TestMain.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.MainFX" />
+      <item itemvalue="Application.ChatServer" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MainFX" />
         <item itemvalue="Application.ChatServer" />
       </list>
     </recent_temporary>
@@ -99,7 +116,9 @@
       <updated>1720460085642</updated>
       <workItem from="1720460090696" duration="2662000" />
       <workItem from="1720531688488" duration="1956000" />
-      <workItem from="1720534493249" duration="11134000" />
+      <workItem from="1720534493249" duration="2306000" />
+      <workItem from="1720540002220" duration="1045000" />
+      <workItem from="1720541087856" duration="3180000" />
     </task>
     <servers />
   </component>

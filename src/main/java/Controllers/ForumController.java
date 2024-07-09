@@ -124,10 +124,20 @@ public class ForumController {
                 newTopicAlert.setStyle("-fx-text-fill: green;"); // Set the success message to green
                 System.out.println("Topic added successfully.");
                 loadForums();
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/forums.fxml"));
+                    Parent root = loader.load();
+
+                    // Get the current stage and set the new scene
+                    Stage stage = (Stage) topicField.getScene().getWindow();
+                    stage.setScene(new Scene(root));
+
+
             } catch (SQLException e) {
                 newTopicAlert.setText("Erreur !");
                 newTopicAlert.setStyle("-fx-text-fill: red;");
                 e.printStackTrace();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
             }
         }
     }
