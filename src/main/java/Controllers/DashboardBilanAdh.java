@@ -236,6 +236,7 @@ public class DashboardBilanAdh {
                 IMCSeries.getData().add(new XYChart.Data<>(dateFormatted, progression.getIMC()));
             }
             StatistiquePoidsDate.getData().addAll(poidsSeries, IMCSeries);
+            System.out.println("ameni");
         } else {
             tfnomPrenom.setText("");
             tfpoids.setText("");
